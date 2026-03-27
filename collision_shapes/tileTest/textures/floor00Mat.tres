@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c4m6b1cy6ypuq"]
+
+[ext_resource type="Texture2D" uid="uid://d2jyx3xgne1lw" path="res://tileTest/textures/Floor00.png" id="1_wd7qt"]
+
+[resource]
+resource_name = "floor00Mat"
+albedo_texture = ExtResource("1_wd7qt")
+roughness = 0.5
+texture_filter = 0

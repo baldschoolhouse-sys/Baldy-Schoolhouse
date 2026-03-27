@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://chq0vrb78ap11"]
+
+[ext_resource type="Texture2D" uid="uid://be6bf1fxty67i" path="res://tileTest/textures/Ceilling00.png" id="1_wu5nf"]
+
+[resource]
+resource_name = "ceiling00Mat"
+albedo_texture = ExtResource("1_wu5nf")
+roughness = 0.5
+texture_filter = 0

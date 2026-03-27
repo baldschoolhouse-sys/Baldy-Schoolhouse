@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c8gnmssaoc5ql"]
+
+[ext_resource type="Texture2D" uid="uid://bc311fomyruty" path="res://tileTest/textures/NormalTexture.png" id="1_fpcei"]
+
+[resource]
+resource_name = "normalTileMat"
+albedo_texture = ExtResource("1_fpcei")
+roughness = 0.5
+texture_filter = 0

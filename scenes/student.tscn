@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://1qrdqbcpnp3y"]
+
+[ext_resource type="Script" uid="uid://wxi0ls5x5n34" path="res://scripts/student.gd" id="1_8bc1h"]
+[ext_resource type="Script" uid="uid://df5v4xs8j47fn" path="res://scripts/ray_cast_3d.gd" id="2_5twd6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4orpo"]
+radius = 0.4
+
+[node name="Student" type="CharacterBody3D"]
+collision_mask = 2
+script = ExtResource("1_8bc1h")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3807068, 0)
+shape = SubResource("CapsuleShape3D_4orpo")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+collision_mask = 3
+script = ExtResource("2_5twd6")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16, 0)
+near = 0.001

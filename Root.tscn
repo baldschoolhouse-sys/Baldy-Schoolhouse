@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://car337ug4t4k0"]
+
+[ext_resource type="Texture2D" uid="uid://df31hwtj23vwf" path="res://Background.png" id="1"]
+
+[sub_resource type="GDScript" id="GDScript_gxo8o"]
+script/source = "extends Node2D
+
+func _ready():
+	pass # Replace with function body.
+
+
+func _physics_process(delta):
+	var move = Vector2()
+	
+	if Input.is_action_pressed(\"ui_left\"):
+		move.x -= 1
+	if Input.is_action_pressed(\"ui_right\"):
+		move.x += 1
+	if Input.is_action_pressed(\"ui_up\"):
+		move.y -= 1
+	if Input.is_action_pressed(\"ui_down\"):
+		move.y += 1
+		
+	position += (move * 1.0)
+
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_24d08"]
+load_path = "res://.godot/imported/player.png-2dd0af52de4b213777cd8c9df94c0978.ctex"
+
+[sub_resource type="GDScript" id="GDScript_170dk"]
+script/source = "extends Node2D
+
+var target
+
+func _ready():
+	target = get_node(\"../Player\")
+
+
+func _physics_process(delta):
+
+	var pos_target = target.position
+	
+	
+	# in pixels
+	var offset = pos_target - position
+
+	var max_dist = 20.0
+	offset.x = clamp(offset.x, -max_dist, max_dist)
+	offset.y = clamp(offset.y, -max_dist, max_dist)
+
+	debug_print(str(offset))
+	
+	position = pos_target - offset
+
+	
+func debug_print(sz):
+	$Camera2D/Label.text = sz
+	
+"
+
+[node name="Root" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(160, 120)
+texture = ExtResource("1")
+
+[node name="Player" type="Node2D" parent="."]
+script = SubResource("GDScript_gxo8o")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+texture = SubResource("CompressedTexture2D_24d08")
+
+[node name="Follow" type="Node2D" parent="."]
+script = SubResource("GDScript_170dk")
+
+[node name="Camera2D" type="Camera2D" parent="Follow"]
+
+[node name="Label" type="Label" parent="Follow/Camera2D"]
+anchors_preset = -1
+anchor_bottom = 0.065
+text = "Test"

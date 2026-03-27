@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://ydr5n0f805hh"]
+
+[ext_resource type="Material" uid="uid://chq0vrb78ap11" path="res://collision_shapes/tileTest2/tileTest/textures/ceiling00Mat.tres" id="1_sbqos"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2lx4m"]
+_surfaces = [{
+"aabb": AABB(-1, 1, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "ceiling00Mat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rxjen"]
+resource_name = "ceiling00_Cube"
+_surfaces = [{
+"aabb": AABB(-1, 1, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": ExtResource("1_sbqos"),
+"name": "ceiling00Mat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2lx4m")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3uulm"]
+data = PackedVector3Array(1, 1, -1, -1, 1, 1, 1, 1, 1, 1, 1, -1, -1, 1, -1, -1, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ceiling00" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_rxjen")
+skeleton = NodePath("")
+
+[node name="ceiling00" type="StaticBody3D" parent="ceiling00"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ceiling00/ceiling00"]
+shape = SubResource("ConcavePolygonShape3D_3uulm")

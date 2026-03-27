@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://ydr5n0f805hh"]
+
+[ext_resource type="Texture2D" uid="uid://dlwq1l6tkecm5" path="res://collision_shapes/tileTest2/ceiling_Ceilling.png" id="1_sbqos"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cdtl"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_sbqos")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_50ewd"]
+_surfaces = [{
+"aabb": AABB(-1, 1, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xd6qg"]
+resource_name = "ceiling_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, 1, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_6cdtl"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_50ewd")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hdwrg"]
+points = PackedVector3Array(-1, 1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_xd6qg")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hdwrg")

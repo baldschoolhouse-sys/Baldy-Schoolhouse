@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkastq4gwik63"]
+
+[ext_resource type="Material" uid="uid://dfd2k860wrkn7" path="res://tileTest/textures/floor01Mat.tres" id="1_ouj23"]
+[ext_resource type="Material" uid="uid://c4m6b1cy6ypuq" path="res://tileTest/textures/floor00Mat.tres" id="2_pujd0"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j8swv"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "floor00Mat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5pjni"]
+resource_name = "floor00_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": ExtResource("2_pujd0"),
+"name": "floor00Mat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 255, 255, 255, 63, 0, 0, 0, 0, 255, 255, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_j8swv")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pujd0"]
+data = PackedVector3Array(-1, -1, -1, 1, -1, 1, -1, -1, 1, -1, -1, -1, 1, -1, -1, 1, -1, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v0c1b"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "floor01Mat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c5745"]
+resource_name = "floor01_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": ExtResource("1_ouj23"),
+"name": "floor01Mat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 255, 255, 255, 63, 0, 0, 0, 0, 255, 255, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_v0c1b")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="floor00" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_5pjni")
+skeleton = NodePath("")
+
+[node name="floor00" type="StaticBody3D" parent="floor00"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor00/floor00"]
+shape = SubResource("ConcavePolygonShape3D_pujd0")
+
+[node name="floor01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("ArrayMesh_c5745")
+skeleton = NodePath("")
+
+[node name="floor01" type="StaticBody3D" parent="floor01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor01/floor01"]
+shape = SubResource("ConcavePolygonShape3D_pujd0")

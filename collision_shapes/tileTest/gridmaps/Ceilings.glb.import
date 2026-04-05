@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b65xxgb0fqd0d"
-path="res://.godot/imported/Floors.glb-6eb95df21c9302e4ef2c8358a45afa42.scn"
+uid="uid://qmu3u3ux5hdd"
+path="res://.godot/imported/Ceilings.glb-a137da203865ac3b07df874bb015413d.scn"
 
 [deps]
 
-source_file="res://collision_shapes/tileTest/gridmaps/Floors.glb"
-dest_files=["res://.godot/imported/Floors.glb-6eb95df21c9302e4ef2c8358a45afa42.scn"]
+source_file="res://collision_shapes/tileTest/gridmaps/Ceilings.glb"
+dest_files=["res://.godot/imported/Ceilings.glb-a137da203865ac3b07df874bb015413d.scn"]
 
 [params]
 
@@ -36,7 +36,7 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 materials/extract=1
 materials/extract_format=0
-materials/extract_path="res://texture/LevelTiles/Materials/Floors"
+materials/extract_path="res://texture/LevelTiles/Materials/Ceilings"
 _subresources={}
 gltf/naming_version=2
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1

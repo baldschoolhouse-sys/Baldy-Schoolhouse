@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dbd0ttwe8k7y1"]
-
-[ext_resource type="Texture2D" uid="uid://rxq0t8wtanp7" path="res://texture/LevelTiles/Walls/Wall_outside.png" id="1_yautw"]
-
-[resource]
-resource_name = "OutsideWallMat"
-albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
-albedo_texture = ExtResource("1_yautw")
-roughness = 0.5

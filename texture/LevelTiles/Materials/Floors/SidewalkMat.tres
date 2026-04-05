@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dpmtdrk67ik6o"]
+
+[ext_resource type="Texture2D" uid="uid://davoy7d60mj6p" path="res://texture/LevelTiles/Textures/Floors/sidewalk.png" id="1_2ny71"]
+
+[resource]
+resource_name = "SidewalkMat"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_2ny71")
+roughness = 0.5
+texture_filter = 0

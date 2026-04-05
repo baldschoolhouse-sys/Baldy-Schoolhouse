@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bsxpxlnajy10c"]
+
+[ext_resource type="Texture2D" uid="uid://b3n1pay5lre7u" path="res://texture/LevelTiles/Textures/Floors/DebugFloor.png" id="1_3k83p"]
+
+[resource]
+resource_name = "FloorDebugMat"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_3k83p")
+roughness = 0.5
+texture_filter = 0

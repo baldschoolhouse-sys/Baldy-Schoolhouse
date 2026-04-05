@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dttcufnva4uee"]
+
+[ext_resource type="Texture2D" uid="uid://b7kbvve8n8loy" path="res://texture/LevelTiles/Textures/Ceiling/DebugCeiling.png" id="1_ra6fl"]
+
+[resource]
+resource_name = "CeilingDebugMat"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_ra6fl")
+roughness = 0.5
+texture_filter = 0

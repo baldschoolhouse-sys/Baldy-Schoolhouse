@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://be0wmf8b5vad7"]
+
+[ext_resource type="PackedScene" uid="uid://qmu3u3ux5hdd" path="res://collision_shapes/tileTest/gridmaps/Ceilings.glb" id="1_s0123"]
+
+[node name="Ceilings" instance=ExtResource("1_s0123")]

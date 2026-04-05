@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://2hlty7dhi36r"]
+
+[ext_resource type="Texture2D" uid="uid://bgyq52ewwl8gr" path="res://texture/LevelTiles/Textures/Ceiling/False_Light.png" id="1_jwoyw"]
+
+[resource]
+resource_name = "FalseLightMat"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_jwoyw")
+roughness = 0.5
+texture_filter = 0

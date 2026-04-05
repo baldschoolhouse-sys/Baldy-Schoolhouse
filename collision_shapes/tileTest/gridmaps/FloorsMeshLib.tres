@@ -1,12 +1,12 @@
 [gd_resource type="MeshLibrary" load_steps=43 format=3 uid="uid://cq5m3mbj3540g"]
 
-[ext_resource type="Material" uid="uid://bsxpxlnajy10c" path="res://texture/LevelTiles/Floors/FloorDebugMat.tres" id="1_sjce5"]
-[ext_resource type="Material" uid="uid://ckn4gno7bn1vd" path="res://texture/LevelTiles/Floors/BasicFloorMat.tres" id="2_nrayy"]
-[ext_resource type="Material" uid="uid://bbaxnw58vypw8" path="res://texture/LevelTiles/Floors/CarpetMat.tres" id="3_wkbcs"]
-[ext_resource type="Material" uid="uid://cpmo35bo7r2ni" path="res://texture/LevelTiles/Floors/PlaygroundFloorMat.tres" id="4_vjo1o"]
-[ext_resource type="Material" uid="uid://mkf6br454jyw" path="res://texture/LevelTiles/Floors/ClassicFloorMat.tres" id="5_un7xf"]
-[ext_resource type="Material" uid="uid://d3371dmnyhkiw" path="res://texture/LevelTiles/Floors/GrassMat.tres" id="6_y7q8y"]
-[ext_resource type="Material" uid="uid://dpmtdrk67ik6o" path="res://texture/LevelTiles/Floors/SidewalkMat.tres" id="7_mqsxa"]
+[ext_resource type="Material" uid="uid://bsxpxlnajy10c" path="res://texture/LevelTiles/Materials/Floors/FloorDebugMat.tres" id="1_sjce5"]
+[ext_resource type="Material" uid="uid://ckn4gno7bn1vd" path="res://texture/LevelTiles/Materials/Floors/BasicFloorMat.tres" id="2_nrayy"]
+[ext_resource type="Material" uid="uid://bbaxnw58vypw8" path="res://texture/LevelTiles/Materials/Floors/CarpetMat.tres" id="3_wkbcs"]
+[ext_resource type="Material" uid="uid://cpmo35bo7r2ni" path="res://texture/LevelTiles/Materials/Floors/PlaygroundFloorMat.tres" id="4_vjo1o"]
+[ext_resource type="Material" uid="uid://mkf6br454jyw" path="res://texture/LevelTiles/Materials/Floors/ClassicFloorMat.tres" id="5_un7xf"]
+[ext_resource type="Material" uid="uid://d3371dmnyhkiw" path="res://texture/LevelTiles/Materials/Floors/GrassMat.tres" id="6_y7q8y"]
+[ext_resource type="Material" uid="uid://dpmtdrk67ik6o" path="res://texture/LevelTiles/Materials/Floors/SidewalkMat.tres" id="7_mqsxa"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d0x21"]
 _surfaces = [{

@@ -1,12 +1,12 @@
 [gd_resource type="MeshLibrary" load_steps=45 format=3 uid="uid://dyiwsig75frdf"]
 
-[ext_resource type="Material" uid="uid://bx1t40gmduipt" path="res://texture/LevelTiles/Walls/NorthWallDebugMat.tres" id="1_26jhg"]
-[ext_resource type="Material" uid="uid://cjefgqyygkom1" path="res://texture/LevelTiles/Walls/WallClassicMat.tres" id="2_vm2v2"]
-[ext_resource type="Material" uid="uid://d11djuepf84bo" path="res://texture/LevelTiles/Walls/YellowClassroomMat.tres" id="3_fvi5w"]
-[ext_resource type="Material" uid="uid://7b2hitrqmg50" path="res://texture/LevelTiles/Walls/RedClassroomMat.tres" id="4_oc8wd"]
-[ext_resource type="Material" uid="uid://c1ntci53jiivy" path="res://texture/LevelTiles/Walls/CafeteriaWall1Mat.tres" id="5_c2rmr"]
-[ext_resource type="Material" uid="uid://dbd0ttwe8k7y1" path="res://texture/LevelTiles/Walls/OutsideWallMat.tres" id="6_8fiqw"]
-[ext_resource type="Material" uid="uid://dxlfyg5q46xhl" path="res://texture/LevelTiles/Walls/CafeteriaWall2Mat.tres" id="7_n3k6w"]
+[ext_resource type="Material" uid="uid://bx1t40gmduipt" path="res://texture/LevelTiles/Materials/Walls/NorthWallDebugMat.tres" id="1_26jhg"]
+[ext_resource type="Material" uid="uid://cjefgqyygkom1" path="res://texture/LevelTiles/Materials/Walls/WallClassicMat.tres" id="2_vm2v2"]
+[ext_resource type="Material" uid="uid://d11djuepf84bo" path="res://texture/LevelTiles/Materials/Walls/YellowClassroomMat.tres" id="3_fvi5w"]
+[ext_resource type="Material" uid="uid://7b2hitrqmg50" path="res://texture/LevelTiles/Materials/Walls/RedClassroomMat.tres" id="4_oc8wd"]
+[ext_resource type="Material" uid="uid://c1ntci53jiivy" path="res://texture/LevelTiles/Materials/Walls/CafeteriaWall1Mat.tres" id="5_c2rmr"]
+[ext_resource type="Material" uid="uid://dbd0ttwe8k7y1" path="res://texture/LevelTiles/Materials/Walls/OutsideWallMat.tres" id="6_8fiqw"]
+[ext_resource type="Material" uid="uid://dxlfyg5q46xhl" path="res://texture/LevelTiles/Materials/Walls/CafeteriaWall2Mat.tres" id="7_n3k6w"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fxc6y"]
 _surfaces = [{

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba75nuc3mgfeh"
-path.s3tc="res://.godot/imported/cafeteria_wall2.png-d9589a570a19a73031757ed18d1897af.s3tc.ctex"
+uid="uid://b3n1pay5lre7u"
+path.s3tc="res://.godot/imported/DebugFloor.png-e7361bdc98aa625e19896e52d1093379.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://collision_shapes/tileTest/textures/cafeteria_wall2.png"
-dest_files=["res://.godot/imported/cafeteria_wall2.png-d9589a570a19a73031757ed18d1897af.s3tc.ctex"]
+source_file="res://texture/LevelTiles/Floors/DebugFloor.png"
+dest_files=["res://.godot/imported/DebugFloor.png-e7361bdc98aa625e19896e52d1093379.s3tc.ctex"]
 
 [params]
 

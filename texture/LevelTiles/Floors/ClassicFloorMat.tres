@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://mkf6br454jyw"]
+
+[ext_resource type="Texture2D" uid="uid://b0tiwipni13ih" path="res://texture/LevelTiles/Floors/Floor-1.png" id="1_gs7tg"]
+
+[resource]
+resource_name = "ClassicFloorMat"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_gs7tg")
+roughness = 0.5
+texture_filter = 0

@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d11djuepf84bo"]
 
-[ext_resource type="Texture2D" uid="uid://ckycup7b2w14s" path="res://collision_shapes/tileTest/textures/YellowClassroom_Wall.png" id="1_k81fo"]
+[ext_resource type="Texture2D" uid="uid://ckycup7b2w14s" path="res://texture/LevelTiles/Walls/YellowClassroom_Wall.png" id="1_k81fo"]
 
 [resource]
 resource_name = "YellowClassroomMat"

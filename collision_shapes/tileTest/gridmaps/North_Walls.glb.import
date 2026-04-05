@@ -36,42 +36,42 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 materials/extract=1
 materials/extract_format=0
-materials/extract_path="res://collision_shapes/tileTest/textures"
+materials/extract_path="res://texture/LevelTiles/Walls"
 _subresources={
 "materials": {
 "CafeteriaWall1Mat": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://collision_shapes/tileTest/textures/CafeteriaWall1Mat.tres",
+"use_external/fallback_path": "res://texture/LevelTiles/Walls/CafeteriaWall1Mat.tres",
 "use_external/path": "uid://c1ntci53jiivy"
 },
 "CafeteriaWall2Mat": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://collision_shapes/tileTest/textures/CafeteriaWall2Mat.tres",
+"use_external/fallback_path": "res://texture/LevelTiles/Walls/CafeteriaWall2Mat.tres",
 "use_external/path": "uid://dxlfyg5q46xhl"
 },
 "NorthWallDebugMat": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://collision_shapes/tileTest/textures/NorthWallDebugMat.tres",
+"use_external/fallback_path": "res://texture/LevelTiles/Walls/NorthWallDebugMat.tres",
 "use_external/path": "uid://bx1t40gmduipt"
 },
 "OutsideWallMat": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://collision_shapes/tileTest/textures/OutsideWallMat.tres",
+"use_external/fallback_path": "res://texture/LevelTiles/Walls/OutsideWallMat.tres",
 "use_external/path": "uid://dbd0ttwe8k7y1"
 },
 "RedClassroomMat": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://collision_shapes/tileTest/textures/RedClassroomMat.tres",
+"use_external/fallback_path": "res://texture/LevelTiles/Walls/RedClassroomMat.tres",
 "use_external/path": "uid://7b2hitrqmg50"
 },
 "WallClassicMat": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://collision_shapes/tileTest/textures/WallClassicMat.tres",
+"use_external/fallback_path": "res://texture/LevelTiles/Walls/WallClassicMat.tres",
 "use_external/path": "uid://cjefgqyygkom1"
 },
 "YellowClassroomMat": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://collision_shapes/tileTest/textures/YellowClassroomMat.tres",
+"use_external/fallback_path": "res://texture/LevelTiles/Walls/YellowClassroomMat.tres",
 "use_external/path": "uid://d11djuepf84bo"
 }
 }

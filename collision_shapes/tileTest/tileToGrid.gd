@@ -25,7 +25,7 @@ extends GridMap
 @export var tilemap: TileMapLayer
 
 # Creates gridmap creation button, sets it to "create_gridmap" function
-@export_tool_button("Create Gridmap From Tilemap") var gridMapFunction = create_gridmap
+@export_tool_button("Create Gridmap From Tilemaps") var gridMapFunction = create_gridmap
 
 # Variable declaration
 var meshLib: MeshLibrary

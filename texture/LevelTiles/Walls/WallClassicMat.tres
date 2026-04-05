@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cjefgqyygkom1"]
 
-[ext_resource type="Texture2D" uid="uid://dfltgsi1qbo4y" path="res://collision_shapes/tileTest/textures/Wall-1.png" id="1_doio1"]
+[ext_resource type="Texture2D" uid="uid://dfltgsi1qbo4y" path="res://texture/LevelTiles/Walls/Wall-1.png" id="1_doio1"]
 
 [resource]
 resource_name = "WallClassicMat"

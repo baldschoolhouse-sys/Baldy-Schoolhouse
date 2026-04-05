@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfltgsi1qbo4y"
-path.s3tc="res://.godot/imported/Wall-1.png-cce2824fb98ef6d6a1e82aad757aa82d.s3tc.ctex"
+uid="uid://ckycup7b2w14s"
+path.s3tc="res://.godot/imported/YellowClassroom_Wall.png-bf30951e4f2d606790f47f7c2c789cea.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://collision_shapes/tileTest/textures/Wall-1.png"
-dest_files=["res://.godot/imported/Wall-1.png-cce2824fb98ef6d6a1e82aad757aa82d.s3tc.ctex"]
+source_file="res://texture/LevelTiles/Walls/YellowClassroom_Wall.png"
+dest_files=["res://.godot/imported/YellowClassroom_Wall.png-bf30951e4f2d606790f47f7c2c789cea.s3tc.ctex"]
 
 [params]
 

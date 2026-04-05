@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "floor00Mat": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://collision_shapes/tileTest/textures/floor00Mat.tres",
+"use_external/fallback_path": "res://collision_shapes/tileTest2/tileTest/textures/floor00Mat.tres",
 "use_external/path": "uid://c4m6b1cy6ypuq"
 }
 }

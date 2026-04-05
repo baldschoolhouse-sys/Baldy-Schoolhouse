@@ -1,10 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8wf5mfpdnjia"]
 
-[ext_resource type="MeshLibrary" uid="uid://dqj272kltm8ar" path="res://tileTest/floorGridmap.tres" id="1_7gygx"]
-[ext_resource type="MeshLibrary" uid="uid://ea84d351dgvg" path="res://tileTest/ceilingGridmap.tres" id="2_mmhje"]
-[ext_resource type="MeshLibrary" uid="uid://bmwiesgqemhai" path="res://tileTest/wallGridmap.tres" id="3_7gygx"]
-[ext_resource type="PackedScene" uid="uid://ckokwpe8w6jfs" path="res://tileTest/studentNewCollision.tscn" id="4_7gygx"]
-[ext_resource type="PackedScene" uid="uid://c547tnw8f85hf" path="res://Skybox.tscn" id="4_s766h"]
+[ext_resource type="MeshLibrary" uid="uid://dqj272kltm8ar" path="res://collision_shapes/tileTest/gridmapsOld/floorGridmap.tres" id="1_7gygx"]
+[ext_resource type="MeshLibrary" uid="uid://ea84d351dgvg" path="res://collision_shapes/tileTest/gridmapsOld/ceilingGridmap.tres" id="2_mmhje"]
+[ext_resource type="MeshLibrary" uid="uid://bmwiesgqemhai" path="res://collision_shapes/tileTest/gridmapsOld/wallGridmap.tres" id="3_7gygx"]
+[ext_resource type="PackedScene" uid="uid://ckokwpe8w6jfs" path="res://collision_shapes/tileTest2/studentNewCollision.tscn" id="4_7gygx"]
+[ext_resource type="PackedScene" path="res://Skybox.tscn" id="4_s766h"]
+
 
 [sub_resource type="GDScript" id="GDScript_ujjl2"]
 

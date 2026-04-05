@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c1ntci53jiivy"]
+
+[ext_resource type="Texture2D" uid="uid://cl1dhs4do4clv" path="res://collision_shapes/tileTest/textures/cafeteria_wall1.png" id="1_3hm6r"]
+
+[resource]
+resource_name = "CafeteriaWall1Mat"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_3hm6r")
+roughness = 0.5

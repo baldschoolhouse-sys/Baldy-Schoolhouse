@@ -16,7 +16,6 @@ config/name_localized={
 }
 config/description="Exlpore Baldy's wacky and wild schoolhouse, where he makes learning fun!"
 config/version="1.0"
-run/main_scene="uid://dtysqmt4ld5k3"
 config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=30
 boot_splash/bg_color=Color(0, 0, 0, 1)

@@ -31,6 +31,7 @@ func _physics_process(delta) -> void:
 			velocity.z *= 2
 	else:
 		cur_speed = 0
+		# I think this isn't accounting fully for where the player is facing - Jack 
 		velocity.x = move_toward(velocity.x, cur_speed, DEACCEL * delta)
 		velocity.z = move_toward(velocity.z, cur_speed, DEACCEL * delta)
 

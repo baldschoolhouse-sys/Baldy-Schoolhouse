@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://ca45vy30js6ow"]
 
-[ext_resource type="MeshLibrary" uid="uid://bmwiesgqemhai" path="res://collision_shapes/tileTest/gridmapsOld/wallGridmap.tres" id="3_7gygx"]
+[ext_resource type="MeshLibrary" uid="uid://bmwiesgqemhai" path="res://collision_shapes/tileTest2/tileTest/gridmaps/wallGridmapOld.tres" id="3_7gygx"]
 [ext_resource type="TileSet" uid="uid://dc2l4y11wj55m" path="res://collision_shapes/tileTest/wallTileSet.tres" id="3_u42a1"]
 [ext_resource type="PackedScene" uid="uid://ckokwpe8w6jfs" path="res://collision_shapes/tileTest2/studentNewCollision.tscn" id="4_7gygx"]
 [ext_resource type="Script" uid="uid://jcpko70p5lkr" path="res://collision_shapes/tileTest/tileToGrid.gd" id="4_mmhje"]

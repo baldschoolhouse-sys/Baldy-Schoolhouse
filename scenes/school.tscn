@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtysqmt4ld5k3"]
 
 [ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://scenes/student.tscn" id="1_v3cpt"]
-[ext_resource type="MeshLibrary" uid="uid://bmwiesgqemhai" path="res://collision_shapes/tileTest2/tileTest/gridmaps/wallGridmapOld.tres" id="2_7cd4u"]
+[ext_resource type="MeshLibrary" uid="uid://bmwiesgqemhai" path="res://collision_shapes/tileTest2/wallGridmap.tres" id="2_7cd4u"]
 [ext_resource type="MeshLibrary" uid="uid://dqj272kltm8ar" path="res://collision_shapes/tileTest2/floorGridmap.tres" id="3_7cd4u"]
 [ext_resource type="Environment" uid="uid://bf68s7u74uc27" path="res://graphics/school_house_environment.tres" id="3_v3cpt"]
 [ext_resource type="MeshLibrary" uid="uid://ea84d351dgvg" path="res://collision_shapes/tileTest2/tileTest/gridmaps/ceilingGridmap.tres" id="4_7cd4u"]

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7neijku4ckky"
-path.s3tc="res://.godot/imported/DebugCeiling.png-36697e4c2e1a356899a7c146d98a3548.s3tc.ctex"
+uid="uid://rmvuy1e2baij"
+path.s3tc="res://.godot/imported/Carpet.png-8bf8ba8531f6da2cff3e6b660d3189dc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://texture/LevelTiles/Textures/Ceiling/DebugCeiling.png"
-dest_files=["res://.godot/imported/DebugCeiling.png-36697e4c2e1a356899a7c146d98a3548.s3tc.ctex"]
+source_file="res://texture/LevelTiles/Textures/Ceiling/Carpet.png"
+dest_files=["res://.godot/imported/Carpet.png-8bf8ba8531f6da2cff3e6b660d3189dc.s3tc.ctex"]
 
 [params]
 

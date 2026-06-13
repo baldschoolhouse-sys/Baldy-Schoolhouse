@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://ca45vy30js6ow"]
+[gd_scene load_steps=10 format=4 uid="uid://ca45vy30js6ow"]
 
 [ext_resource type="Environment" uid="uid://bf68s7u74uc27" path="res://graphics/school_house_environment.tres" id="1_jh5w5"]
-[ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://scenes/student.tscn" id="2_dycdf"]
+[ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="2_dycdf"]
 [ext_resource type="TileSet" uid="uid://dc2l4y11wj55m" path="res://collision_shapes/tileTest/wallTileSet.tres" id="3_u42a1"]
+[ext_resource type="PackedScene" uid="uid://bl7sgqcgtk0gx" path="res://entities/editor/StandardDoor.tscn" id="4_ads6k"]
 [ext_resource type="MeshLibrary" uid="uid://dyiwsig75frdf" path="res://collision_shapes/tileTest/gridmaps/NorthWallsMeshLib.tres" id="4_jh5w5"]
 [ext_resource type="Script" uid="uid://jcpko70p5lkr" path="res://collision_shapes/tileTest/tileToGrid.gd" id="4_mmhje"]
 [ext_resource type="MeshLibrary" uid="uid://cq5m3mbj3540g" path="res://collision_shapes/tileTest/gridmaps/FloorsMeshLib.tres" id="6_o6est"]
@@ -33,6 +34,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3886862, -0.25793886, 1.156
 collision_layer = 2
 script = ExtResource("4_mmhje")
 tilemap = NodePath("../TileMapWalls")
+
+[node name="StandardDoor" parent="Node/SchoolhouseGrid" instance=ExtResource("4_ads6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 11)
 
 [node name="NorthWall" type="GridMap" parent="Node/SchoolhouseGrid"]
 mesh_library = ExtResource("4_jh5w5")

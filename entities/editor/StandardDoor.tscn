@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://bl7sgqcgtk0gx"]
+
+[ext_resource type="Material" uid="uid://diutdty0gient" path="res://texture/LevelTiles/Materials/Doors/StandardDoorClosed.tres" id="1_xws3n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgkwk"]
+resource_name = "DoorClosed"
+transparency = 4
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_72073"]
+_surfaces = [{
+"aabb": AABB(-1, -0.99987483, -0.99999994, 2, 0.01999998, 2),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "DoorClosed",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAAAAAAAAAAAA//8AAP//AAAAAP////8AAP////8AAAAA////////AAAAAP//AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pc2eh"]
+resource_name = "Door_DoorPlanes"
+_surfaces = [{
+"aabb": AABB(-1, -0.99987483, -0.99999994, 2, 0.01999998, 2),
+"attribute_data": PackedByteArray("AAD/////AAAAAAAA/////wAA/////wAA/////wAAAAA="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_pgkwk"),
+"name": "DoorClosed",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP///z///wAAAAD/PwAAAAAAAP8///8AAP///z8AAP//////v/////8AAP+//////////78AAP//AAD/vwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_72073")
+
+[node name="StandardDoor" type="Node3D"]
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1, -0.01)
+material_override = ExtResource("1_xws3n")
+mesh = SubResource("ArrayMesh_pc2eh")
+skeleton = NodePath("")

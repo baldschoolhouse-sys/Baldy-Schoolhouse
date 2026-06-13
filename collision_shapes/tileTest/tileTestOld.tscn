@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=4 uid="uid://bqbucfrps14ow"]
 
 [ext_resource type="Environment" uid="uid://bf68s7u74uc27" path="res://graphics/school_house_environment.tres" id="1_c8he1"]
-[ext_resource type="MeshLibrary" uid="uid://bmwiesgqemhai" path="res://collision_shapes/tileTest2/tileTest/gridmaps/wallGridmapOld.tres" id="2_c8he1"]
+[ext_resource type="MeshLibrary" uid="uid://bmwiesgqemhai" path="res://collision_shapes/tileTest2/wallGridmap.tres" id="2_c8he1"]
 [ext_resource type="Script" uid="uid://jcpko70p5lkr" path="res://collision_shapes/tileTest/tileToGrid.gd" id="4_ydv0r"]
-[ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://scenes/student.tscn" id="5_dlawn"]
+[ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="5_dlawn"]
 [ext_resource type="TileSet" uid="uid://dc2l4y11wj55m" path="res://collision_shapes/tileTest/wallTileSet.tres" id="5_i83a2"]
 
 [sub_resource type="GDScript" id="GDScript_ujjl2"]

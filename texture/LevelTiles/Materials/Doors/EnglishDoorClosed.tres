@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://g32pjsn0d473"]
+
+[ext_resource type="Texture2D" uid="uid://bn8faws6to8am" path="res://texture/LevelTiles/Textures/Doors/English_Door_Closed.png" id="1_wn0dq"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_wn0dq")
+texture_filter = 0

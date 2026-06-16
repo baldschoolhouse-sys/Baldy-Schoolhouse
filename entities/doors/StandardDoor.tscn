@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://bl7sgqcgtk0gx"]
+[gd_scene load_steps=8 format=4 uid="uid://bl7sgqcgtk0gx"]
 
+[ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_ipwip"]
 [ext_resource type="Material" uid="uid://diutdty0gient" path="res://texture/LevelTiles/Materials/Doors/StandardDoorClosed.tres" id="1_xws3n"]
+[ext_resource type="Material" uid="uid://c0o65jsl2rh0d" path="res://texture/LevelTiles/Materials/Doors/StandardDoorOpen.tres" id="3_mukhv"]
+[ext_resource type="PackedScene" uid="uid://bd5pmq2l61lil" path="res://entities/doors/DoorCollider.tscn" id="4_acm1i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgkwk"]
 resource_name = "DoorClosed"
@@ -41,9 +44,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_72073")
 
 [node name="StandardDoor" type="Node3D"]
+script = ExtResource("1_ipwip")
+DoorClosed = ExtResource("1_xws3n")
+DoorOpen = ExtResource("3_mukhv")
 
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1, -0.01)
 material_override = ExtResource("1_xws3n")
 mesh = SubResource("ArrayMesh_pc2eh")
 skeleton = NodePath("")
+
+[node name="Area3D" parent="." instance=ExtResource("4_acm1i")]

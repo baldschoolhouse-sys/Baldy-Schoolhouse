@@ -47,11 +47,11 @@ func _physics_process(delta) -> void:
 		#velocity.x = move_toward(velocity.x, cur_speed, DEACCEL * delta)
 		#velocity.z = move_toward(velocity.z, cur_speed, DEACCEL * delta)
 	
-	print("cur_speed: " + str(cur_speed))
-	print("cur_speed_2: " + str(cur_speed_2))
-	print("VX: " + str(velocity.x))
-	print("VZ: " + str(velocity.z))
-	print("VXMT: " + str(move_toward(velocity.x, cur_speed, DEACCEL * delta)))
-	print("VZMT: " + str(move_toward(velocity.z, cur_speed, DEACCEL * delta)))
+	#print("cur_speed: " + str(cur_speed))
+	#print("cur_speed_2: " + str(cur_speed_2))
+	#print("VX: " + str(velocity.x))
+	#print("VZ: " + str(velocity.z))
+	#print("VXMT: " + str(move_toward(velocity.x, cur_speed, DEACCEL * delta)))
+	#print("VZMT: " + str(move_toward(velocity.z, cur_speed, DEACCEL * delta)))
 	
 	move_and_slide()

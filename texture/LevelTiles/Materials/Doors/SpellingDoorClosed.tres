@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d27hl8lvrmofm"]
+
+[ext_resource type="Texture2D" uid="uid://barcghrq5yuoj" path="res://texture/LevelTiles/Textures/Doors/Spelling_Door_Closed.png" id="1_hoja8"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_hoja8")
+texture_filter = 0

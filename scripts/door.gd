@@ -17,7 +17,12 @@ func _ready() -> void:
 func _on_door_collider_entered(body: Node3D) -> void:
 	if body.get_script().get_path().get_file() == "student.gd":
 		doorMesh.set_material_override(DoorOpen)
-		doorTimer.start()
+		doorTimer.stop()
+		print("Hi!")
+		
+func _on_door_collider_exited(body: Node3D) -> void:
+	if body.get_script().get_path().get_file() == "student.gd":
+		doorTimer.start(3)
 		print("Hello!")
 		
 func on_timeout():

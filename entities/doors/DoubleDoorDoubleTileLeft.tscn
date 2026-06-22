@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://pqk4v8whq67m"]
+[gd_scene load_steps=9 format=4 uid="uid://d3jgkp1b84tfi"]
 
-[ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_xl3fr"]
-[ext_resource type="Material" uid="uid://demwfa0375d86" path="res://texture/LevelTiles/Materials/Doors/HistoryDoorClosed.tres" id="2_xl3fr"]
-[ext_resource type="Material" uid="uid://djlvrkulj5s0h" path="res://texture/LevelTiles/Materials/Doors/HistoryDoorOpen.tres" id="3_o25fx"]
-[ext_resource type="PackedScene" uid="uid://bd5pmq2l61lil" path="res://entities/doors/DoubleDoorCollider.tscn" id="4_lyv8o"]
+[ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_n7c30"]
+[ext_resource type="Material" uid="uid://c6ee8no8n1a1e" path="res://texture/LevelTiles/Materials/Doors/DoubleDoorLeftDoorClosed.tres" id="2_n7c30"]
+[ext_resource type="Material" uid="uid://d2j0uam44ca2c" path="res://texture/LevelTiles/Materials/Doors/DoubleDoorLeftDoorOpen.tres" id="3_ofmvn"]
+[ext_resource type="PackedScene" uid="uid://mxh5f1c7x2q5" path="res://entities/doors/DoubleDoorLeftCollider.tscn" id="4_n7c30"]
+[ext_resource type="PackedScene" uid="uid://6jv1l2crg2ym" path="res://entities/doors/DoubleDoorConnector.tscn" id="5_ofmvn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgkwk"]
 resource_name = "DoorClosed"
@@ -11,7 +12,7 @@ transparency = 4
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_72073"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ofmvn"]
 _surfaces = [{
 "aabb": AABB(-1, -0.99987483, -0.99999994, 2, 0.01999998, 2),
 "format": 34896613377,
@@ -41,17 +42,23 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAP///z///wAAAAD/PwAAAAAAAP8///8AAP///z8AAP//////v/////8AAP+//////////78AAP//AAD/vwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_72073")
+shadow_mesh = SubResource("ArrayMesh_ofmvn")
 
-[node name="HistoryDoor" type="Node3D"]
-script = ExtResource("1_xl3fr")
-DoorClosed = ExtResource("2_xl3fr")
-DoorOpen = ExtResource("3_o25fx")
+[node name="DoubleDoorDoubleTileLeft" type="Node3D"]
+script = ExtResource("1_n7c30")
+DoubleDoor = true
+DoorClosed = ExtResource("2_n7c30")
+DoorOpen = ExtResource("3_ofmvn")
 
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1, -0.01)
-material_override = ExtResource("2_xl3fr")
+material_override = ExtResource("2_n7c30")
 mesh = SubResource("ArrayMesh_pc2eh")
 skeleton = NodePath("")
 
-[node name="Area3D" parent="." instance=ExtResource("4_lyv8o")]
+[node name="Area3D" parent="." instance=ExtResource("4_n7c30")]
+
+[node name="Area3D2" parent="." instance=ExtResource("5_ofmvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.35, 0)
+
+[connection signal="area_entered" from="Area3D2" to="Area3D2" method="_on_area_entered"]

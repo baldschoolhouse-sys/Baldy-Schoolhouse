@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://mxh5f1c7x2q5"]
+
+[ext_resource type="Script" uid="uid://bjlq0r1uxurv8" path="res://scripts/enter_door_signal.gd" id="1_k6qkx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n4bkl"]
+size = Vector3(0.885, 1.75, 0.065)
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_k6qkx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5563989, 0.9, -1)
+shape = SubResource("BoxShape3D_n4bkl")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_door_collider_entered"]
+[connection signal="body_exited" from="." to="." method="_on_door_collider_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

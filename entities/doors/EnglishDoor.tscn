@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_o7pec"]
 [ext_resource type="Material" uid="uid://g32pjsn0d473" path="res://texture/LevelTiles/Materials/Doors/EnglishDoorClosed.tres" id="2_o7pec"]
 [ext_resource type="Material" uid="uid://conna1a8shwil" path="res://texture/LevelTiles/Materials/Doors/EnglishDoorOpen.tres" id="3_gpivi"]
-[ext_resource type="PackedScene" uid="uid://bd5pmq2l61lil" path="res://entities/doors/DoorCollider.tscn" id="4_a1r5h"]
+[ext_resource type="PackedScene" uid="uid://bd5pmq2l61lil" path="res://entities/doors/DoubleDoorCollider.tscn" id="4_a1r5h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgkwk"]
 resource_name = "DoorClosed"

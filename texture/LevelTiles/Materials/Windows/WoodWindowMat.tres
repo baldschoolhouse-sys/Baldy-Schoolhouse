@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bt3gbh7cgmy4f"]
+
+[ext_resource type="Texture2D" uid="uid://esmckr8vph05" path="res://texture/LevelTiles/Textures/Windows/WoodWindow_Overlay.png" id="1_ow66a"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_ow66a")
+texture_filter = 0

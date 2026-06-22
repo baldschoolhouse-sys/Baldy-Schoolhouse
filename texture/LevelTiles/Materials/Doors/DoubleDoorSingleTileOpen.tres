@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b7tmejvgkbe1p"]
+
+[ext_resource type="Texture2D" uid="uid://fyhe0hcbi672" path="res://texture/LevelTiles/Textures/Doors/Double_Door_Opened.png" id="1_cae46"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_cae46")
+texture_filter = 0

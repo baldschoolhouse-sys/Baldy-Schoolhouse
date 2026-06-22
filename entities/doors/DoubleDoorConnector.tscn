@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://6jv1l2crg2ym"]
+
+[ext_resource type="Script" uid="uid://dj78juxhd6a1d" path="res://scripts/double_door_connector.gd" id="1_0ut0h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mukhv"]
+size = Vector3(0.5, 0.2, 0.065)
+
+[node name="DoubleDoorConnector" type="Area3D"]
+script = ExtResource("1_0ut0h")
+
+[node name="DoorCheck" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -1)
+shape = SubResource("BoxShape3D_mukhv")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_door_collider_entered"]
+[connection signal="body_exited" from="." to="." method="_on_door_collider_exited"]

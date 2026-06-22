@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl3laqk60er43"
-path.s3tc="res://.godot/imported/Double_Door_Opened1-2.png-0209d8dfaee61f7dd4fa4fb2df6f9988.s3tc.ctex"
+uid="uid://esmckr8vph05"
+path.s3tc="res://.godot/imported/WoodWindow_Overlay.png-4a67bb59c44b8af137012076e79efc05.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://texture/LevelTiles/Textures/Doors/Double_Door_Opened1-2.png"
-dest_files=["res://.godot/imported/Double_Door_Opened1-2.png-0209d8dfaee61f7dd4fa4fb2df6f9988.s3tc.ctex"]
+source_file="res://texture/LevelTiles/Textures/Windows/WoodWindow_Overlay.png"
+dest_files=["res://.godot/imported/WoodWindow_Overlay.png-4a67bb59c44b8af137012076e79efc05.s3tc.ctex"]
 
 [params]
 

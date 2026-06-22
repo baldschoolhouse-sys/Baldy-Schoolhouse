@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd5pmq2l61lil"]
+[gd_scene load_steps=3 format=3 uid="uid://iyn14khee7jn"]
 
-[ext_resource type="Script" uid="uid://bjlq0r1uxurv8" path="res://scripts/enter_door_signal.gd" id="1_jnwdi"]
+[ext_resource type="Script" uid="uid://bjlq0r1uxurv8" path="res://scripts/enter_door_signal.gd" id="1_r166o"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mukhv"]
-size = Vector3(1.1, 1.75, 0.065)
+[sub_resource type="BoxShape3D" id="BoxShape3D_n4bkl"]
+size = Vector3(0.885, 1.75, 0.065)
 
 [node name="Area3D" type="Area3D"]
-script = ExtResource("1_jnwdi")
+script = ExtResource("1_r166o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -1)
-shape = SubResource("BoxShape3D_mukhv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.556, 0.9, -1)
+shape = SubResource("BoxShape3D_n4bkl")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://pqk4v8whq67m"]
+[gd_scene load_steps=8 format=4 uid="uid://cqgqn85vj3whw"]
 
-[ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_xl3fr"]
-[ext_resource type="Material" uid="uid://demwfa0375d86" path="res://texture/LevelTiles/Materials/Doors/HistoryDoorClosed.tres" id="2_xl3fr"]
-[ext_resource type="Material" uid="uid://djlvrkulj5s0h" path="res://texture/LevelTiles/Materials/Doors/HistoryDoorOpen.tres" id="3_o25fx"]
-[ext_resource type="PackedScene" uid="uid://bd5pmq2l61lil" path="res://entities/doors/DoubleDoorCollider.tscn" id="4_lyv8o"]
+[ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_41gg7"]
+[ext_resource type="Material" uid="uid://dwcvq3vd6wcoq" path="res://texture/LevelTiles/Materials/Doors/DoubleDoorSingleTileClosed.tres" id="2_41gg7"]
+[ext_resource type="Material" uid="uid://b7tmejvgkbe1p" path="res://texture/LevelTiles/Materials/Doors/DoubleDoorSingleTileOpen.tres" id="3_kw1nh"]
+[ext_resource type="PackedScene" uid="uid://bd5pmq2l61lil" path="res://entities/doors/DoubleDoorCollider.tscn" id="4_1omrt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgkwk"]
 resource_name = "DoorClosed"
@@ -43,15 +43,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_72073")
 
-[node name="HistoryDoor" type="Node3D"]
-script = ExtResource("1_xl3fr")
-DoorClosed = ExtResource("2_xl3fr")
-DoorOpen = ExtResource("3_o25fx")
+[node name="DoubleDoorSingleTile" type="Node3D"]
+script = ExtResource("1_41gg7")
+DoubleDoor = true
+DoorClosed = ExtResource("2_41gg7")
+DoorOpen = ExtResource("3_kw1nh")
 
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1, -0.01)
-material_override = ExtResource("2_xl3fr")
+material_override = ExtResource("2_41gg7")
 mesh = SubResource("ArrayMesh_pc2eh")
 skeleton = NodePath("")
 
-[node name="Area3D" parent="." instance=ExtResource("4_lyv8o")]
+[node name="Area3D" parent="." instance=ExtResource("4_1omrt")]

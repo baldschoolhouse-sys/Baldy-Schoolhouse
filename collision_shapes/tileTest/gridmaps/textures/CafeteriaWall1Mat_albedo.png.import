@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vutslxodqsv4"
-path.s3tc="res://.godot/imported/DebugSouthWall.png-fe6016b50a3875d527248817680d005d.s3tc.ctex"
+uid="uid://blkek7xsfbci3"
+path="res://.godot/imported/CafeteriaWall1Mat_albedo.png-0cf5a7105a86aa7efb8005adbad68306.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/LevelTiles/Textures/Walls/DebugSouthWall.png"
-dest_files=["res://.godot/imported/DebugSouthWall.png-fe6016b50a3875d527248817680d005d.s3tc.ctex"]
+source_file="res://collision_shapes/tileTest/gridmaps/textures/CafeteriaWall1Mat_albedo.png"
+dest_files=["res://.godot/imported/CafeteriaWall1Mat_albedo.png-0cf5a7105a86aa7efb8005adbad68306.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -34,8 +33,8 @@ process/channel_remap/blue=2
 process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
+process/normal_map_invert_y=true
+process/hdr_as_srgb=true
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=6
 detect_3d/compress_to=0

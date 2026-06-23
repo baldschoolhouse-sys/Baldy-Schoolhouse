@@ -1,0 +1,80 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://fqxjr5qic7hw"
+path="res://.godot/imported/South_Walls.glb-7118cab8b269f4bb5d5a95d8848aaa16.scn"
+
+[deps]
+
+source_file="res://collision_shapes/tileTest/gridmaps/South_Walls.glb"
+dest_files=["res://.godot/imported/South_Walls.glb-7118cab8b269f4bb5d5a95d8848aaa16.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"CafeteriaWall1Mat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/CafeteriaWall1Mat.tres",
+"use_external/path": "uid://c1ntci53jiivy"
+},
+"CafeteriaWall2Mat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/CafeteriaWall2Mat.tres",
+"use_external/path": "uid://dxlfyg5q46xhl"
+},
+"OutsideWallMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/OutsideWallMat.tres",
+"use_external/path": "uid://dbd0ttwe8k7y1"
+},
+"RedClassroomMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/RedClassroomMat.tres",
+"use_external/path": "uid://7b2hitrqmg50"
+},
+"SouthWallDebugMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/SouthWallDebugMat.tres",
+"use_external/path": "uid://b2cdb8wrkj301"
+},
+"WallClassicMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/WallClassicMat.tres",
+"use_external/path": "uid://cjefgqyygkom1"
+},
+"YellowClassroomMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/YellowClassroomMat.tres",
+"use_external/path": "uid://d11djuepf84bo"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

@@ -12,7 +12,6 @@ var otherDoor = null
 var doorTimer = Timer
 var doorMesh = Mesh
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	doorColliders = find_children("Area3D")
@@ -23,8 +22,10 @@ func _ready() -> void:
 	doorMesh = find_child("Door")
 
 func connect_doors(body: Node3D):
-	otherDoor = body.get_parent()
-	print(str(self) + str(otherDoor))
+	if(self != body.get_parent()):
+		print(body)
+		otherDoor = body.get_parent()
+		print(str(self) + str(otherDoor))
 
 func _on_door_collider_entered(body: Node3D, recursionCheck = false) -> void:
 	if body.get_script().get_path().get_file() == "student.gd":

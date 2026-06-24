@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b3ndyf5khv4ba"]
+
+[ext_resource type="Texture2D" uid="uid://bqxfigkwiy7lc" path="res://texture/LevelTiles/Textures/Windows/MagentaWindow_Overlay.png" id="1_7ivmt"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_7ivmt")
+texture_filter = 0

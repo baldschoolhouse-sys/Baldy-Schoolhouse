@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7mk0oanxssuv"]
+
+[ext_resource type="Texture2D" uid="uid://ce5ya76fwi2ql" path="res://texture/LevelTiles/Textures/Windows/YellowWindow_Overlay.png" id="1_gxs14"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_gxs14")
+texture_filter = 0

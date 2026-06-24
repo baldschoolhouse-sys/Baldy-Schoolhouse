@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://e5174cxdwlgn"]
+
+[ext_resource type="Material" uid="uid://c7mk0oanxssuv" path="res://texture/LevelTiles/Materials/Windows/YellowWindowMat.tres" id="1_hq7xp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4agr"]
+resource_name = "WindowMat"
+transparency = 4
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r4j0r"]
+_surfaces = [{
+"aabb": AABB(-1, -0.99987483, -0.99999994, 2, 0.01999998, 2),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "WindowMat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAAAAAAAAAAAA//8AAP//AAAAAP////8AAP////8AAAAA////////AAAAAP//AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bol52"]
+resource_name = "StandardWindow_WindowPlanes"
+_surfaces = [{
+"aabb": AABB(-1, -0.99987483, -0.99999994, 2, 0.01999998, 2),
+"attribute_data": PackedByteArray("AAD/////AAAAAAAA/////wAA/////wAA/////wAAAAA="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_w4agr"),
+"name": "WindowMat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP///z///wAAAAD/PwAAAAAAAP8///8AAP///z8AAP//////v/////8AAP+//////////78AAP//AAD/vwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_r4j0r")
+
+[node name="YellowWindow" type="Node3D"]
+
+[node name="Window" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1, -0.01)
+material_override = ExtResource("1_hq7xp")
+mesh = SubResource("ArrayMesh_bol52")
+skeleton = NodePath("")

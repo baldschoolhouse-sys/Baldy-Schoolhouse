@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqsetypwcr4jy"]
+[gd_resource type="StandardMaterial3D" load_steps=0 format=3 uid="uid://bqsetypwcr4jy"]
 
 [resource]
 resource_name = "NorthWallDebugMat.001"

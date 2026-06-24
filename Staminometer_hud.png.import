@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cijse4hewxnu0"
-path="res://.godot/imported/Principal.png-bb3088ab62c7b7383928c89dfc7ff5f8.ctex"
+uid="uid://6dnjka0evvii"
+path="res://.godot/imported/Staminometer_hud.png-45d7bc1dab48d84652da67b4c4a03f9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Characters/Principal.png"
-dest_files=["res://.godot/imported/Principal.png-bb3088ab62c7b7383928c89dfc7ff5f8.ctex"]
+source_file="res://Staminometer_hud.png"
+dest_files=["res://.godot/imported/Staminometer_hud.png-45d7bc1dab48d84652da67b4c4a03f9f.ctex"]
 
 [params]
 
@@ -33,8 +33,8 @@ process/channel_remap/blue=2
 process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
+process/normal_map_invert_y=true
+process/hdr_as_srgb=true
 process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=0
+process/size_limit=6
+detect_3d/compress_to=2

@@ -5,7 +5,7 @@ extends Node
 @export var DoorClosed = Material
 @export var DoorOpen = Material
 
-var doorCollider = Area3D
+var doorCollider
 var doorColliders
 var doorConnector = null
 var otherDoor = null
@@ -14,12 +14,17 @@ var doorMesh = Mesh
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	doorColliders = find_children("Area3D")
-	doorCollider = doorColliders[0]
+	doorMesh = find_child("Door")
+	if(DoubleDoor):
+		doorColliders = find_children("Area3D")
+		doorTimer = doorColliders[0].find_children("*", "Timer")[0]
+	else:
+		doorColliders = find_children("*", "StaticBody3D")
+		doorTimer = doorMesh.get_parent().find_children("*", "Timer")[0]
 	if(doorColliders.size() > 1):
 		doorConnector = doorColliders[1]
-	doorTimer = doorCollider.find_children("*", "Timer")[0]
-	doorMesh = find_child("Door")
+	if(doorColliders.size() > 0):
+		doorCollider = doorColliders[0]
 
 func connect_doors(body: Node3D):
 	if(self != body.get_parent()):
@@ -27,16 +32,27 @@ func connect_doors(body: Node3D):
 		otherDoor = body.get_parent()
 		print(str(self) + str(otherDoor))
 
-func _on_door_collider_entered(body: Node3D, recursionCheck = false) -> void:
+func _on_door_collider_entered(body: Node3D) -> void:
 	if body.get_script().get_path().get_file() == "student.gd":
-		doorMesh.set_material_override(DoorOpen)
+		openDoor()
 		doorTimer.stop()
+
+func openDoor(recursionCheck = false):
 		print("Hi!")
+		doorMesh.set_material_override(DoorOpen)
 		if(otherDoor != null && recursionCheck == false):
 			recursionCheck = true
-			otherDoor._on_door_collider_entered(body, recursionCheck)
+			otherDoor.openDoor(recursionCheck)
 			print("Hi2!")
-	
+		if(!DoubleDoor):
+			doorCollider.set_collision_layer_value(2, false)
+			
+func closeDoor():
+	doorMesh.set_material_override(DoorClosed)
+	print("Hello Again!")
+	if(!DoubleDoor):
+		doorCollider.set_collision_layer_value(2, true)
+			
 func _on_door_collider_exited(body: Node3D, recursionCheck = false) -> void:
 	if body.get_script().get_path().get_file() == "student.gd":
 		doorTimer.start(3)
@@ -47,5 +63,4 @@ func _on_door_collider_exited(body: Node3D, recursionCheck = false) -> void:
 			print("Hello2!")
 
 func on_timeout():
-	doorMesh.set_material_override(DoorClosed)
-	print("Hello Again!")
+	closeDoor()

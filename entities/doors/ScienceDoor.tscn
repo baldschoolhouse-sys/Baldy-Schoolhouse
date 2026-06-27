@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_53vii"]
 [ext_resource type="Material" uid="uid://ghwnpnndnxe1" path="res://texture/LevelTiles/Materials/Doors/ScienceDoorClosed.tres" id="2_53vii"]
 [ext_resource type="Material" uid="uid://dquxwhl5cr3fp" path="res://texture/LevelTiles/Materials/Doors/ScienceDoorOpen.tres" id="3_3mjhb"]
-[ext_resource type="PackedScene" uid="uid://bd5pmq2l61lil" path="res://entities/doors/DoubleDoorCollider.tscn" id="4_0lhlv"]
+[ext_resource type="PackedScene" uid="uid://gmx6f7hb2jb8" path="res://entities/doors/SingleDoorCollider.tscn" id="4_53vii"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgkwk"]
 resource_name = "DoorClosed"
@@ -54,4 +54,12 @@ material_override = ExtResource("2_53vii")
 mesh = SubResource("ArrayMesh_pc2eh")
 skeleton = NodePath("")
 
-[node name="Area3D" parent="." instance=ExtResource("4_0lhlv")]
+[node name="SingleDoorCollider" parent="." instance=ExtResource("4_53vii")]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1, -0.01)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="on_timeout"]

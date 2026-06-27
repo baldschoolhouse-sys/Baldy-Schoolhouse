@@ -5,20 +5,41 @@ const MOUSE_SENS: float = 0.4
 const MAX_SPEED: float = 8
 const ACCEL: float = 8
 const DEACCEL: float = 16
+const PLAYER_REACH = 3.0
 
 var cur_speed: float = 4
 var cur_speed_2: float = 4
 
 var collisionNode
+var cameraNode
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	collisionNode = get_node("Collision")
-
+	cameraNode = find_child("Camera3D")
+		
 func _input(event) -> void:
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * MOUSE_SENS
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
+		var mousepos = get_viewport().get_mouse_position()
 
+		var origin = cameraNode.project_ray_origin(mousepos)
+		var end = origin + cameraNode.project_ray_normal(mousepos) * PLAYER_REACH
+		var query = PhysicsRayQueryParameters3D.create(origin, end)
+		query.collide_with_areas = true
+
+		var result = get_world_3d().direct_space_state.intersect_ray(query)
+		
+		if(!result.is_empty()):
+			var clickedObject = result['collider']
+			if(clickedObject.get_parent()):
+				var doorScript = clickedObject.get_parent()
+				print(doorScript)
+				if (doorScript.get_script().get_path().get_file() == "door.gd"):
+					doorScript.openDoor(false)
+					doorScript._on_door_collider_exited(self, false)
+		
 func _physics_process(delta) -> void:
 	if not is_on_floor(): velocity += get_gravity() * delta
 	var input_direction: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_down", "ui_up")
@@ -41,7 +62,7 @@ func _physics_process(delta) -> void:
 		velocity.z *= (cur_speed_2 / MAX_SPEED)
 		
 		cur_speed = 0
-		
+	
 		# I think this isn't accounting fully for where the player is facing - Jack 
 		#cur_speed = 0
 		#velocity.x = move_toward(velocity.x, cur_speed, DEACCEL * delta)
@@ -55,3 +76,4 @@ func _physics_process(delta) -> void:
 	#print("VZMT: " + str(move_toward(velocity.z, cur_speed, DEACCEL * delta)))
 	
 	move_and_slide()
+	

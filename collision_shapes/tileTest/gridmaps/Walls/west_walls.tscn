@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckgnilgxo4olo"]
+
+[ext_resource type="PackedScene" uid="uid://b87x3t4vj7vuj" path="res://collision_shapes/tileTest/gridmaps/Walls/West_Walls.glb" id="1_8wfj6"]
+
+[node name="West_Walls" instance=ExtResource("1_8wfj6")]

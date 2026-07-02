@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b87x3t4vj7vuj"
-path="res://.godot/imported/West_Walls.glb-63b5439d2af43494de0e9c0dcb7d2ff9.scn"
+uid="uid://dl2ehm03wemb0"
+path="res://.godot/imported/North_Walls.glb-44d6dab97e44464a9cf5f5a9a299b88a.scn"
 
 [deps]
 
-source_file="res://collision_shapes/tileTest/gridmaps/West_Walls.glb"
-dest_files=["res://.godot/imported/West_Walls.glb-63b5439d2af43494de0e9c0dcb7d2ff9.scn"]
+source_file="res://collision_shapes/tileTest/gridmaps/Walls/North_Walls.glb"
+dest_files=["res://.godot/imported/North_Walls.glb-44d6dab97e44464a9cf5f5a9a299b88a.scn"]
 
 [params]
 
@@ -34,9 +34,9 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-materials/extract=0
+materials/extract=1
 materials/extract_format=0
-materials/extract_path=""
+materials/extract_path="res://texture/LevelTiles/Materials/Walls"
 _subresources={
 "materials": {
 "CafeteriaWall1Mat": {
@@ -49,6 +49,12 @@ _subresources={
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/CafeteriaWall2Mat.tres",
 "use_external/path": "uid://dxlfyg5q46xhl"
 },
+"NorthWallDebugMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/NorthWallDebugMat.tres",
+"use_external/path": "uid://bx1t40gmduipt"
+},
+"NorthWallDebugMat.001": null,
 "OutsideWallMat": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/OutsideWallMat.tres",
@@ -63,11 +69,6 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/WallClassicMat.tres",
 "use_external/path": "uid://cjefgqyygkom1"
-},
-"WestWallDebugMat": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/WestWallDebugMat.tres",
-"use_external/path": "uid://b1cgakre5t5jv"
 },
 "YellowClassroomMat": {
 "use_external/enabled": true,

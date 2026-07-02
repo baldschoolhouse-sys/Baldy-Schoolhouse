@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://fqxjr5qic7hw"
-path="res://.godot/imported/South_Walls.glb-7118cab8b269f4bb5d5a95d8848aaa16.scn"
+uid="uid://rddiqh4mqd1k"
+path="res://.godot/imported/East_Walls.glb-b6cbef9430eaa0159d574dee4d95662c.scn"
 
 [deps]
 
-source_file="res://collision_shapes/tileTest/gridmaps/South_Walls.glb"
-dest_files=["res://.godot/imported/South_Walls.glb-7118cab8b269f4bb5d5a95d8848aaa16.scn"]
+source_file="res://collision_shapes/tileTest/gridmaps/Walls/East_Walls.glb"
+dest_files=["res://.godot/imported/East_Walls.glb-b6cbef9430eaa0159d574dee4d95662c.scn"]
 
 [params]
 
@@ -49,6 +49,11 @@ _subresources={
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/CafeteriaWall2Mat.tres",
 "use_external/path": "uid://dxlfyg5q46xhl"
 },
+"EastWallDebugMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/EastWallDebugMat.tres",
+"use_external/path": "uid://c816mrhiatbny"
+},
 "OutsideWallMat": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/OutsideWallMat.tres",
@@ -58,11 +63,6 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/RedClassroomMat.tres",
 "use_external/path": "uid://7b2hitrqmg50"
-},
-"SouthWallDebugMat": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/SouthWallDebugMat.tres",
-"use_external/path": "uid://b2cdb8wrkj301"
 },
 "WallClassicMat": {
 "use_external/enabled": true,

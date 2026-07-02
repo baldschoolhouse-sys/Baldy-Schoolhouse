@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceoow2fkippo4"
-path="res://.godot/imported/tilemapTest4.png-6bf4e13a70a5666aae02fa7005ad91ac.ctex"
+path="res://.godot/imported/TileSetWalls.png-7d9fbe3e3321e3f7fb16c6874ac3648b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://collision_shapes/tileTest/tilemapTest4.png"
-dest_files=["res://.godot/imported/tilemapTest4.png-6bf4e13a70a5666aae02fa7005ad91ac.ctex"]
+source_file="res://collision_shapes/tileTest/TileSetWalls.png"
+dest_files=["res://.godot/imported/TileSetWalls.png-7d9fbe3e3321e3f7fb16c6874ac3648b.ctex"]
 
 [params]
 

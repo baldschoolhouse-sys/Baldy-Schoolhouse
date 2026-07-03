@@ -34,7 +34,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-materials/extract=1
+materials/extract=0
 materials/extract_format=0
 materials/extract_path="res://texture/LevelTiles/Materials/Walls"
 _subresources={
@@ -54,7 +54,6 @@ _subresources={
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/NorthWallDebugMat.tres",
 "use_external/path": "uid://bx1t40gmduipt"
 },
-"NorthWallDebugMat.001": null,
 "OutsideWallMat": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/OutsideWallMat.tres",
@@ -69,6 +68,11 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/WallClassicMat.tres",
 "use_external/path": "uid://cjefgqyygkom1"
+},
+"WoodWallMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Walls/WoodWallMat.tres",
+"use_external/path": "uid://v738f0ljbni6"
 },
 "YellowClassroomMat": {
 "use_external/enabled": true,

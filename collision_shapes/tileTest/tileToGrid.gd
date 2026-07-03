@@ -28,13 +28,33 @@ extends GridMap
 @export_tool_button("Create Gridmap From Tilemaps") var gridMapFunction = create_gridmap
 
 # Variable declaration
-var meshLib: MeshLibrary
 var tileMapData: PackedByteArray
 var size = Vector2()
 var cellInfo
 var modelName
+var modelType
+var modelDirection
+
+# Gridmaps
+var northWall
+var southWall
+var eastWall
+var westWall
+var levelFloor
+var celling
+
+# Meshlibs
+var northMeshLib: MeshLibrary
+var southMeshLib: MeshLibrary
+var eastMeshLib: MeshLibrary
+var westMeshLib: MeshLibrary
 
 func create_gridmap():
+	
+	northWall = get_node("NorthWall")
+	southWall = get_node("SouthWall")
+	eastWall = get_node("EastWall")
+	westWall = get_node("WestWall")
 	
 	# Get size of tilemap, add one to both axis because it's for some
 	# reason number one short
@@ -44,10 +64,16 @@ func create_gridmap():
 	size[1] += 1
 	
 	# Get mesh library from self
-	meshLib = get_mesh_library()
+	northMeshLib = northWall.get_mesh_library()
+	southMeshLib = southWall.get_mesh_library()
+	eastMeshLib = eastWall.get_mesh_library()
+	westMeshLib = westWall.get_mesh_library()
 	
 	# Clears self to avoid corruption and errors
-	self.clear()
+	northWall.clear()
+	southWall.clear()
+	eastWall.clear()
+	westWall.clear()
 	
 	# Get the tilemap data as a PackedByteArray
 	tileMapData = tilemap.get_tile_map_data_as_array()
@@ -63,6 +89,44 @@ func create_gridmap():
 			modelName = String(cellInfo.get_custom_data("Model"))
 			# Checks of tile has a model name, if so, add that model to
 			# current cell
+			
+			modelType = modelName.findn("tile")
+			modelType = modelName.erase(modelType, modelName.length())
+			
+			modelDirection = modelName.get_slice("Tile", 1)
+			modelDirection = modelDirection.to_lower()
+			
 			if modelName != "":
-				set_cell_item(Vector3i(I%size[0], 0, int(I/size[0])), 
-					meshLib.find_item_by_name(modelName), 0)
+				if modelName.begins_with("Debug"):
+					checkWall("Debug", modelDirection, I)
+				if modelName.begins_with("Normal"):
+					checkWall("WallClassic", modelDirection, I)
+				if modelName.begins_with("YellowC"):
+					checkWall("YellowClassroom", modelDirection, I)
+				if modelName.begins_with("Wood"):
+					checkWall("WoodWall", modelDirection, I)
+				if modelName.begins_with("RedC"):
+					checkWall("RedClassroom_", modelDirection, I)
+				if modelName.begins_with("Cafeteria"):
+					checkWall("CafeteriaWall1", modelDirection, I)
+				if modelName.begins_with("Outside"):
+					checkWall("OutsideWall", modelDirection, I)
+				#northWall.set_cell_item(Vector3i(I%size[0], 0, int(I/size[0])), 
+					#northMeshLib.find_item_by_name(modelName), 0)
+
+func checkWall(type, direction, index):
+	if direction == "blank":
+		pass
+	else:
+		if direction.contains('n'):
+			northWall.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
+				northMeshLib.find_item_by_name(type), 0)
+		if direction.contains('s'):
+			southWall.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
+				southMeshLib.find_item_by_name(type), 0)
+		if direction.contains('e'):
+			eastWall.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
+				eastMeshLib.find_item_by_name(type), 0)
+		if direction.contains('w'):
+			westWall.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
+				westMeshLib.find_item_by_name(type), 0)

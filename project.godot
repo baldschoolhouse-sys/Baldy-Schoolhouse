@@ -28,7 +28,6 @@ boot_splash/minimum_display_time=990
 
 window/size/viewport_width=1024
 window/size/viewport_height=768
-window/size/sharp_corners=true
 
 [editor_plugins]
 

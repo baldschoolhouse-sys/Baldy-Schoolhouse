@@ -12,17 +12,30 @@ var cur_speed_2: float = 4
 
 var collisionNode
 var cameraNode
+var subViewportNode
+var backgroundNode
+var headNode
+
+var screensize
+
+var mouseCaptured = true
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	collisionNode = get_node("Collision")
+	headNode = find_child("Head")
 	cameraNode = find_child("Camera3D")
-		
+	subViewportNode = find_child("SubViewport")
+	
+	screensize = get_viewport().get_visible_rect().size
+	backgroundNode = get_node("BackgroundTile")
+	backgroundNode.region_rect = Rect2(0, 0, screensize.x, screensize.y)
+	
 func _input(event) -> void:
 	if event is InputEventMouseMotion:
-		rotation_degrees.y -= event.relative.x * MOUSE_SENS
+		cameraNode.rotation_degrees.y -= event.relative.x * MOUSE_SENS
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		var mousepos = get_viewport().get_mouse_position()
+		var mousepos = Vector2(subViewportNode.size.x/2, subViewportNode.size.y/2)
 
 		var origin = cameraNode.project_ray_origin(mousepos)
 		var end = origin + cameraNode.project_ray_normal(mousepos) * PLAYER_REACH
@@ -39,11 +52,22 @@ func _input(event) -> void:
 				if (doorScript.get_script().get_path().get_file() == "door.gd"):
 					doorScript.openDoor(false)
 					doorScript._on_door_collider_exited(self, false)
-		
+	if event is InputEventKey:
+		if Input.is_key_pressed(KEY_QUOTELEFT):
+			if(mouseCaptured):
+				mouseCaptured = false
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			else:
+				mouseCaptured = true
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
 func _physics_process(delta) -> void:
+	screensize = get_viewport().get_visible_rect().size
+	backgroundNode.region_rect = Rect2(0, 0, screensize.x, screensize.y)
+	
 	if not is_on_floor(): velocity += get_gravity() * delta
 	var input_direction: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_down", "ui_up")
-	var move_direction: Vector3 = (transform.basis * Vector3(input_direction.x, 0, -1 * input_direction.y)).normalized()
+	var move_direction: Vector3 = (cameraNode.transform.basis * Vector3(input_direction.x, 0, -1 * input_direction.y)).normalized()
 	
 	if move_direction:
 		cur_speed = move_toward(cur_speed, MAX_SPEED, ACCEL * delta)
@@ -76,4 +100,7 @@ func _physics_process(delta) -> void:
 	#print("VZMT: " + str(move_toward(velocity.z, cur_speed, DEACCEL * delta)))
 	
 	move_and_slide()
-	
+	cameraNode.position = Vector3(position.x, position.y + headNode.position.y, position.z)
+
+	#print(rotation)
+	#print(cameraNode.rotation)

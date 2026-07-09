@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://1qrdqbcpnp3y"]
+[gd_scene load_steps=7 format=3 uid="uid://1qrdqbcpnp3y"]
 
 [ext_resource type="Script" uid="uid://wxi0ls5x5n34" path="res://scripts/student.gd" id="1_8bc1h"]
 [ext_resource type="Script" uid="uid://df5v4xs8j47fn" path="res://scripts/ray_cast_3d.gd" id="2_5twd6"]
 [ext_resource type="Texture2D" uid="uid://digf46chggjq5" path="res://graphics/HudTextures/Staminometer_hud.png" id="3_c6rpx"]
+[ext_resource type="Texture2D" uid="uid://ci43dclxttnu1" path="res://texture/background_tile.png" id="3_c22a6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4orpo"]
 radius = 0.4
 height = 1.55
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_c22a6"]
+viewport_path = NodePath("Head/SubViewportContainer/SubViewport")
 
 [node name="Student" type="CharacterBody3D"]
 collision_mask = 2
@@ -17,17 +21,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.775, 0)
 shape = SubResource("CapsuleShape3D_4orpo")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84, 0)
 collision_mask = 3
 script = ExtResource("2_5twd6")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15999997, 0)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head"]
+offset_right = 1024.0
+offset_bottom = 768.0
+
+[node name="SubViewport" type="SubViewport" parent="Head/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1024, 768)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Head/SubViewportContainer/SubViewport"]
 near = 0.001
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BackgroundTile" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("3_c22a6")
+centered = false
+region_enabled = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -384.0
+offset_right = -472.0
+offset_bottom = -344.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="CenterContainer"]
+texture = SubResource("ViewportTexture_c22a6")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer"]
 texture = ExtResource("3_c6rpx")
 centered = false

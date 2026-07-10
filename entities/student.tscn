@@ -29,13 +29,14 @@ script = ExtResource("2_5twd6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84, 0)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Head"]
+visible = false
 offset_right = 1024.0
 offset_bottom = 768.0
 
 [node name="SubViewport" type="SubViewport" parent="Head/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(1024, 768)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera3D" type="Camera3D" parent="Head/SubViewportContainer/SubViewport"]
 near = 0.001
@@ -47,6 +48,7 @@ centered = false
 region_enabled = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -59,7 +61,7 @@ offset_bottom = -344.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D2" type="Sprite2D" parent="CenterContainer"]
+[node name="PlayerPOV" type="Sprite2D" parent="CenterContainer"]
 texture = SubResource("ViewportTexture_c22a6")
 centered = false
 

@@ -22,7 +22,12 @@ extends GridMap
 # you get a weird map in the corner of the screen
 
 # Adds TileMapLayer parameter
-@export var tilemap: TileMapLayer
+@export var tileMapDetail: TileMapLayer
+@export var tileMapHeight: TileMapLayer
+@export var tileMapWalls: TileMapLayer
+@export var tileMapFloors: TileMapLayer
+
+
 
 # Creates gridmap creation button, sets it to "create_gridmap" function
 @export_tool_button("Create Gridmap From Tilemaps") var gridMapFunction = create_gridmap
@@ -58,7 +63,7 @@ func create_gridmap():
 	
 	# Get size of tilemap, add one to both axis because it's for some
 	# reason number one short
-	size = tilemap.get_used_rect().size
+	size = tileMapWalls.get_used_rect().size
 
 	size[0] += 1
 	size[1] += 1
@@ -76,12 +81,12 @@ func create_gridmap():
 	westWall.clear()
 	
 	# Get the tilemap data as a PackedByteArray
-	tileMapData = tilemap.get_tile_map_data_as_array()
+	tileMapData = tileMapWalls.get_tile_map_data_as_array()
 	
 	# Checks each cell/entry in tileMapData
 	for I in range(tileMapData.size()):
 		# Gets the info of the current cell
-		cellInfo = tilemap.get_cell_tile_data( Vector2( I%size[0], 
+		cellInfo = tileMapWalls.get_cell_tile_data( Vector2( I%size[0], 
 			int(I/size[0]) ) )
 		# Checks if cell is blank or not, if so, ignore 
 		if cellInfo != null:

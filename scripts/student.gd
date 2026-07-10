@@ -15,6 +15,7 @@ var cameraNode
 var subViewportNode
 var backgroundNode
 var headNode
+var centerContainerNode
 
 var screensize
 
@@ -26,6 +27,10 @@ func _ready() -> void:
 	headNode = find_child("Head")
 	cameraNode = find_child("Camera3D")
 	subViewportNode = find_child("SubViewport")
+	centerContainerNode = find_child("CenterContainer")
+	
+	subViewportNode.get_parent().visible = true
+	centerContainerNode.visible = true
 	
 	screensize = get_viewport().get_visible_rect().size
 	backgroundNode = get_node("BackgroundTile")

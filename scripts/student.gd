@@ -20,14 +20,18 @@ var centerContainerNode
 var screensize
 
 var mouseCaptured = true
+var fullscreen = false
 
 func _ready() -> void:
+	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	collisionNode = get_node("Collision")
 	headNode = find_child("Head")
 	cameraNode = find_child("Camera3D")
 	subViewportNode = find_child("SubViewport")
 	centerContainerNode = find_child("CenterContainer")
+	
+	DisplayServer.window_set_min_size(subViewportNode.size)
 	
 	subViewportNode.get_parent().visible = true
 	centerContainerNode.visible = true
@@ -65,7 +69,14 @@ func _input(event) -> void:
 			else:
 				mouseCaptured = true
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			
+		if Input.is_key_pressed(KEY_F11):
+			if(fullscreen):
+				fullscreen = false
+				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			else:
+				fullscreen = true
+				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+				
 func _physics_process(delta) -> void:
 	screensize = get_viewport().get_visible_rect().size
 	backgroundNode.region_rect = Rect2(0, 0, screensize.x, screensize.y)

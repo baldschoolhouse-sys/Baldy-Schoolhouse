@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://1qrdqbcpnp3y"]
+[gd_scene load_steps=9 format=3 uid="uid://1qrdqbcpnp3y"]
 
 [ext_resource type="Script" uid="uid://wxi0ls5x5n34" path="res://scripts/student.gd" id="1_8bc1h"]
 [ext_resource type="Script" uid="uid://df5v4xs8j47fn" path="res://scripts/ray_cast_3d.gd" id="2_5twd6"]
+[ext_resource type="AudioStream" uid="uid://cb6qbfpq3xj7c" path="res://audio/SFX/Skid.wav" id="3_64eig"]
 [ext_resource type="Texture2D" uid="uid://digf46chggjq5" path="res://graphics/HudTextures/Staminometer_hud.png" id="3_c6rpx"]
 [ext_resource type="Texture2D" uid="uid://buspk4gtuctqd" path="res://texture/background_tile2.png" id="3_c22a6"]
 [ext_resource type="Texture2D" uid="uid://338hxl54gjim" path="res://texture/Boarder.png" id="4_jvcrt"]
@@ -25,6 +26,9 @@ shape = SubResource("CapsuleShape3D_4orpo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84, 0)
 collision_mask = 3
 script = ExtResource("2_5twd6")
+
+[node name="Skid" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_64eig")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84, 0)

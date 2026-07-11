@@ -16,6 +16,7 @@ var subViewportNode
 var backgroundNode
 var headNode
 var centerContainerNode
+var skidNode
 
 var screensize
 
@@ -30,6 +31,7 @@ func _ready() -> void:
 	cameraNode = find_child("Camera3D")
 	subViewportNode = find_child("SubViewport")
 	centerContainerNode = find_child("CenterContainer")
+	skidNode = find_child("Skid")
 	
 	DisplayServer.window_set_min_size(subViewportNode.size)
 	
@@ -100,6 +102,14 @@ func _physics_process(delta) -> void:
 		# I think this isn't accounting fully for where the player is facing - Jack 
 		velocity.x *= (cur_speed_2 / MAX_SPEED)
 		velocity.z *= (cur_speed_2 / MAX_SPEED)
+		
+		if(cur_speed >= 8.0):
+			if(abs(velocity.x + velocity.z) >= 14.0):
+				skidNode.pitch_scale = 1.0
+				skidNode.play()
+			elif(abs(velocity.x + velocity.z) >= 7.0):
+				skidNode.pitch_scale = 2.5
+				skidNode.play()
 		
 		cur_speed = 0
 	

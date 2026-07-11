@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://1qrdqbcpnp3y"]
+[gd_scene load_steps=8 format=3 uid="uid://1qrdqbcpnp3y"]
 
 [ext_resource type="Script" uid="uid://wxi0ls5x5n34" path="res://scripts/student.gd" id="1_8bc1h"]
 [ext_resource type="Script" uid="uid://df5v4xs8j47fn" path="res://scripts/ray_cast_3d.gd" id="2_5twd6"]
 [ext_resource type="Texture2D" uid="uid://digf46chggjq5" path="res://graphics/HudTextures/Staminometer_hud.png" id="3_c6rpx"]
 [ext_resource type="Texture2D" uid="uid://buspk4gtuctqd" path="res://texture/background_tile2.png" id="3_c22a6"]
+[ext_resource type="Texture2D" uid="uid://338hxl54gjim" path="res://texture/Boarder.png" id="4_jvcrt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4orpo"]
 radius = 0.4
@@ -63,6 +64,11 @@ grow_vertical = 2
 
 [node name="PlayerPOV" type="Sprite2D" parent="CenterContainer"]
 texture = SubResource("ViewportTexture_c22a6")
+centered = false
+
+[node name="Boarder" type="Sprite2D" parent="CenterContainer"]
+position = Vector2(-8, -8)
+texture = ExtResource("4_jvcrt")
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CenterContainer"]

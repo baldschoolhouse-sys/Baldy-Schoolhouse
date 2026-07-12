@@ -1,10 +1,10 @@
 extends CharacterBody3D
 
 const MOUSE_SENS: float = 0.4
-
+const RUNNING_MULTIPLIER_VALUE = 2.0
 const MAX_SPEED: float = 8
 const ACCEL: float = 8
-const DEACCEL: float = 16
+const DEACCEL: float = 7
 const PLAYER_REACH = 3.0
 
 var cur_speed: float = 4
@@ -22,6 +22,8 @@ var screensize
 
 var mouseCaptured = true
 var fullscreen = false
+
+var runningMultiplier = 1.0
 
 func _ready() -> void:
 	
@@ -88,35 +90,31 @@ func _physics_process(delta) -> void:
 	var move_direction: Vector3 = (cameraNode.transform.basis * Vector3(input_direction.x, 0, -1 * input_direction.y)).normalized()
 	
 	if move_direction:
-		cur_speed = move_toward(cur_speed, MAX_SPEED, ACCEL * delta)
-		cur_speed_2 = cur_speed
-		velocity.x = cur_speed * move_direction.x
-		velocity.z = cur_speed * move_direction.z
 		# Check if running
 		if Input.is_action_pressed("run"):
 			# We are running
-			velocity.x *= 2
-			velocity.z *= 2
+			runningMultiplier = RUNNING_MULTIPLIER_VALUE
+		else:
+			runningMultiplier = 1.0
+			
+		cur_speed = move_toward(cur_speed, MAX_SPEED*runningMultiplier, (ACCEL*runningMultiplier) * delta)
+		cur_speed_2 = cur_speed
+		velocity.x = cur_speed * move_direction.x
+		velocity.z = cur_speed * move_direction.z
 	else:
 		cur_speed_2 = move_toward(cur_speed_2, 0, DEACCEL * delta)
-		# I think this isn't accounting fully for where the player is facing - Jack 
-		velocity.x *= (cur_speed_2 / MAX_SPEED)
-		velocity.z *= (cur_speed_2 / MAX_SPEED)
 		
-		if(cur_speed >= 8.0):
-			if(abs(velocity.x + velocity.z) >= 14.0):
-				skidNode.pitch_scale = 1.0
-				skidNode.play()
-			elif(abs(velocity.x + velocity.z) >= 7.0):
-				skidNode.pitch_scale = 2.5
+		if(cur_speed_2 > 8.0):
+			velocity.x *= (cur_speed_2 / (MAX_SPEED*RUNNING_MULTIPLIER_VALUE))
+			velocity.z *= (cur_speed_2 / (MAX_SPEED*RUNNING_MULTIPLIER_VALUE))
+		else:
+			velocity.x *= (cur_speed_2 / MAX_SPEED)
+			velocity.z *= (cur_speed_2 / MAX_SPEED)
+			
+		if(cur_speed >= 16.0):
 				skidNode.play()
 		
 		cur_speed = 0
-	
-		# I think this isn't accounting fully for where the player is facing - Jack 
-		#cur_speed = 0
-		#velocity.x = move_toward(velocity.x, cur_speed, DEACCEL * delta)
-		#velocity.z = move_toward(velocity.z, cur_speed, DEACCEL * delta)
 	
 	#print("cur_speed: " + str(cur_speed))
 	#print("cur_speed_2: " + str(cur_speed_2))
@@ -127,6 +125,3 @@ func _physics_process(delta) -> void:
 	
 	move_and_slide()
 	cameraNode.position = Vector3(position.x, position.y + headNode.position.y, position.z)
-
-	#print(rotation)
-	#print(cameraNode.rotation)

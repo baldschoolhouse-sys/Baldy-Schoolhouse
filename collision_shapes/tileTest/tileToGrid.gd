@@ -27,17 +27,18 @@ extends GridMap
 @export var tileMapWalls: TileMapLayer
 @export var tileMapFloors: TileMapLayer
 
-
-
 # Creates gridmap creation button, sets it to "create_gridmap" function
 @export_tool_button("Create Gridmap From Tilemaps") var gridMapFunction = create_gridmap
 
 # Variable declaration
 var size = Vector2()
 var cellInfo
+var heightInfo
 var modelName
 var modelType
 var modelDirection
+var heightVal
+var mapSize
 
 # Gridmaps
 var northWall
@@ -89,18 +90,30 @@ func create_gridmap():
 	westWall.clear()
 	levelFloor.clear()
 	
-	# Get the tilemap data as a PackedByteArray
+	# Get the wall tilemap data as a PackedByteArray
 	tileMapWallData = tileMapWalls.get_tile_map_data_as_array()
-	
+	# Get the floor tilemap data as a PackedByteArray
+	tileMapFloorData = tileMapFloors.get_tile_map_data_as_array()
+
+	mapSize = tileMapWallData.size()
+
 	# Checks each cell/entry in tileMapData
 	for I in range(tileMapWallData.size()):
 		# Gets the info of the current cell
 		cellInfo = tileMapWalls.get_cell_tile_data( Vector2( I%size[0], 
 			int(I/size[0]) ) )
+		heightInfo = tileMapHeight.get_cell_tile_data( Vector2( I%size[0], 
+			int(I/size[0]) ) )
+		
 		# Checks if cell is blank or not, if so, ignore 
 		if cellInfo != null:
 			# Gets provided model name from tile, then converts to string
 			modelName = String(cellInfo.get_custom_data("Model"))
+			
+			if(heightInfo != null):
+				heightVal = heightInfo.get_custom_data("Value")
+			else:
+				heightVal = 1
 			# Checks of tile has a model name, if so, add that model to
 			# current cell
 			
@@ -110,24 +123,27 @@ func create_gridmap():
 			modelDirection = modelName.get_slice("Tile", 1)
 			modelDirection = modelDirection.to_lower()
 			
-			if modelName != "":
-				if modelName.begins_with("Debug"):
-					checkWall("Debug", modelDirection, I)
-				if modelName.begins_with("Normal"):
-					checkWall("WallClassic", modelDirection, I)
-				if modelName.begins_with("YellowC"):
-					checkWall("YellowClassroom", modelDirection, I)
-				if modelName.begins_with("Wood"):
-					checkWall("WoodWall", modelDirection, I)
-				if modelName.begins_with("RedC"):
-					checkWall("RedClassroom_", modelDirection, I)
-				if modelName.begins_with("Cafeteria"):
-					checkWall("CafeteriaWall1", modelDirection, I)
-				if modelName.begins_with("Outside"):
-					checkWall("OutsideWall", modelDirection, I)
-
-	# Get the tilemap data as a PackedByteArray
-	tileMapFloorData = tileMapFloors.get_tile_map_data_as_array()
+			var H = 0
+			while H < heightVal: 
+				if modelName != "":
+					if modelName.begins_with("Debug"):
+						checkWall("Debug", modelDirection, I, H)
+					if modelName.begins_with("Normal"):
+						checkWall("WallClassic", modelDirection, I, H)
+					if modelName.begins_with("YellowC"):
+						checkWall("YellowClassroom", modelDirection, I, H)
+					if modelName.begins_with("Wood"):
+						checkWall("WoodWall", modelDirection, I, H)
+					if modelName.begins_with("RedC"):
+						checkWall("RedClassroom_", modelDirection, I, H)
+					if modelName.begins_with("Cafeteria"):
+						if(H == 0):
+							checkWall("CafeteriaWall1", modelDirection, I, H)
+						else:
+							checkWall("CafeteriaWall2", modelDirection, I, H)
+					if modelName.begins_with("Outside"):
+						checkWall("OutsideWall", modelDirection, I, H)
+				H += 1
 	
 	# Checks each cell/entry in tileMapData
 	for I in range(tileMapFloorData.size()):
@@ -136,15 +152,10 @@ func create_gridmap():
 			int(I/size[0]) ) )
 		# Checks if cell is blank or not, if so, ignore 
 		if cellInfo != null:
-			#print("Test!")
 			# Gets provided model name from tile, then converts to string
 			modelName = String(cellInfo.get_custom_data("Model"))
 			# Checks of tile has a model name, if so, add that model to
 			# current cell
-			
-			modelType = modelName.findn("tile")
-			modelType = modelName.erase(modelType, modelName.length())
-			#print(modelName)
 			if modelName != "":
 				if modelName.begins_with("FloorDebug"):
 					SetCellFloor("FloorDebug", I)
@@ -165,19 +176,19 @@ func SetCellFloor(type, index):
 	levelFloor.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
 	floorMeshLib.find_item_by_name(type), 0)
 
-func checkWall(type, direction, index):
+func checkWall(type, direction, index, tileHeight):
 	if direction == "blank":
 		pass
 	else:
 		if direction.contains('n'):
-			northWall.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
+			northWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
 				northMeshLib.find_item_by_name(type), 0)
 		if direction.contains('s'):
-			southWall.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
+			southWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
 				southMeshLib.find_item_by_name(type), 0)
 		if direction.contains('e'):
-			eastWall.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
+			eastWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
 				eastMeshLib.find_item_by_name(type), 0)
 		if direction.contains('w'):
-			westWall.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
+			westWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
 				westMeshLib.find_item_by_name(type), 0)

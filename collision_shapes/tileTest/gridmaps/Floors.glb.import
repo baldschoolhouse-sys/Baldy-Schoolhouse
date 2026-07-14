@@ -37,6 +37,44 @@ import_script/path=""
 materials/extract=1
 materials/extract_format=0
 materials/extract_path="res://texture/LevelTiles/Materials/Floors"
-_subresources={}
+_subresources={
+"materials": {
+"BasicFloorMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/BasicFloorMat.tres",
+"use_external/path": "uid://ckn4gno7bn1vd"
+},
+"CarpetMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/CarpetMat.tres",
+"use_external/path": "uid://bbaxnw58vypw8"
+},
+"ClassicFloorMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/ClassicFloorMat.tres",
+"use_external/path": "uid://mkf6br454jyw"
+},
+"FloorDebugMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/FloorDebugMat.tres",
+"use_external/path": "uid://bsxpxlnajy10c"
+},
+"GrassMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/GrassMat.tres",
+"use_external/path": "uid://d3371dmnyhkiw"
+},
+"PlaygroundFloorMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/PlaygroundFloorMat.tres",
+"use_external/path": "uid://cpmo35bo7r2ni"
+},
+"SidewalkMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/SidewalkMat.tres",
+"use_external/path": "uid://dpmtdrk67ik6o"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=0

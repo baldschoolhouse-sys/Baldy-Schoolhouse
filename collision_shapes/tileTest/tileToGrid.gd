@@ -33,7 +33,6 @@ extends GridMap
 @export_tool_button("Create Gridmap From Tilemaps") var gridMapFunction = create_gridmap
 
 # Variable declaration
-var tileMapData: PackedByteArray
 var size = Vector2()
 var cellInfo
 var modelName
@@ -48,11 +47,16 @@ var westWall
 var levelFloor
 var celling
 
+# Gridmap Data
+var tileMapWallData: PackedByteArray
+var tileMapFloorData: PackedByteArray
+
 # Meshlibs
 var northMeshLib: MeshLibrary
 var southMeshLib: MeshLibrary
 var eastMeshLib: MeshLibrary
 var westMeshLib: MeshLibrary
+var floorMeshLib: MeshLibrary
 
 func create_gridmap():
 	
@@ -60,6 +64,8 @@ func create_gridmap():
 	southWall = get_node("SouthWall")
 	eastWall = get_node("EastWall")
 	westWall = get_node("WestWall")
+	
+	levelFloor = get_node("Floor")
 	
 	# Get size of tilemap, add one to both axis because it's for some
 	# reason number one short
@@ -74,17 +80,20 @@ func create_gridmap():
 	eastMeshLib = eastWall.get_mesh_library()
 	westMeshLib = westWall.get_mesh_library()
 	
+	floorMeshLib = levelFloor.get_mesh_library()
+	
 	# Clears self to avoid corruption and errors
 	northWall.clear()
 	southWall.clear()
 	eastWall.clear()
 	westWall.clear()
+	levelFloor.clear()
 	
 	# Get the tilemap data as a PackedByteArray
-	tileMapData = tileMapWalls.get_tile_map_data_as_array()
+	tileMapWallData = tileMapWalls.get_tile_map_data_as_array()
 	
 	# Checks each cell/entry in tileMapData
-	for I in range(tileMapData.size()):
+	for I in range(tileMapWallData.size()):
 		# Gets the info of the current cell
 		cellInfo = tileMapWalls.get_cell_tile_data( Vector2( I%size[0], 
 			int(I/size[0]) ) )
@@ -116,8 +125,45 @@ func create_gridmap():
 					checkWall("CafeteriaWall1", modelDirection, I)
 				if modelName.begins_with("Outside"):
 					checkWall("OutsideWall", modelDirection, I)
-				#northWall.set_cell_item(Vector3i(I%size[0], 0, int(I/size[0])), 
-					#northMeshLib.find_item_by_name(modelName), 0)
+
+	# Get the tilemap data as a PackedByteArray
+	tileMapFloorData = tileMapFloors.get_tile_map_data_as_array()
+	
+	# Checks each cell/entry in tileMapData
+	for I in range(tileMapFloorData.size()):
+		# Gets the info of the current cell
+		cellInfo = tileMapFloors.get_cell_tile_data( Vector2( I%size[0], 
+			int(I/size[0]) ) )
+		# Checks if cell is blank or not, if so, ignore 
+		if cellInfo != null:
+			#print("Test!")
+			# Gets provided model name from tile, then converts to string
+			modelName = String(cellInfo.get_custom_data("Model"))
+			# Checks of tile has a model name, if so, add that model to
+			# current cell
+			
+			modelType = modelName.findn("tile")
+			modelType = modelName.erase(modelType, modelName.length())
+			#print(modelName)
+			if modelName != "":
+				if modelName.begins_with("FloorDebug"):
+					SetCellFloor("FloorDebug", I)
+				if modelName.begins_with("BasicFloor"):
+					SetCellFloor("BasicFloor", I)
+				if modelName.begins_with("ClassicFloor"):
+					SetCellFloor("ClassicFloor", I)
+				if modelName.begins_with("CarpetFloor"):
+					SetCellFloor("CarpetFloor", I)
+				if modelName.begins_with("PlaygroundFloor"):
+					SetCellFloor("PlaygroundFloor", I)
+				if modelName.begins_with("Sidewalk"):
+					SetCellFloor("Sidewalk", I)
+				if modelName.begins_with("Grass"):
+					SetCellFloor("Grass", I)
+
+func SetCellFloor(type, index):
+	levelFloor.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
+	floorMeshLib.find_item_by_name(type), 0)
 
 func checkWall(type, direction, index):
 	if direction == "blank":

@@ -94,6 +94,7 @@ func create_gridmap():
 	eastWall.clear()
 	westWall.clear()
 	levelFloor.clear()
+	levelCeiling.clear()
 	
 	# Get the wall tilemap data as a PackedByteArray
 	tileMapWallData = tileMapWalls.get_tile_map_data_as_array()
@@ -183,6 +184,14 @@ func create_gridmap():
 		# Gets the info of the current cell
 		cellInfo = tileMapCeiling.get_cell_tile_data( Vector2( I%size[0], 
 			int(I/size[0]) ) )
+		heightInfo = tileMapHeight.get_cell_tile_data( Vector2( I%size[0], 
+			int(I/size[0]) ) )
+		
+		if(heightInfo != null):
+			heightVal = heightInfo.get_custom_data("Value")
+		else:
+			heightVal = 1
+			
 		# Checks if cell is blank or not, if so, ignore 
 		if cellInfo != null:
 			# Gets provided model name from tile, then converts to string
@@ -191,13 +200,13 @@ func create_gridmap():
 			# current cell
 			if modelName != "":
 				if modelName.begins_with("CeilingDebug"):
-					SetCellCeiling("CeilingDebug", I, 0)
+					SetCellCeiling("CeilingDebug", I, heightVal-1)
 				if modelName.begins_with("BasicCeiling"):
-					SetCellCeiling("BasicCeiling", I, 0)
+					SetCellCeiling("BasicCeiling", I, heightVal-1)
 				if modelName.begins_with("VentCeiling"):
-					SetCellCeiling("VentCeiling", I, 0)
+					SetCellCeiling("VentCeiling", I, heightVal-1)
 				if modelName.begins_with("FalseLight"):
-					SetCellCeiling("FalseLight", I, 0)
+					SetCellCeiling("FalseLight", I, heightVal-1)
 
 func SetCellCeiling(type, index, tileHeight):
 	levelCeiling.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 

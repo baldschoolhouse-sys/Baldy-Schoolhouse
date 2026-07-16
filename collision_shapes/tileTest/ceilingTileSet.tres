@@ -1,0 +1,23 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://6wwm7bwrdahg"]
+
+[ext_resource type="Texture2D" uid="uid://d0c654r12tvdv" path="res://collision_shapes/tileTest/TileSetCeiling.png" id="1_dmnbm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rkhv"]
+texture = ExtResource("1_dmnbm")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/custom_data_0 = "Blank"
+1:0/0 = 0
+1:0/0/custom_data_0 = "CeilingDebugTile"
+2:0/0 = 0
+2:0/0/custom_data_0 = "BasicCeilingTile"
+3:0/0 = 0
+3:0/0/custom_data_0 = "VentCeilingTile"
+4:0/0 = 0
+4:0/0/custom_data_0 = "FalseLightTile"
+
+[resource]
+tile_size = Vector2i(8, 8)
+custom_data_layer_0/name = "Model"
+custom_data_layer_0/type = 4
+sources/0 = SubResource("TileSetAtlasSource_5rkhv")

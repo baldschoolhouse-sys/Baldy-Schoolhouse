@@ -160,25 +160,46 @@ func create_gridmap():
 			var H = 0
 			while H < heightVal: 
 				if modelName != "":
-					if modelName.begins_with("Debug"):
-						checkWall("Debug", modelDirection, I, H)
-					if modelName.begins_with("Normal"):
-						checkWall("WallClassic", modelDirection, I, H)
-					if modelName.begins_with("YellowC"):
-						checkWall("YellowClassroom", modelDirection, I, H)
-					if modelName.begins_with("Wood"):
-						checkWall("WoodWall", modelDirection, I, H)
-					if modelName.begins_with("RedC"):
-						checkWall("RedClassroom_", modelDirection, I, H)
-					if modelName.begins_with("Cafeteria"):
-						if(H == 0):
-							checkWall("CafeteriaWall1", modelDirection, I, H)
-						else:
-							checkWall("CafeteriaWall2", modelDirection, I, H)
-					if modelName.begins_with("Outside"):
-						checkWall("OutsideWall", modelDirection, I, H)
+					setWall(modelName, modelDirection, I, H)
+					pass
 				H += 1
-	
+			
+			var heightInfoNSEW = [
+				tileMapHeight.get_cell_tile_data( Vector2( I%size[0], int((I)/size[0])-1 ) ),
+				tileMapHeight.get_cell_tile_data( Vector2( I%size[0], int((I)/size[0])+1 ) ),
+				tileMapHeight.get_cell_tile_data( Vector2( (I+1)%size[0], int(I/size[0]) ) ),
+				tileMapHeight.get_cell_tile_data( Vector2( (I-1)%size[0], int(I/size[0]) ) ),
+			]
+			
+			var heightValNSEW = []
+			
+			for hi in heightInfoNSEW:
+				if hi != null:
+					heightValNSEW.append(hi.get_custom_data("Value"))
+				else:
+					heightValNSEW.append(1)
+			
+			#print("H : " + str(H))
+			#print("Mx : " + str( min(heightValNSEW[0], heightValNSEW[1], heightValNSEW[2], heightValNSEW[3]) ) )
+			
+			while H > min(heightValNSEW[0], heightValNSEW[1], heightValNSEW[2], heightValNSEW[3]): 
+				modelDirection = ""
+				if modelName != "":
+					if(H > heightValNSEW[0]):
+						modelDirection += "n"
+					if(H > heightValNSEW[1]):
+						modelDirection += "s"
+					if(H > heightValNSEW[2]):
+						modelDirection += "e"
+					if(H > heightValNSEW[3]):
+						modelDirection += "w"
+					print(modelDirection)
+					#print(modelName)
+					setWall(modelName, modelDirection, I, H-1)
+				H -= 1
+				
+
+				
 	# Checks each cell/entry in tileCeilingData
 	for I in range(tileMapCeilingData.size()):
 		# Gets the info of the current cell
@@ -216,7 +237,26 @@ func SetCellFloor(type, index):
 	levelFloor.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
 	floorMeshLib.find_item_by_name(type), 0)
 
-func checkWall(type, direction, index, tileHeight):
+func setWall(mn, md, i, h):
+	if mn.begins_with("Debug"):
+		createWall("Debug", md, i, h)
+	if mn.begins_with("Normal"):
+		createWall("WallClassic", md, i, h)
+	if mn.begins_with("YellowC"):
+		createWall("YellowClassroom", md, i, h)
+	if mn.begins_with("Wood"):
+		createWall("WoodWall", md, i, h)
+	if mn.begins_with("RedC"):
+		createWall("RedClassroom_", md, i, h)
+	if mn.begins_with("Cafeteria"):
+		if(h == 0):
+			createWall("CafeteriaWall1", md, i, h)
+		else:
+			createWall("CafeteriaWall2", md, i, h)
+	if mn.begins_with("Outside"):
+		createWall("OutsideWall", md, i, h)
+
+func createWall(type, direction, index, tileHeight):
 	if direction == "blank":
 		pass
 	else:

@@ -24,7 +24,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_flhyq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_rqfjb"]
 resource_name = "North_Walls_NorthWallDebug"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -52,7 +52,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_jc3tu"]
+[sub_resource type="ImageTexture" id="ImageTexture_qyq71"]
 image = SubResource("Image_rqfjb")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0xpb8"]
@@ -72,7 +72,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_eask7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jc3tu"]
 resource_name = "North_Walls_NorthWallDebug_001"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -99,7 +99,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_jhkyj"]
+[sub_resource type="ImageTexture" id="ImageTexture_soog7"]
 image = SubResource("Image_flhyq")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vxbp5"]
@@ -119,7 +119,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_un4bn"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jhkyj"]
 resource_name = "North_Walls_NorthWallDebug_018"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -146,7 +146,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_0povu"]
+[sub_resource type="ImageTexture" id="ImageTexture_fnust"]
 image = SubResource("Image_qyq71")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7yh7k"]
@@ -166,7 +166,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2ewfc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0povu"]
 resource_name = "North_Walls_NorthWallDebug_019"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -193,7 +193,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_elkny"]
+[sub_resource type="ImageTexture" id="ImageTexture_hhvvh"]
 image = SubResource("Image_jc3tu")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pyr38"]
@@ -213,7 +213,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_mnnoo"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_elkny"]
 resource_name = "North_Walls_NorthWallDebug_020"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -240,7 +240,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_6gdt7"]
+[sub_resource type="ImageTexture" id="ImageTexture_8q315"]
 image = SubResource("Image_eask7")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tsvtq"]
@@ -260,7 +260,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_yi44m"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6gdt7"]
 resource_name = "North_Walls_NorthWallDebug_021"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -287,7 +287,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_q7e08"]
+[sub_resource type="ImageTexture" id="ImageTexture_3ry34"]
 image = SubResource("Image_soog7")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_l42o2"]
@@ -307,7 +307,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_77csi"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_q7e08"]
 resource_name = "North_Walls_NorthWallDebug_007"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -334,7 +334,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_l8kfo"]
+[sub_resource type="ImageTexture" id="ImageTexture_thmms"]
 image = SubResource("Image_jhkyj")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rwflx"]
@@ -354,7 +354,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_611ln"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_l8kfo"]
 resource_name = "North_Walls_NorthWallDebug_022"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -381,7 +381,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_ptun8"]
+[sub_resource type="ImageTexture" id="ImageTexture_v018q"]
 image = SubResource("Image_un4bn")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yq5uy"]
@@ -401,7 +401,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cgnra"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ptun8"]
 resource_name = "North_Walls_NorthWallDebug_023"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -428,7 +428,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_udkfg"]
+[sub_resource type="ImageTexture" id="ImageTexture_4qhlu"]
 image = SubResource("Image_fnust")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pwmn2"]
@@ -448,7 +448,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_mpq0l"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_udkfg"]
 resource_name = "North_Walls_NorthWallDebug_024"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -475,7 +475,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_mn40o"]
+[sub_resource type="ImageTexture" id="ImageTexture_5afu0"]
 image = SubResource("Image_0povu")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ka5rg"]
@@ -495,7 +495,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_12cc2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mn40o"]
 resource_name = "North_Walls_NorthWallDebug_025"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -522,7 +522,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_phate"]
+[sub_resource type="ImageTexture" id="ImageTexture_lhwyq"]
 image = SubResource("Image_2ewfc")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6k3bl"]
@@ -542,7 +542,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6hrdj"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_phate"]
 resource_name = "North_Walls_NorthWallDebug_026"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -569,7 +569,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_253f5"]
+[sub_resource type="ImageTexture" id="ImageTexture_3pd5n"]
 image = SubResource("Image_hhvvh")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yy40i"]
@@ -589,7 +589,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_5v21o"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_253f5"]
 resource_name = "North_Walls_NorthWallDebug_002"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -616,7 +616,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_ck08g"]
+[sub_resource type="ImageTexture" id="ImageTexture_p7tp3"]
 image = SubResource("Image_elkny")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4vuyt"]
@@ -636,7 +636,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bts82"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ck08g"]
 resource_name = "North_Walls_NorthWallDebug_027"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -663,7 +663,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_qnf8s"]
+[sub_resource type="ImageTexture" id="ImageTexture_x2ddp"]
 image = SubResource("Image_mnnoo")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fxpyb"]
@@ -683,7 +683,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_p4h3p"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qnf8s"]
 resource_name = "North_Walls_NorthWallDebug_028"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -710,7 +710,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_lg8yu"]
+[sub_resource type="ImageTexture" id="ImageTexture_ctrk3"]
 image = SubResource("Image_8q315")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8ev0d"]
@@ -730,7 +730,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_etvbe"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lg8yu"]
 resource_name = "North_Walls_NorthWallDebug_030"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -757,7 +757,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_soplp"]
+[sub_resource type="ImageTexture" id="ImageTexture_wywco"]
 image = SubResource("Image_6gdt7")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6g0vx"]
@@ -777,7 +777,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_csb6h"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_soplp"]
 resource_name = "North_Walls_NorthWallDebug_031"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -804,7 +804,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_fh2f5"]
+[sub_resource type="ImageTexture" id="ImageTexture_8bmnt"]
 image = SubResource("Image_yi44m")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_suqsw"]
@@ -824,7 +824,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_x1vnl"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_fh2f5"]
 resource_name = "North_Walls_NorthWallDebug_032"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -851,7 +851,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_p7x1u"]
+[sub_resource type="ImageTexture" id="ImageTexture_k8vd8"]
 image = SubResource("Image_3ry34")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xy0v1"]
@@ -871,7 +871,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_awg8d"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_p7x1u"]
 resource_name = "North_Walls_NorthWallDebug_033"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -898,7 +898,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_uf20k"]
+[sub_resource type="ImageTexture" id="ImageTexture_68pff"]
 image = SubResource("Image_q7e08")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3mv8t"]
@@ -918,7 +918,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_gbys4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_uf20k"]
 resource_name = "North_Walls_NorthWallDebug_034"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -945,7 +945,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_wfthr"]
+[sub_resource type="ImageTexture" id="ImageTexture_d1o0m"]
 image = SubResource("Image_77csi")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2j3ob"]
@@ -965,7 +965,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_e07ko"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wfthr"]
 resource_name = "North_Walls_NorthWallDebug_035"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -992,7 +992,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_a6gy1"]
+[sub_resource type="ImageTexture" id="ImageTexture_61u3y"]
 image = SubResource("Image_thmms")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_467h1"]
@@ -1012,7 +1012,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_c7d6b"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_a6gy1"]
 resource_name = "North_Walls_NorthWallDebug_029"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1039,7 +1039,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_q7jfc"]
+[sub_resource type="ImageTexture" id="ImageTexture_cl84f"]
 image = SubResource("Image_l8kfo")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mmkq0"]
@@ -1059,7 +1059,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lpr5o"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_q7jfc"]
 resource_name = "North_Walls_NorthWallDebug_037"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1086,7 +1086,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_pdph6"]
+[sub_resource type="ImageTexture" id="ImageTexture_hwn87"]
 image = SubResource("Image_611ln")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ctyo5"]
@@ -1106,7 +1106,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_phcom"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_pdph6"]
 resource_name = "North_Walls_NorthWallDebug_003"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1133,7 +1133,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_w0hxg"]
+[sub_resource type="ImageTexture" id="ImageTexture_b41we"]
 image = SubResource("Image_v018q")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d1ijc"]
@@ -1153,7 +1153,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pkkyl"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_w0hxg"]
 resource_name = "North_Walls_NorthWallDebug_038"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1180,7 +1180,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_xfq2n"]
+[sub_resource type="ImageTexture" id="ImageTexture_eaqmq"]
 image = SubResource("Image_ptun8")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b1vhh"]
@@ -1200,7 +1200,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7jonu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xfq2n"]
 resource_name = "North_Walls_NorthWallDebug_039"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1227,7 +1227,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_u67su"]
+[sub_resource type="ImageTexture" id="ImageTexture_yy2vs"]
 image = SubResource("Image_cgnra")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y1rvs"]
@@ -1247,7 +1247,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0je37"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_u67su"]
 resource_name = "North_Walls_NorthWallDebug_040"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1274,7 +1274,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_tdnyr"]
+[sub_resource type="ImageTexture" id="ImageTexture_vy10t"]
 image = SubResource("Image_4qhlu")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hpl0r"]
@@ -1294,7 +1294,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1xhxm"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_tdnyr"]
 resource_name = "North_Walls_NorthWallDebug_041"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1321,7 +1321,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_m0xlp"]
+[sub_resource type="ImageTexture" id="ImageTexture_mite8"]
 image = SubResource("Image_udkfg")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bxd5p"]
@@ -1341,7 +1341,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_i4d3k"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_m0xlp"]
 resource_name = "North_Walls_NorthWallDebug_042"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1368,7 +1368,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_g1ys2"]
+[sub_resource type="ImageTexture" id="ImageTexture_tbu04"]
 image = SubResource("Image_mpq0l")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dtfta"]
@@ -1388,7 +1388,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7s40y"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_g1ys2"]
 resource_name = "North_Walls_NorthWallDebug_044"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1415,7 +1415,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_1v63i"]
+[sub_resource type="ImageTexture" id="ImageTexture_3mcus"]
 image = SubResource("Image_5afu0")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_trjb2"]
@@ -1435,7 +1435,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pdjfk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1v63i"]
 resource_name = "North_Walls_NorthWallDebug_045"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1462,7 +1462,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_wtan0"]
+[sub_resource type="ImageTexture" id="ImageTexture_rlojh"]
 image = SubResource("Image_mn40o")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qbckb"]
@@ -1482,7 +1482,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_r0smu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wtan0"]
 resource_name = "North_Walls_NorthWallDebug_046"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1509,7 +1509,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_8xd41"]
+[sub_resource type="ImageTexture" id="ImageTexture_571la"]
 image = SubResource("Image_12cc2")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8m5cf"]
@@ -1529,7 +1529,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_wrcwl"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8xd41"]
 resource_name = "North_Walls_NorthWallDebug_047"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1556,7 +1556,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_af5dk"]
+[sub_resource type="ImageTexture" id="ImageTexture_nrksc"]
 image = SubResource("Image_lhwyq")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_e1mm8"]
@@ -1576,7 +1576,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vy61u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_af5dk"]
 resource_name = "North_Walls_NorthWallDebug_048"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1603,7 +1603,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_uc3ta"]
+[sub_resource type="ImageTexture" id="ImageTexture_i21xo"]
 image = SubResource("Image_phate")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_22uh4"]
@@ -1623,7 +1623,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_42vih"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_uc3ta"]
 resource_name = "North_Walls_NorthWallDebug_004"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1650,7 +1650,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_j6kfe"]
+[sub_resource type="ImageTexture" id="ImageTexture_xume6"]
 image = SubResource("Image_6hrdj")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0m8w7"]
@@ -1670,7 +1670,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_akn0i"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_j6kfe"]
 resource_name = "North_Walls_NorthWallDebug_049"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1697,7 +1697,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_my2gq"]
+[sub_resource type="ImageTexture" id="ImageTexture_v6480"]
 image = SubResource("Image_3pd5n")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_530ey"]
@@ -1717,7 +1717,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ia5vw"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_my2gq"]
 resource_name = "North_Walls_NorthWallDebug_050"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1744,7 +1744,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_mkj8d"]
+[sub_resource type="ImageTexture" id="ImageTexture_r6rji"]
 image = SubResource("Image_253f5")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7ebvu"]
@@ -1764,7 +1764,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8opl3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mkj8d"]
 resource_name = "North_Walls_WoodWall_010"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1791,7 +1791,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_6cjex"]
+[sub_resource type="ImageTexture" id="ImageTexture_lur1s"]
 image = SubResource("Image_5v21o")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ly42p"]
@@ -1811,7 +1811,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_3bsni"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6cjex"]
 resource_name = "North_Walls_WoodWall"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1838,7 +1838,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_61wnu"]
+[sub_resource type="ImageTexture" id="ImageTexture_1q2ta"]
 image = SubResource("Image_p7tp3")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k1lwl"]
@@ -1858,7 +1858,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_w8ky8"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_61wnu"]
 resource_name = "North_Walls_WoodWall_01"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1885,7 +1885,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_mi7ct"]
+[sub_resource type="ImageTexture" id="ImageTexture_h6a5n"]
 image = SubResource("Image_ck08g")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eqtkh"]
@@ -1905,7 +1905,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7qspc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mi7ct"]
 resource_name = "North_Walls_WoodWall_02"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1932,7 +1932,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_jnc5u"]
+[sub_resource type="ImageTexture" id="ImageTexture_qhgxj"]
 image = SubResource("Image_bts82")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cthxp"]
@@ -1952,7 +1952,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_w5b1u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jnc5u"]
 resource_name = "North_Walls_WoodWall_03"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -1979,7 +1979,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_8aa0q"]
+[sub_resource type="ImageTexture" id="ImageTexture_40djx"]
 image = SubResource("Image_x2ddp")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_57tfb"]
@@ -1999,7 +1999,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_q5jk0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8aa0q"]
 resource_name = "North_Walls_WoodWall_04"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -2026,7 +2026,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_vfqe8"]
+[sub_resource type="ImageTexture" id="ImageTexture_2prim"]
 image = SubResource("Image_qnf8s")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_py7yw"]
@@ -2046,7 +2046,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4jt44"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vfqe8"]
 resource_name = "North_Walls_NorthWallDebug_005"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -2073,7 +2073,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_qpie0"]
+[sub_resource type="ImageTexture" id="ImageTexture_mgx0d"]
 image = SubResource("Image_p4h3p")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pdxd7"]
@@ -2093,7 +2093,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ke7dy"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qpie0"]
 resource_name = "North_Walls_NorthWallDebug_006"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -2120,7 +2120,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_nn3ld"]
+[sub_resource type="ImageTexture" id="ImageTexture_mtgkk"]
 image = SubResource("Image_ctrk3")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_t8xyj"]
@@ -2140,7 +2140,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_x0dv0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_nn3ld"]
 resource_name = "North_Walls_NorthWallDebug_008"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -2167,7 +2167,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_6r2f6"]
+[sub_resource type="ImageTexture" id="ImageTexture_u740q"]
 image = SubResource("Image_lg8yu")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_kqqhk"]
@@ -2187,7 +2187,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_08er2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6r2f6"]
 resource_name = "North_Walls_NorthWallDebug_009"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -2214,7 +2214,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_2i7me"]
+[sub_resource type="ImageTexture" id="ImageTexture_mk2qi"]
 image = SubResource("Image_etvbe")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yp3hu"]
@@ -2234,7 +2234,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8etra"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_2i7me"]
 resource_name = "North_Walls_NorthWallDebug_017"
 _surfaces = [{
 "aabb": AABB(-1, -0.99999994, -0.9998749, 2, 2, 1e-05),
@@ -2261,394 +2261,394 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_q5k47"]
+[sub_resource type="ImageTexture" id="ImageTexture_3e73t"]
 image = SubResource("Image_wywco")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r1ywy"]
 data = PackedVector3Array(0.45083332, 0.74333334, -0.99987483, 1, 1, -0.9998748, 1, 0.74333334, -0.99987483, 0.45083332, 0.74333334, -0.99987483, 0.45083332, 1, -0.9998748, 1, 1, -0.9998748, -1, 0.74333334, -0.99987483, -0.45001328, 1, -0.9998748, -0.45001328, 0.74333334, -0.99987483, -1, 0.74333334, -0.99987483, -1, 1, -0.9998748, -0.45001328, 1, -0.9998748, -0.45001328, 0.74333334, -0.99987483, 0.45083332, 1, -0.9998748, 0.45083332, 0.74333334, -0.99987483, -0.45001328, 0.74333334, -0.99987483, -0.45001328, 1, -0.9998748, 0.45083332, 1, -0.9998748, 1, 0.6966667, -0.99987483, 0.45083332, 0.74333334, -0.99987483, 1, 0.74333334, -0.99987483, 1, 0.6966667, -0.99987483, 0.50083333, 0.6966667, -0.99987483, 0.45083332, 0.74333334, -0.99987483, -0.5000133, 0.6966667, -0.99987483, -1, 0.74333334, -0.99987483, -0.45001328, 0.74333334, -0.99987483, -0.5000133, 0.6966667, -0.99987483, -1, 0.69666666, -0.99987483, -1, 0.74333334, -0.99987483, -0.5000133, -0.99999994, -0.9998749, -1, 0.69666666, -0.99987483, -0.5000133, 0.6966667, -0.99987483, -0.5000133, -0.99999994, -0.9998749, -1, -0.99999994, -0.9998749, -1, 0.69666666, -0.99987483, 1, -0.99999994, -0.9998749, 0.50083333, 0.6966667, -0.99987483, 1, 0.6966667, -0.99987483, 1, -0.99999994, -0.9998749, 0.50083333, -0.99999994, -0.9998749, 0.50083333, 0.6966667, -0.99987483)
 
 [resource]
-item/0/name = "NorthWallDebug"
-item/0/mesh = SubResource("ArrayMesh_flhyq")
+item/0/name = "DebugWallN"
+item/0/mesh = SubResource("ArrayMesh_rqfjb")
 item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/mesh_cast_shadow = 1
 item/0/shapes = [SubResource("ConcavePolygonShape3D_0xpb8"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/navigation_layers = 1
-item/0/preview = SubResource("ImageTexture_jc3tu")
+item/0/preview = SubResource("ImageTexture_qyq71")
 item/1/name = "WallClassic"
-item/1/mesh = SubResource("ArrayMesh_eask7")
+item/1/mesh = SubResource("ArrayMesh_jc3tu")
 item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/mesh_cast_shadow = 1
 item/1/shapes = [SubResource("ConcavePolygonShape3D_vxbp5"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/navigation_layers = 1
-item/1/preview = SubResource("ImageTexture_jhkyj")
+item/1/preview = SubResource("ImageTexture_soog7")
 item/2/name = "YellowClassroom"
-item/2/mesh = SubResource("ArrayMesh_5v21o")
+item/2/mesh = SubResource("ArrayMesh_253f5")
 item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/2/mesh_cast_shadow = 1
 item/2/shapes = [SubResource("ConcavePolygonShape3D_4vuyt"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/2/navigation_layers = 1
-item/2/preview = SubResource("ImageTexture_ck08g")
-item/3/name = "RedClassroom_"
-item/3/mesh = SubResource("ArrayMesh_phcom")
+item/2/preview = SubResource("ImageTexture_p7tp3")
+item/3/name = "RedClassroom"
+item/3/mesh = SubResource("ArrayMesh_pdph6")
 item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/3/mesh_cast_shadow = 1
 item/3/shapes = [SubResource("ConcavePolygonShape3D_d1ijc"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/3/navigation_layers = 1
-item/3/preview = SubResource("ImageTexture_w0hxg")
+item/3/preview = SubResource("ImageTexture_b41we")
 item/4/name = "CafeteriaWall1"
-item/4/mesh = SubResource("ArrayMesh_42vih")
+item/4/mesh = SubResource("ArrayMesh_uc3ta")
 item/4/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/4/mesh_cast_shadow = 1
 item/4/shapes = [SubResource("ConcavePolygonShape3D_0m8w7"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/4/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/4/navigation_layers = 1
-item/4/preview = SubResource("ImageTexture_j6kfe")
+item/4/preview = SubResource("ImageTexture_xume6")
 item/5/name = "OutsideWall"
-item/5/mesh = SubResource("ArrayMesh_4jt44")
+item/5/mesh = SubResource("ArrayMesh_vfqe8")
 item/5/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/5/mesh_cast_shadow = 1
 item/5/shapes = [SubResource("ConcavePolygonShape3D_pdxd7"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/5/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/5/navigation_layers = 1
-item/5/preview = SubResource("ImageTexture_qpie0")
+item/5/preview = SubResource("ImageTexture_mgx0d")
 item/6/name = "CafeteriaWall2"
-item/6/mesh = SubResource("ArrayMesh_ke7dy")
+item/6/mesh = SubResource("ArrayMesh_qpie0")
 item/6/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/6/mesh_cast_shadow = 1
 item/6/shapes = [SubResource("ConcavePolygonShape3D_t8xyj"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/6/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/6/navigation_layers = 1
-item/6/preview = SubResource("ImageTexture_nn3ld")
-item/7/name = "NorthWallDoorholeDebug"
-item/7/mesh = SubResource("ArrayMesh_x0dv0")
+item/6/preview = SubResource("ImageTexture_mtgkk")
+item/7/name = "DebugWallNDoorhole"
+item/7/mesh = SubResource("ArrayMesh_nn3ld")
 item/7/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/7/mesh_cast_shadow = 1
 item/7/shapes = [SubResource("ConcavePolygonShape3D_kqqhk"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/7/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/7/navigation_layers = 1
-item/7/preview = SubResource("ImageTexture_6r2f6")
+item/7/preview = SubResource("ImageTexture_u740q")
 item/8/name = "WallClassicDoorhole"
-item/8/mesh = SubResource("ArrayMesh_08er2")
+item/8/mesh = SubResource("ArrayMesh_6r2f6")
 item/8/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/8/mesh_cast_shadow = 1
 item/8/shapes = [SubResource("ConcavePolygonShape3D_yp3hu"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/8/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/8/navigation_layers = 1
-item/8/preview = SubResource("ImageTexture_2i7me")
+item/8/preview = SubResource("ImageTexture_mk2qi")
 item/9/name = "YellowClassroomDoorhole"
-item/9/mesh = SubResource("ArrayMesh_8etra")
+item/9/mesh = SubResource("ArrayMesh_2i7me")
 item/9/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/9/mesh_cast_shadow = 1
 item/9/shapes = [SubResource("ConcavePolygonShape3D_r1ywy"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/9/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/9/navigation_layers = 1
-item/9/preview = SubResource("ImageTexture_q5k47")
+item/9/preview = SubResource("ImageTexture_3e73t")
 item/10/name = "RedClassroomDoorhole"
-item/10/mesh = SubResource("ArrayMesh_un4bn")
+item/10/mesh = SubResource("ArrayMesh_jhkyj")
 item/10/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/10/mesh_cast_shadow = 1
 item/10/shapes = [SubResource("ConcavePolygonShape3D_7yh7k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/10/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/10/navigation_layers = 1
-item/10/preview = SubResource("ImageTexture_0povu")
+item/10/preview = SubResource("ImageTexture_fnust")
 item/11/name = "CafeteriaWall1Doorhole"
-item/11/mesh = SubResource("ArrayMesh_2ewfc")
+item/11/mesh = SubResource("ArrayMesh_0povu")
 item/11/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/11/mesh_cast_shadow = 1
 item/11/shapes = [SubResource("ConcavePolygonShape3D_pyr38"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/11/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/11/navigation_layers = 1
-item/11/preview = SubResource("ImageTexture_elkny")
+item/11/preview = SubResource("ImageTexture_hhvvh")
 item/12/name = "CafeteriaWall2Doorhole"
-item/12/mesh = SubResource("ArrayMesh_mnnoo")
+item/12/mesh = SubResource("ArrayMesh_elkny")
 item/12/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/12/mesh_cast_shadow = 1
 item/12/shapes = [SubResource("ConcavePolygonShape3D_tsvtq"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/12/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/12/navigation_layers = 1
-item/12/preview = SubResource("ImageTexture_6gdt7")
+item/12/preview = SubResource("ImageTexture_8q315")
 item/13/name = "OutsideWallDoorhole"
-item/13/mesh = SubResource("ArrayMesh_yi44m")
+item/13/mesh = SubResource("ArrayMesh_6gdt7")
 item/13/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/13/mesh_cast_shadow = 1
 item/13/shapes = [SubResource("ConcavePolygonShape3D_l42o2"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/13/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/13/navigation_layers = 1
-item/13/preview = SubResource("ImageTexture_q7e08")
-item/14/name = "NorthWall-LDDoor-Debug"
-item/14/mesh = SubResource("ArrayMesh_77csi")
+item/13/preview = SubResource("ImageTexture_3ry34")
+item/14/name = "DebugWallN-LDDoor"
+item/14/mesh = SubResource("ArrayMesh_q7e08")
 item/14/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/14/mesh_cast_shadow = 1
 item/14/shapes = [SubResource("ConcavePolygonShape3D_rwflx"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/14/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/14/navigation_layers = 1
-item/14/preview = SubResource("ImageTexture_l8kfo")
+item/14/preview = SubResource("ImageTexture_thmms")
 item/15/name = "WallClassic-LDDoor"
-item/15/mesh = SubResource("ArrayMesh_611ln")
+item/15/mesh = SubResource("ArrayMesh_l8kfo")
 item/15/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/15/mesh_cast_shadow = 1
 item/15/shapes = [SubResource("ConcavePolygonShape3D_yq5uy"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/15/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/15/navigation_layers = 1
-item/15/preview = SubResource("ImageTexture_ptun8")
+item/15/preview = SubResource("ImageTexture_v018q")
 item/16/name = "YellowClassroom-LDDoor"
-item/16/mesh = SubResource("ArrayMesh_cgnra")
+item/16/mesh = SubResource("ArrayMesh_ptun8")
 item/16/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/16/mesh_cast_shadow = 1
 item/16/shapes = [SubResource("ConcavePolygonShape3D_pwmn2"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/16/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/16/navigation_layers = 1
-item/16/preview = SubResource("ImageTexture_udkfg")
+item/16/preview = SubResource("ImageTexture_4qhlu")
 item/17/name = "RedClassroom-LDDoor"
-item/17/mesh = SubResource("ArrayMesh_mpq0l")
+item/17/mesh = SubResource("ArrayMesh_udkfg")
 item/17/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/17/mesh_cast_shadow = 1
 item/17/shapes = [SubResource("ConcavePolygonShape3D_ka5rg"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/17/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/17/navigation_layers = 1
-item/17/preview = SubResource("ImageTexture_mn40o")
+item/17/preview = SubResource("ImageTexture_5afu0")
 item/18/name = "CafeteriaWall1-LDDoor"
-item/18/mesh = SubResource("ArrayMesh_12cc2")
+item/18/mesh = SubResource("ArrayMesh_mn40o")
 item/18/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/18/mesh_cast_shadow = 1
 item/18/shapes = [SubResource("ConcavePolygonShape3D_6k3bl"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/18/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/18/navigation_layers = 1
-item/18/preview = SubResource("ImageTexture_phate")
+item/18/preview = SubResource("ImageTexture_lhwyq")
 item/19/name = "CafeteriaWall2-LDDoor"
-item/19/mesh = SubResource("ArrayMesh_6hrdj")
+item/19/mesh = SubResource("ArrayMesh_phate")
 item/19/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/19/mesh_cast_shadow = 1
 item/19/shapes = [SubResource("ConcavePolygonShape3D_yy40i"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/19/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/19/navigation_layers = 1
-item/19/preview = SubResource("ImageTexture_253f5")
+item/19/preview = SubResource("ImageTexture_3pd5n")
 item/20/name = "OutsideWall-LDDoor"
-item/20/mesh = SubResource("ArrayMesh_bts82")
+item/20/mesh = SubResource("ArrayMesh_ck08g")
 item/20/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/20/mesh_cast_shadow = 1
 item/20/shapes = [SubResource("ConcavePolygonShape3D_fxpyb"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/20/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/20/navigation_layers = 1
-item/20/preview = SubResource("ImageTexture_qnf8s")
-item/21/name = "NorthWall-RDDoor-Debug"
-item/21/mesh = SubResource("ArrayMesh_p4h3p")
+item/20/preview = SubResource("ImageTexture_x2ddp")
+item/21/name = "DebugWallN-RDDoor"
+item/21/mesh = SubResource("ArrayMesh_qnf8s")
 item/21/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/21/mesh_cast_shadow = 1
 item/21/shapes = [SubResource("ConcavePolygonShape3D_8ev0d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/21/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/21/navigation_layers = 1
-item/21/preview = SubResource("ImageTexture_lg8yu")
+item/21/preview = SubResource("ImageTexture_ctrk3")
 item/22/name = "WallClassic-RDDoor"
-item/22/mesh = SubResource("ArrayMesh_etvbe")
+item/22/mesh = SubResource("ArrayMesh_lg8yu")
 item/22/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/22/mesh_cast_shadow = 1
 item/22/shapes = [SubResource("ConcavePolygonShape3D_6g0vx"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/22/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/22/navigation_layers = 1
-item/22/preview = SubResource("ImageTexture_soplp")
+item/22/preview = SubResource("ImageTexture_wywco")
 item/23/name = "YellowClassroom-RDDoor"
-item/23/mesh = SubResource("ArrayMesh_csb6h")
+item/23/mesh = SubResource("ArrayMesh_soplp")
 item/23/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/23/mesh_cast_shadow = 1
 item/23/shapes = [SubResource("ConcavePolygonShape3D_suqsw"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/23/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/23/navigation_layers = 1
-item/23/preview = SubResource("ImageTexture_fh2f5")
+item/23/preview = SubResource("ImageTexture_8bmnt")
 item/24/name = "RedClassroom-RDDoor"
-item/24/mesh = SubResource("ArrayMesh_x1vnl")
+item/24/mesh = SubResource("ArrayMesh_fh2f5")
 item/24/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/24/mesh_cast_shadow = 1
 item/24/shapes = [SubResource("ConcavePolygonShape3D_xy0v1"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/24/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/24/navigation_layers = 1
-item/24/preview = SubResource("ImageTexture_p7x1u")
+item/24/preview = SubResource("ImageTexture_k8vd8")
 item/25/name = "CafeteriaWall1-RDDoor"
-item/25/mesh = SubResource("ArrayMesh_awg8d")
+item/25/mesh = SubResource("ArrayMesh_p7x1u")
 item/25/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/25/mesh_cast_shadow = 1
 item/25/shapes = [SubResource("ConcavePolygonShape3D_3mv8t"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/25/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/25/navigation_layers = 1
-item/25/preview = SubResource("ImageTexture_uf20k")
+item/25/preview = SubResource("ImageTexture_68pff")
 item/26/name = "CafeteriaWall2-RDDoor"
-item/26/mesh = SubResource("ArrayMesh_gbys4")
+item/26/mesh = SubResource("ArrayMesh_uf20k")
 item/26/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/26/mesh_cast_shadow = 1
 item/26/shapes = [SubResource("ConcavePolygonShape3D_2j3ob"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/26/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/26/navigation_layers = 1
-item/26/preview = SubResource("ImageTexture_wfthr")
+item/26/preview = SubResource("ImageTexture_d1o0m")
 item/27/name = "OutsideWall-RDDoor"
-item/27/mesh = SubResource("ArrayMesh_e07ko")
+item/27/mesh = SubResource("ArrayMesh_wfthr")
 item/27/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/27/mesh_cast_shadow = 1
 item/27/shapes = [SubResource("ConcavePolygonShape3D_467h1"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/27/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/27/navigation_layers = 1
-item/27/preview = SubResource("ImageTexture_a6gy1")
-item/28/name = "NorthWallDoubleDoorDebug"
-item/28/mesh = SubResource("ArrayMesh_c7d6b")
+item/27/preview = SubResource("ImageTexture_61u3y")
+item/28/name = "DebugWallNDoubleDoor"
+item/28/mesh = SubResource("ArrayMesh_a6gy1")
 item/28/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/28/mesh_cast_shadow = 1
 item/28/shapes = [SubResource("ConcavePolygonShape3D_mmkq0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/28/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/28/navigation_layers = 1
-item/28/preview = SubResource("ImageTexture_q7jfc")
+item/28/preview = SubResource("ImageTexture_cl84f")
 item/29/name = "WallClassicDoubleDoor"
-item/29/mesh = SubResource("ArrayMesh_lpr5o")
+item/29/mesh = SubResource("ArrayMesh_q7jfc")
 item/29/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/29/mesh_cast_shadow = 1
 item/29/shapes = [SubResource("ConcavePolygonShape3D_ctyo5"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/29/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/29/navigation_layers = 1
-item/29/preview = SubResource("ImageTexture_pdph6")
+item/29/preview = SubResource("ImageTexture_hwn87")
 item/30/name = "YellowClassroomDoubleDoor"
-item/30/mesh = SubResource("ArrayMesh_pkkyl")
+item/30/mesh = SubResource("ArrayMesh_w0hxg")
 item/30/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/30/mesh_cast_shadow = 1
 item/30/shapes = [SubResource("ConcavePolygonShape3D_b1vhh"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/30/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/30/navigation_layers = 1
-item/30/preview = SubResource("ImageTexture_xfq2n")
+item/30/preview = SubResource("ImageTexture_eaqmq")
 item/31/name = "RedClassroomDoubleDoor"
-item/31/mesh = SubResource("ArrayMesh_7jonu")
+item/31/mesh = SubResource("ArrayMesh_xfq2n")
 item/31/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/31/mesh_cast_shadow = 1
 item/31/shapes = [SubResource("ConcavePolygonShape3D_y1rvs"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/31/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/31/navigation_layers = 1
-item/31/preview = SubResource("ImageTexture_u67su")
+item/31/preview = SubResource("ImageTexture_yy2vs")
 item/32/name = "CafeteriaWall1DoubleDoor"
-item/32/mesh = SubResource("ArrayMesh_0je37")
+item/32/mesh = SubResource("ArrayMesh_u67su")
 item/32/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/32/mesh_cast_shadow = 1
 item/32/shapes = [SubResource("ConcavePolygonShape3D_hpl0r"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/32/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/32/navigation_layers = 1
-item/32/preview = SubResource("ImageTexture_tdnyr")
+item/32/preview = SubResource("ImageTexture_vy10t")
 item/33/name = "CafeteriaWall2DoubleDoor"
-item/33/mesh = SubResource("ArrayMesh_1xhxm")
+item/33/mesh = SubResource("ArrayMesh_tdnyr")
 item/33/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/33/mesh_cast_shadow = 1
 item/33/shapes = [SubResource("ConcavePolygonShape3D_bxd5p"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/33/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/33/navigation_layers = 1
-item/33/preview = SubResource("ImageTexture_m0xlp")
+item/33/preview = SubResource("ImageTexture_mite8")
 item/34/name = "OutsideWallDoubleDoor"
-item/34/mesh = SubResource("ArrayMesh_i4d3k")
+item/34/mesh = SubResource("ArrayMesh_m0xlp")
 item/34/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/34/mesh_cast_shadow = 1
 item/34/shapes = [SubResource("ConcavePolygonShape3D_dtfta"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/34/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/34/navigation_layers = 1
-item/34/preview = SubResource("ImageTexture_g1ys2")
-item/35/name = "NorthWallWindowDebug"
-item/35/mesh = SubResource("ArrayMesh_7s40y")
+item/34/preview = SubResource("ImageTexture_tbu04")
+item/35/name = "DebugWallNWindow"
+item/35/mesh = SubResource("ArrayMesh_g1ys2")
 item/35/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/35/mesh_cast_shadow = 1
 item/35/shapes = [SubResource("ConcavePolygonShape3D_trjb2"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/35/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/35/navigation_layers = 1
-item/35/preview = SubResource("ImageTexture_1v63i")
+item/35/preview = SubResource("ImageTexture_3mcus")
 item/36/name = "WallClassicWindow"
-item/36/mesh = SubResource("ArrayMesh_pdjfk")
+item/36/mesh = SubResource("ArrayMesh_1v63i")
 item/36/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/36/mesh_cast_shadow = 1
 item/36/shapes = [SubResource("ConcavePolygonShape3D_qbckb"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/36/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/36/navigation_layers = 1
-item/36/preview = SubResource("ImageTexture_wtan0")
+item/36/preview = SubResource("ImageTexture_rlojh")
 item/37/name = "YellowClassroomWindow"
-item/37/mesh = SubResource("ArrayMesh_r0smu")
+item/37/mesh = SubResource("ArrayMesh_wtan0")
 item/37/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/37/mesh_cast_shadow = 1
 item/37/shapes = [SubResource("ConcavePolygonShape3D_8m5cf"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/37/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/37/navigation_layers = 1
-item/37/preview = SubResource("ImageTexture_8xd41")
+item/37/preview = SubResource("ImageTexture_571la")
 item/38/name = "RedClassroomWindow"
-item/38/mesh = SubResource("ArrayMesh_wrcwl")
+item/38/mesh = SubResource("ArrayMesh_8xd41")
 item/38/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/38/mesh_cast_shadow = 1
 item/38/shapes = [SubResource("ConcavePolygonShape3D_e1mm8"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/38/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/38/navigation_layers = 1
-item/38/preview = SubResource("ImageTexture_af5dk")
+item/38/preview = SubResource("ImageTexture_nrksc")
 item/39/name = "CafeteriaWall1Window"
-item/39/mesh = SubResource("ArrayMesh_vy61u")
+item/39/mesh = SubResource("ArrayMesh_af5dk")
 item/39/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/39/mesh_cast_shadow = 1
 item/39/shapes = [SubResource("ConcavePolygonShape3D_22uh4"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/39/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/39/navigation_layers = 1
-item/39/preview = SubResource("ImageTexture_uc3ta")
+item/39/preview = SubResource("ImageTexture_i21xo")
 item/40/name = "CafeteriaWall2Window"
-item/40/mesh = SubResource("ArrayMesh_akn0i")
+item/40/mesh = SubResource("ArrayMesh_j6kfe")
 item/40/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/40/mesh_cast_shadow = 1
 item/40/shapes = [SubResource("ConcavePolygonShape3D_530ey"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/40/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/40/navigation_layers = 1
-item/40/preview = SubResource("ImageTexture_my2gq")
+item/40/preview = SubResource("ImageTexture_v6480")
 item/41/name = "OutsideWallWindow"
-item/41/mesh = SubResource("ArrayMesh_ia5vw")
+item/41/mesh = SubResource("ArrayMesh_my2gq")
 item/41/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/41/mesh_cast_shadow = 1
 item/41/shapes = [SubResource("ConcavePolygonShape3D_7ebvu"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/41/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/41/navigation_layers = 1
-item/41/preview = SubResource("ImageTexture_mkj8d")
+item/41/preview = SubResource("ImageTexture_r6rji")
 item/42/name = "WoodWallWindow"
-item/42/mesh = SubResource("ArrayMesh_8opl3")
+item/42/mesh = SubResource("ArrayMesh_mkj8d")
 item/42/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/42/mesh_cast_shadow = 1
 item/42/shapes = [SubResource("ConcavePolygonShape3D_ly42p"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/42/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/42/navigation_layers = 1
-item/42/preview = SubResource("ImageTexture_6cjex")
+item/42/preview = SubResource("ImageTexture_lur1s")
 item/43/name = "WoodWallDoubleDoor"
-item/43/mesh = SubResource("ArrayMesh_3bsni")
+item/43/mesh = SubResource("ArrayMesh_6cjex")
 item/43/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/43/mesh_cast_shadow = 1
 item/43/shapes = [SubResource("ConcavePolygonShape3D_k1lwl"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/43/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/43/navigation_layers = 1
-item/43/preview = SubResource("ImageTexture_61wnu")
+item/43/preview = SubResource("ImageTexture_1q2ta")
 item/44/name = "WoodWallDoorhole"
-item/44/mesh = SubResource("ArrayMesh_w8ky8")
+item/44/mesh = SubResource("ArrayMesh_61wnu")
 item/44/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/44/mesh_cast_shadow = 1
 item/44/shapes = [SubResource("ConcavePolygonShape3D_eqtkh"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/44/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/44/navigation_layers = 1
-item/44/preview = SubResource("ImageTexture_mi7ct")
+item/44/preview = SubResource("ImageTexture_h6a5n")
 item/45/name = "WoodWall-RDDoor"
-item/45/mesh = SubResource("ArrayMesh_7qspc")
+item/45/mesh = SubResource("ArrayMesh_mi7ct")
 item/45/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/45/mesh_cast_shadow = 1
 item/45/shapes = [SubResource("ConcavePolygonShape3D_cthxp"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/45/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/45/navigation_layers = 1
-item/45/preview = SubResource("ImageTexture_jnc5u")
+item/45/preview = SubResource("ImageTexture_qhgxj")
 item/46/name = "WoodWall-LDDoor"
-item/46/mesh = SubResource("ArrayMesh_w5b1u")
+item/46/mesh = SubResource("ArrayMesh_jnc5u")
 item/46/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/46/mesh_cast_shadow = 1
 item/46/shapes = [SubResource("ConcavePolygonShape3D_57tfb"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/46/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/46/navigation_layers = 1
-item/46/preview = SubResource("ImageTexture_8aa0q")
+item/46/preview = SubResource("ImageTexture_40djx")
 item/47/name = "WoodWall"
-item/47/mesh = SubResource("ArrayMesh_q5jk0")
+item/47/mesh = SubResource("ArrayMesh_8aa0q")
 item/47/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/47/mesh_cast_shadow = 1
 item/47/shapes = [SubResource("ConcavePolygonShape3D_py7yw"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/47/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/47/navigation_layers = 1
-item/47/preview = SubResource("ImageTexture_vfqe8")
+item/47/preview = SubResource("ImageTexture_2prim")

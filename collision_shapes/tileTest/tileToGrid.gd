@@ -28,6 +28,8 @@ extends GridMap
 @export var tileMapFloors: TileMapLayer
 @export var tileMapCeiling: TileMapLayer
 
+const optNSEW = ["","N","S","E","W"]
+
 # Creates gridmap creation button, sets it to "create_gridmap" function
 @export_tool_button("Create Gridmap From Tilemaps") var gridMapFunction = create_gridmap
 
@@ -239,7 +241,7 @@ func SetCellFloor(type, index):
 
 func setWall(mn, md, i, h):
 	if mn.begins_with("Debug"):
-		createWall("Debug", md, i, h)
+		createWall("DebugWall", md, i, h, 1)
 	if mn.begins_with("Normal"):
 		createWall("WallClassic", md, i, h)
 	if mn.begins_with("YellowC"):
@@ -247,7 +249,7 @@ func setWall(mn, md, i, h):
 	if mn.begins_with("Wood"):
 		createWall("WoodWall", md, i, h)
 	if mn.begins_with("RedC"):
-		createWall("RedClassroom_", md, i, h)
+		createWall("RedClassroom", md, i, h)
 	if mn.begins_with("Cafeteria"):
 		if(h == 0):
 			createWall("CafeteriaWall1", md, i, h)
@@ -256,19 +258,19 @@ func setWall(mn, md, i, h):
 	if mn.begins_with("Outside"):
 		createWall("OutsideWall", md, i, h)
 
-func createWall(type, direction, index, tileHeight):
+func createWall(type, direction, index, tileHeight, ad = 0):
 	if direction == "blank":
 		pass
 	else:
 		if direction.contains('n'):
 			northWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
-				northMeshLib.find_item_by_name(type), 0)
+				northMeshLib.find_item_by_name(type + optNSEW[1 * ad]), 0)
 		if direction.contains('s'):
 			southWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
-				southMeshLib.find_item_by_name(type), 0)
+				southMeshLib.find_item_by_name(type + optNSEW[2 * ad]), 0)
 		if direction.contains('e'):
 			eastWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
-				eastMeshLib.find_item_by_name(type), 0)
+				eastMeshLib.find_item_by_name(type + optNSEW[3 * ad]), 0)
 		if direction.contains('w'):
 			westWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
-				westMeshLib.find_item_by_name(type), 0)
+				westMeshLib.find_item_by_name(type + optNSEW[4 * ad]), 0)

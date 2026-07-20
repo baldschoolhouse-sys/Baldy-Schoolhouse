@@ -101,25 +101,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 11)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.000001, 0, 11)
 
 [node name="EnglishDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("13_tmgkw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 11)
-
-[node name="GeologyDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("14_f3me0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 11)
-
-[node name="HistoryDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_auck0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 11)
 
-[node name="MathDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("16_dcqsi")]
+[node name="GeologyDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("14_f3me0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 11)
+
+[node name="HistoryDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_auck0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 11)
+
+[node name="MathDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("16_dcqsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 11)
 
 [node name="OfficeDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("17_3vxql")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.000001, 0, 11)
 
 [node name="ScienceDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_0y6h6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 11)
 
 [node name="SpellingDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("19_tqmlq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 11)
 
 [node name="DoubleDoorDoubleTileLeft" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("20_vfklp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, 11)
@@ -131,10 +131,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19, 
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19, 0, 33)
 
 [node name="ClinicDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("21_seytf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 11)
 
 [node name="ClinicDoor2" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("21_1k3sd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 11)
 
 [node name="Windows" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
 

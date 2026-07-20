@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7eacp2ggo4e3"]
+
+[ext_resource type="Texture2D" uid="uid://c60q3ctumaps1" path="res://texture/LevelTiles/Textures/Bell/Bell_Wall_00.png" id="1_vklc4"]
+
+[resource]
+resource_name = "BellMat"
+transparency = 4
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_vklc4")
+roughness = 0.5
+texture_filter = 0

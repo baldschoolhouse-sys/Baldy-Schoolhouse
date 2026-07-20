@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://iq4mddle347r"]
+
+[ext_resource type="PackedScene" uid="uid://dbfsry27xi8q5" path="res://mesh/Bell.glb" id="1_l1lgm"]
+
+[node name="Bell" instance=ExtResource("1_l1lgm")]

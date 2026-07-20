@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bny1cwpvq587n"]
+[gd_scene load_steps=32 format=3 uid="uid://bny1cwpvq587n"]
 
 [ext_resource type="Environment" uid="uid://bf68s7u74uc27" path="res://graphics/school_house_environment.tres" id="1_1k3sd"]
 [ext_resource type="Script" uid="uid://jcpko70p5lkr" path="res://collision_shapes/tileTest/tileToGrid.gd" id="3_3m6cs"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://ct4hm2v5pwsjd" path="res://entities/windows/MagentaWindow.tscn" id="27_lq867"]
 [ext_resource type="PackedScene" uid="uid://e5174cxdwlgn" path="res://entities/windows/YellowWindow.tscn" id="28_euouq"]
 [ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="29_o4p83"]
+[ext_resource type="PackedScene" uid="uid://iq4mddle347r" path="res://entities/bell/bell.tscn" id="29_wcvw5"]
 
 [sub_resource type="GDScript" id="GDScript_ujjl2"]
 
@@ -158,6 +159,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 5)
 
 [node name="YellowWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("28_euouq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 5)
+
+[node name="Bell" parent="Node/SchoolhouseGrid/DetailAndInteractive" instance=ExtResource("29_wcvw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 5)
 
 [node name="Student" parent="." instance=ExtResource("29_o4p83")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.20727, 0.00012493134, 13.469321)

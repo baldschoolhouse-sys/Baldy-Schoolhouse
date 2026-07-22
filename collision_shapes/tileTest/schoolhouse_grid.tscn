@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnpanuubc68ni"]
+
+[ext_resource type="Script" uid="uid://jcpko70p5lkr" path="res://collision_shapes/tileTest/tileToGrid.gd" id="1_epdxo"]
+[ext_resource type="MeshLibrary" uid="uid://dyiwsig75frdf" path="res://collision_shapes/tileTest/gridmaps/Walls/NorthWallsMeshLib.tres" id="2_ssnpb"]
+[ext_resource type="MeshLibrary" uid="uid://du71r3f46gso5" path="res://collision_shapes/tileTest/gridmaps/Walls/SouthWallsMeshLib.tres" id="3_wror0"]
+[ext_resource type="MeshLibrary" uid="uid://icwg0c3nm6mk" path="res://collision_shapes/tileTest/gridmaps/Walls/EastWallsMeshLib.tres" id="4_7pffn"]
+[ext_resource type="MeshLibrary" uid="uid://d1irv6803lw70" path="res://collision_shapes/tileTest/gridmaps/Walls/WestWallsMeshLib.tres" id="5_mvdgj"]
+[ext_resource type="MeshLibrary" uid="uid://cq5m3mbj3540g" path="res://collision_shapes/tileTest/gridmaps/FloorsMeshLib.tres" id="6_584wr"]
+[ext_resource type="MeshLibrary" uid="uid://cch83mqa7iq5v" path="res://collision_shapes/tileTest/gridmaps/CeilingMeshLib.tres" id="7_pxcp0"]
+
+[node name="SchoolhouseGrid" type="GridMap" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling")]
+collision_layer = 2
+script = ExtResource("1_epdxo")
+tileMapDetail = NodePath("")
+tileMapHeight = NodePath("")
+tileMapWalls = NodePath("")
+tileMapFloors = NodePath("")
+tileMapCeiling = NodePath("")
+
+[node name="NorthWall" type="GridMap" parent="."]
+mesh_library = ExtResource("2_ssnpb")
+collision_layer = 2
+
+[node name="SouthWall" type="GridMap" parent="."]
+mesh_library = ExtResource("3_wror0")
+collision_layer = 2
+
+[node name="EastWall" type="GridMap" parent="."]
+mesh_library = ExtResource("4_7pffn")
+collision_layer = 2
+
+[node name="WestWall" type="GridMap" parent="."]
+mesh_library = ExtResource("5_mvdgj")
+collision_layer = 2
+
+[node name="Floor" type="GridMap" parent="."]
+mesh_library = ExtResource("6_584wr")
+collision_layer = 2
+
+[node name="Ceiling" type="GridMap" parent="."]
+mesh_library = ExtResource("7_pxcp0")
+collision_layer = 2
+
+[node name="DetailAndInteractive" type="Node3D" parent="."]
+
+[node name="Doors" type="Node3D" parent="DetailAndInteractive"]
+
+[node name="Windows" type="Node3D" parent="DetailAndInteractive"]
+
+[node name="Bells" type="Node3D" parent="DetailAndInteractive"]

@@ -184,5 +184,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 5)
 [node name="YellowWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("27_q3870")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 5)
 
+[node name="Bells" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
+
 [node name="Student" parent="." instance=ExtResource("2_dycdf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2072697, 0.00012493134, 38.469322)

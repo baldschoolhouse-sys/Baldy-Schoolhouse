@@ -33,6 +33,9 @@ const optNSEW = ["","N","S","E","W"]
 # Creates gridmap creation button, sets it to "create_gridmap" function
 @export_tool_button("Create Gridmap From Tilemaps") var gridMapFunction = create_gridmap
 
+var objects
+var bellNodes
+
 # Variable declaration
 var size = Vector2()
 var cellInfo
@@ -64,6 +67,18 @@ var westMeshLib: MeshLibrary
 var floorMeshLib: MeshLibrary
 var ceilingMeshLib: MeshLibrary
 
+func create_node_bases(input):
+	if(!objects.has_node(input)):
+		var packedNode = PackedScene.new()
+		var newNode3D = Node3D.new()
+		newNode3D.position = Vector3(0, 0, 0)
+		newNode3D.name = input
+		packedNode.pack(newNode3D)
+		var instantiatedNode = packedNode.instantiate()
+
+		objects.add_child(instantiatedNode)
+		instantiatedNode.set_owner(EditorInterface.get_edited_scene_root())
+		
 func create_gridmap():
 	
 	northWall = get_node("NorthWall")
@@ -73,6 +88,8 @@ func create_gridmap():
 	
 	levelFloor = get_node("Floor")
 	levelCeiling = get_node("Ceiling")
+	
+	objects = get_node("DetailAndInteractive")
 	
 	# Get size of tilemap, add one to both axis because it's for some
 	# reason number one short
@@ -90,6 +107,15 @@ func create_gridmap():
 	floorMeshLib = levelFloor.get_mesh_library()
 	ceilingMeshLib = levelCeiling.get_mesh_library()
 	
+	create_node_bases("Doors")
+	bellNodes = get_node("Doors")
+
+	create_node_bases("Windows")
+	bellNodes = get_node("Windows")
+	
+	create_node_bases("Bells")
+	bellNodes = get_node("Bells")	
+
 	# Clears self to avoid corruption and errors
 	northWall.clear()
 	southWall.clear()
@@ -195,7 +221,7 @@ func create_gridmap():
 						modelDirection += "e"
 					if(H > heightValNSEW[3]):
 						modelDirection += "w"
-					print(modelDirection)
+					#print(modelDirection)
 					#print(modelName)
 					setWall(modelName, modelDirection, I, H-1)
 				H -= 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dtysqmt4ld5k3"]
+[gd_scene load_steps=19 format=3 uid="uid://dtysqmt4ld5k3"]
 
 [ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="1_v3cpt"]
 [ext_resource type="MeshLibrary" uid="uid://bmwiesgqemhai" path="res://collision_shapes/tileTest2/wallGridmap.tres" id="2_7cd4u"]
@@ -18,25 +18,6 @@
 [ext_resource type="MeshLibrary" uid="uid://d1irv6803lw70" path="res://collision_shapes/tileTest/gridmaps/Walls/WestWallsMeshLib.tres" id="15_je13h"]
 [ext_resource type="MeshLibrary" uid="uid://cq5m3mbj3540g" path="res://collision_shapes/tileTest/gridmaps/FloorsMeshLib.tres" id="16_er8ke"]
 [ext_resource type="MeshLibrary" uid="uid://cch83mqa7iq5v" path="res://collision_shapes/tileTest/gridmaps/CeilingMeshLib.tres" id="17_swdib"]
-[ext_resource type="PackedScene" uid="uid://dh6ct5goffbxm" path="res://entities/doors/DoubleDoorDoubleTileRight.tscn" id="18_twdw5"]
-[ext_resource type="PackedScene" uid="uid://cqgqn85vj3whw" path="res://entities/doors/DoubleDoorSingleTile.tscn" id="19_4celc"]
-[ext_resource type="PackedScene" uid="uid://bl7sgqcgtk0gx" path="res://entities/doors/StandardDoor.tscn" id="20_ysee0"]
-[ext_resource type="PackedScene" uid="uid://wltdrgsreurn" path="res://entities/doors/EnglishDoor.tscn" id="21_yy3wx"]
-[ext_resource type="PackedScene" uid="uid://dgwj8pufjjgym" path="res://entities/doors/GeologyDoor.tscn" id="22_vhxwt"]
-[ext_resource type="PackedScene" uid="uid://pqk4v8whq67m" path="res://entities/doors/HistoryDoor.tscn" id="23_g2pv0"]
-[ext_resource type="PackedScene" uid="uid://ghjxspa5uak4" path="res://entities/doors/MathDoor.tscn" id="24_febxm"]
-[ext_resource type="PackedScene" uid="uid://c0sxjp36thv8m" path="res://entities/doors/OfficeDoor.tscn" id="25_mwd34"]
-[ext_resource type="PackedScene" uid="uid://baoym43xujxo7" path="res://entities/doors/ScienceDoor.tscn" id="26_06yay"]
-[ext_resource type="PackedScene" uid="uid://cjqbfnm0xpkse" path="res://entities/doors/SpellingDoor.tscn" id="27_3askp"]
-[ext_resource type="PackedScene" uid="uid://d3jgkp1b84tfi" path="res://entities/doors/DoubleDoorDoubleTileLeft.tscn" id="28_afs8w"]
-[ext_resource type="PackedScene" uid="uid://c1mnto2ub6j58" path="res://entities/doors/ClinicDoor.tscn" id="29_catu5"]
-[ext_resource type="PackedScene" uid="uid://dwq3opn2xklsu" path="res://entities/windows/BlueWindow.tscn" id="30_im8k6"]
-[ext_resource type="PackedScene" uid="uid://eiyqcwwgwe3n" path="res://entities/windows/CyanWindow.tscn" id="31_6o1xh"]
-[ext_resource type="PackedScene" uid="uid://if0iqc4ysf3a" path="res://entities/windows/WoodWindow.tscn" id="32_nj22w"]
-[ext_resource type="PackedScene" uid="uid://ch0ymu0oee02o" path="res://entities/windows/GreenWindow.tscn" id="33_tr6ce"]
-[ext_resource type="PackedScene" uid="uid://c57kt1ewdyaqu" path="res://entities/windows/RedWindow.tscn" id="34_8okc5"]
-[ext_resource type="PackedScene" uid="uid://ct4hm2v5pwsjd" path="res://entities/windows/MagentaWindow.tscn" id="35_ikldc"]
-[ext_resource type="PackedScene" uid="uid://e5174cxdwlgn" path="res://entities/windows/YellowWindow.tscn" id="36_g5l35"]
 
 [node name="School" type="Node3D"]
 
@@ -47,7 +28,7 @@ collision_layer = 2
 data = {
 "cells": PackedInt32Array(131070, 1, 1441794, 131069, 1, 2, 65537, 1, 2, 131071, 2, 1441792, 65536, 2, 1441792, 131068, 2, 655360, 131068, 3, 655362, 131067, 3, 1048576, 131066, 3, 1048576, 131065, 3, 1048576, 131064, 3, 1048576, 131063, 3, 1048578, 131063, 2, 0, 131063, 1, 0, 131068, 0, 1441794, 131063, 0, 2, 131065, 0, 1441792, 131066, 0, 1441792, 131067, 0, 1441792, 131068, 65535, 655360, 131068, 65533, 655360, 131068, 65532, 1441794, 131067, 65532, 1441792, 131066, 65532, 1441792, 131065, 65532, 1441792, 131064, 65532, 1441792, 131063, 65533, 0, 131063, 65534, 0, 131063, 65535, 0, 65539, 0, 0, 65539, 65535, 0, 65539, 65534, 0, 65539, 65533, 0, 65539, 65532, 0, 65539, 65529, 0, 65539, 65528, 0, 65539, 65527, 0, 65539, 65526, 0, 131068, 65531, 655360, 131068, 65530, 655360, 131068, 65529, 655360, 131068, 65528, 655360, 131068, 65527, 655360, 131062, 65532, 1441794, 65539, 65525, 0, 65539, 65524, 0, 65539, 65523, 0, 65539, 65522, 0, 131062, 65521, 1441792, 131063, 65521, 1441792, 131068, 65521, 1441792, 131067, 65521, 1441792, 131066, 65521, 1441792, 131065, 65521, 1441792, 131064, 65521, 1441792, 131063, 65532, 1441792, 131061, 65531, 1048578, 131061, 65521, 2, 131061, 65522, 0, 131061, 65523, 0, 131061, 65524, 0, 131061, 65525, 0, 131061, 65526, 0, 131061, 65527, 0, 131061, 65528, 0, 131061, 65529, 0, 131061, 65530, 0, 131069, 65526, 0, 131069, 65525, 0, 131069, 65524, 0, 131069, 65523, 0, 131069, 65521, 0, 65538, 1, 1441794, 65553, 65521, 1441792, 65552, 65521, 1441792, 65551, 65521, 1441792, 65550, 65521, 1441792, 65549, 65521, 1441792, 65546, 65521, 1441792, 65545, 65521, 1441792, 65544, 65521, 1441792, 65543, 65521, 1441792, 65542, 65521, 1441792, 65541, 65521, 1441792, 65540, 65521, 1441792, 65539, 65521, 2, 65539, 2, 1048578, 65556, 2, 655362, 65556, 65521, 1441794, 65554, 65521, 1441792, 65555, 65521, 1441792, 65556, 1, 655360, 65556, 0, 655360, 65556, 65535, 655360, 65556, 65534, 655360, 65556, 65532, 655360, 65556, 65531, 655360, 65556, 65530, 655360, 65556, 65529, 655360, 65556, 65528, 655360, 65556, 65527, 655360, 65556, 65526, 655360, 65556, 65525, 655360, 65556, 65524, 655360, 65556, 65523, 655360, 65556, 65522, 655360, 65540, 2, 1048576, 65541, 2, 1048576, 65542, 2, 1048576, 65543, 2, 1048576, 65544, 2, 1048576, 65545, 2, 1048576, 65546, 2, 1048576, 65547, 2, 1048576, 65548, 2, 1048576, 65549, 2, 1048576, 65550, 2, 1048576, 65551, 2, 1048576, 65552, 2, 1048576, 65553, 2, 1048576, 65554, 2, 1048576, 65555, 2, 1048576, 65546, 65518, 1441792, 65545, 65518, 1441792, 65544, 65518, 1441792, 65543, 65518, 1441792, 65542, 65518, 1441792, 65541, 65518, 1441792, 65540, 65518, 1441792, 65539, 65518, 1441792, 65538, 65518, 1441792, 65537, 65518, 1441792, 131070, 65518, 1441792, 131069, 65518, 1441792, 65546, 65517, 655362, 131068, 65517, 1048576, 131067, 65517, 1048576, 131066, 65517, 1048576, 131065, 65517, 1048576, 131064, 65517, 1048576, 131063, 65517, 1048576, 131062, 65517, 1048576, 131061, 65517, 1048576, 131060, 65517, 1048578, 65552, 65517, 1048578, 65553, 65517, 1048576, 65554, 65517, 1048576, 65555, 65517, 1048576, 65557, 65520, 1048576, 65558, 65520, 1048576, 65559, 65520, 1048576, 65557, 65517, 1048576, 65558, 65517, 1048576, 65559, 65517, 1048576, 65560, 65517, 655362, 65561, 65517, 1048576, 65562, 65517, 1048576, 65563, 65517, 1048576, 65564, 65517, 1048576, 65566, 65517, 1048576, 65567, 65517, 1048576, 65568, 65517, 1048576, 65569, 65517, 655362, 65569, 65516, 655360, 65569, 65515, 655360, 65569, 65514, 655360, 65569, 65513, 655360, 65560, 65516, 655360, 65560, 65515, 655360, 65560, 65514, 655360, 65560, 65513, 655360, 65560, 65512, 655360, 65560, 65511, 655360, 65560, 65510, 655360, 65560, 65509, 1441794, 65560, 65521, 1441794, 65557, 2, 1048576, 65558, 2, 1048576, 65559, 2, 1048576, 65560, 2, 655362, 65560, 1, 655360, 65560, 0, 655360, 65560, 65535, 655360, 65560, 65534, 655360, 65560, 65533, 655360, 65560, 65532, 655360, 65560, 65531, 655360, 65560, 65530, 655360, 65560, 65522, 655360, 65560, 65523, 655360, 65560, 65524, 655360, 65560, 65525, 655360, 65560, 65526, 655360, 65560, 65527, 655360, 65560, 65528, 655360, 65560, 65529, 655360, 65561, 65520, 1048576, 65562, 65520, 1048576, 65563, 65520, 1048576, 65564, 65520, 1048576, 65565, 65520, 1048576, 65566, 65520, 1048576, 65567, 65520, 1048576, 65568, 65520, 1048576, 65569, 65520, 1048576, 65570, 65520, 1048576, 65571, 65520, 1048576, 65572, 65520, 1048576, 65573, 65520, 1048576, 65574, 65520, 655362, 65569, 65512, 655360, 65569, 65511, 655360, 65569, 65510, 655360, 65569, 65509, 1441794, 65551, 65516, 655360, 65551, 65515, 655360, 65551, 65514, 655360, 65551, 65513, 655360, 65551, 65512, 655360, 65551, 65511, 655360, 65551, 65510, 655360, 65551, 65509, 655360, 65552, 65509, 2, 65553, 65509, 1441792, 65554, 65509, 1441792, 65555, 65509, 1441792, 65556, 65509, 1441792, 65557, 65509, 1441792, 65558, 65509, 1441792, 65559, 65509, 1441792, 65561, 65509, 1441792, 65562, 65509, 1441792, 65563, 65509, 1441792, 65564, 65509, 1441792, 65565, 65509, 1441792, 65566, 65509, 1441792, 65567, 65509, 1441792, 65568, 65509, 1441792, 131073, 65517, 1048576, 131072, 65517, 1048576, 196607, 65517, 1048576, 196606, 65517, 1048576, 196605, 65517, 1048576, 196604, 65517, 1048576, 131074, 65517, 1048576, 131075, 65517, 1048576, 131076, 65517, 1048576, 131077, 65517, 1048576, 131078, 65517, 1048576, 131079, 65517, 1048576, 131080, 65517, 1048576, 131081, 65517, 1048576, 196597, 65517, 1048576, 196598, 65517, 1048576, 196599, 65517, 1048576, 196600, 65517, 1048576, 196601, 65517, 1048576, 196602, 65517, 1048576, 196603, 65517, 1048576, 196610, 65517, 1048576, 196609, 65517, 1048576, 196608, 65517, 1048576, 262143, 65517, 1048576, 262142, 65517, 1048576, 262141, 65517, 1048576, 262140, 65517, 1048576, 262139, 65517, 1048576, 262138, 65517, 1048576, 262137, 65517, 1048576, 262136, 65517, 1048576, 262135, 65517, 1048576, 262134, 65517, 1048576, 262133, 65517, 1048576, 196611, 65517, 1048576, 196612, 65517, 1048576, 196613, 65517, 1048576, 196614, 65517, 1048576, 196615, 65517, 1048576, 196616, 65517, 1048576, 196617, 65517, 1048576)
 }
-metadata/_editor_floor_ = Vector3(0, 3, 0)
+metadata/_editor_floor_ = Vector3(0, 8, 0)
 
 [node name="FloorTest" type="GridMap" parent="."]
 mesh_library = ExtResource("3_7cd4u")
@@ -128,71 +109,8 @@ collision_layer = 2
 
 [node name="DetailAndInteractive" type="Node3D" parent="Node/SchoolhouseGrid"]
 
+[node name="Bells" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
+
 [node name="Doors" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
 
-[node name="DoubleDoorDoubleTileRight" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_twdw5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 11)
-
-[node name="DoubleDoorSingleTile" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("19_4celc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 11)
-
-[node name="StandardDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("20_ysee0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.000001, 0, 11)
-
-[node name="EnglishDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("21_yy3wx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 11)
-
-[node name="GeologyDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("22_vhxwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 11)
-
-[node name="HistoryDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("23_g2pv0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 11)
-
-[node name="MathDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("24_febxm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 11)
-
-[node name="OfficeDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_mwd34")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.000001, 0, 11)
-
-[node name="ScienceDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("26_06yay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 11)
-
-[node name="SpellingDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("27_3askp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 11)
-
-[node name="DoubleDoorDoubleTileLeft" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("28_afs8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 11)
-
-[node name="DoubleDoorDoubleTileRight2" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_twdw5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19, 0, 31)
-
-[node name="DoubleDoorDoubleTileLeft2" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("28_afs8w")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19, 0, 33)
-
-[node name="ClinicDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("29_catu5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 11)
-
 [node name="Windows" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
-
-[node name="BlueWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("30_im8k6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, 5)
-
-[node name="CyanWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("31_6o1xh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, 5)
-
-[node name="WoodWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("32_nj22w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 5)
-
-[node name="GreenWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("33_tr6ce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 5)
-
-[node name="RedWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("34_8okc5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 5)
-
-[node name="MagentaWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("35_ikldc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 5)
-
-[node name="YellowWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("36_g5l35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 5)
-
-[node name="Bells" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://dtysqmt4ld5k3"]
+[gd_scene load_steps=38 format=3 uid="uid://dtysqmt4ld5k3"]
 
 [ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="1_v3cpt"]
 [ext_resource type="MeshLibrary" uid="uid://bmwiesgqemhai" path="res://collision_shapes/tileTest2/wallGridmap.tres" id="2_7cd4u"]
 [ext_resource type="MeshLibrary" uid="uid://dqj272kltm8ar" path="res://collision_shapes/tileTest2/floorGridmap.tres" id="3_7cd4u"]
 [ext_resource type="Environment" uid="uid://bf68s7u74uc27" path="res://graphics/school_house_environment.tres" id="3_v3cpt"]
 [ext_resource type="MeshLibrary" uid="uid://ea84d351dgvg" path="res://collision_shapes/tileTest2/tileTest/gridmaps/ceilingGridmap.tres" id="4_7cd4u"]
+[ext_resource type="Texture2D" uid="uid://b6vhcyq6vj8v3" path="res://collision_shapes/tileTest/map_of_school2.png" id="4_pp4u6"]
 [ext_resource type="TileSet" uid="uid://b6mfwtklq0l5q" path="res://collision_shapes/tileTest/heightTileSet.tres" id="6_k28eo"]
 [ext_resource type="TileSet" uid="uid://dijfaqkpj2de8" path="res://collision_shapes/tileTest/floorTileSet.tres" id="7_pp4u6"]
 [ext_resource type="TileSet" uid="uid://6wwm7bwrdahg" path="res://collision_shapes/tileTest/ceilingTileSet.tres" id="8_k4vw2"]
@@ -64,29 +65,34 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("4_pp4u6")
+centered = false
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." groups=["first_exit_trigger"]]
 environment = ExtResource("3_v3cpt")
 
-[node name="Student" parent="WorldEnvironment" instance=ExtResource("1_v3cpt")]
+[node name="Student" parent="." instance=ExtResource("1_v3cpt")]
 
-[node name="Node" type="Node" parent="WorldEnvironment"]
+[node name="Node" type="Node" parent="."]
 
-[node name="TileMapHeight" type="TileMapLayer" parent="WorldEnvironment/Node"]
+[node name="TileMapHeight" type="TileMapLayer" parent="Node"]
 tile_set = ExtResource("6_k28eo")
 
-[node name="TileMapFloors" type="TileMapLayer" parent="WorldEnvironment/Node"]
+[node name="TileMapFloors" type="TileMapLayer" parent="Node"]
 tile_set = ExtResource("7_pp4u6")
 
-[node name="TileMapCeiling" type="TileMapLayer" parent="WorldEnvironment/Node"]
+[node name="TileMapCeiling" type="TileMapLayer" parent="Node"]
 tile_set = ExtResource("8_k4vw2")
 
-[node name="TileMapWalls" type="TileMapLayer" parent="WorldEnvironment/Node"]
+[node name="TileMapWalls" type="TileMapLayer" parent="Node"]
 tile_set = ExtResource("9_ymgdw")
 
-[node name="TileMapDetail" type="TileMapLayer" parent="WorldEnvironment/Node"]
+[node name="TileMapDetail" type="TileMapLayer" parent="Node"]
 tile_set = ExtResource("10_ayo07")
 
-[node name="SchoolhouseGrid" type="GridMap" parent="WorldEnvironment/Node" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling")]
+[node name="SchoolhouseGrid" type="GridMap" parent="Node" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3886862, -0.25793886, 1.1565399)
 collision_layer = 2
 script = ExtResource("11_i33fr")
@@ -96,97 +102,97 @@ tileMapWalls = NodePath("../TileMapWalls")
 tileMapFloors = NodePath("../TileMapFloors")
 tileMapCeiling = NodePath("../TileMapCeiling")
 
-[node name="NorthWall" type="GridMap" parent="WorldEnvironment/Node/SchoolhouseGrid"]
+[node name="NorthWall" type="GridMap" parent="Node/SchoolhouseGrid"]
 mesh_library = ExtResource("12_swsgj")
 collision_layer = 2
 
-[node name="SouthWall" type="GridMap" parent="WorldEnvironment/Node/SchoolhouseGrid"]
+[node name="SouthWall" type="GridMap" parent="Node/SchoolhouseGrid"]
 mesh_library = ExtResource("13_21ubr")
 collision_layer = 2
 
-[node name="EastWall" type="GridMap" parent="WorldEnvironment/Node/SchoolhouseGrid"]
+[node name="EastWall" type="GridMap" parent="Node/SchoolhouseGrid"]
 mesh_library = ExtResource("14_i02cs")
 collision_layer = 2
 
-[node name="WestWall" type="GridMap" parent="WorldEnvironment/Node/SchoolhouseGrid"]
+[node name="WestWall" type="GridMap" parent="Node/SchoolhouseGrid"]
 mesh_library = ExtResource("15_je13h")
 collision_layer = 2
 
-[node name="Floor" type="GridMap" parent="WorldEnvironment/Node/SchoolhouseGrid"]
+[node name="Floor" type="GridMap" parent="Node/SchoolhouseGrid"]
 mesh_library = ExtResource("16_er8ke")
 collision_layer = 2
 
-[node name="Ceiling" type="GridMap" parent="WorldEnvironment/Node/SchoolhouseGrid"]
+[node name="Ceiling" type="GridMap" parent="Node/SchoolhouseGrid"]
 mesh_library = ExtResource("17_swdib")
 collision_layer = 2
 
-[node name="DetailAndInteractive" type="Node3D" parent="WorldEnvironment/Node/SchoolhouseGrid"]
+[node name="DetailAndInteractive" type="Node3D" parent="Node/SchoolhouseGrid"]
 
-[node name="Doors" type="Node3D" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive"]
+[node name="Doors" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
 
-[node name="DoubleDoorDoubleTileRight" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_twdw5")]
+[node name="DoubleDoorDoubleTileRight" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_twdw5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 11)
 
-[node name="DoubleDoorSingleTile" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("19_4celc")]
+[node name="DoubleDoorSingleTile" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("19_4celc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 11)
 
-[node name="StandardDoor" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("20_ysee0")]
+[node name="StandardDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("20_ysee0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.000001, 0, 11)
 
-[node name="EnglishDoor" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("21_yy3wx")]
+[node name="EnglishDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("21_yy3wx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 11)
 
-[node name="GeologyDoor" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("22_vhxwt")]
+[node name="GeologyDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("22_vhxwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 11)
 
-[node name="HistoryDoor" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("23_g2pv0")]
+[node name="HistoryDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("23_g2pv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 11)
 
-[node name="MathDoor" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("24_febxm")]
+[node name="MathDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("24_febxm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 11)
 
-[node name="OfficeDoor" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_mwd34")]
+[node name="OfficeDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_mwd34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.000001, 0, 11)
 
-[node name="ScienceDoor" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("26_06yay")]
+[node name="ScienceDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("26_06yay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 11)
 
-[node name="SpellingDoor" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("27_3askp")]
+[node name="SpellingDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("27_3askp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 11)
 
-[node name="DoubleDoorDoubleTileLeft" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("28_afs8w")]
+[node name="DoubleDoorDoubleTileLeft" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("28_afs8w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 11)
 
-[node name="DoubleDoorDoubleTileRight2" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_twdw5")]
+[node name="DoubleDoorDoubleTileRight2" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_twdw5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19, 0, 31)
 
-[node name="DoubleDoorDoubleTileLeft2" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("28_afs8w")]
+[node name="DoubleDoorDoubleTileLeft2" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("28_afs8w")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19, 0, 33)
 
-[node name="ClinicDoor" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("29_catu5")]
+[node name="ClinicDoor" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("29_catu5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 11)
 
-[node name="Windows" type="Node3D" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive"]
+[node name="Windows" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
 
-[node name="BlueWindow" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("30_im8k6")]
+[node name="BlueWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("30_im8k6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, 5)
 
-[node name="CyanWindow" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("31_6o1xh")]
+[node name="CyanWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("31_6o1xh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, 5)
 
-[node name="WoodWindow" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("32_nj22w")]
+[node name="WoodWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("32_nj22w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 5)
 
-[node name="GreenWindow" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("33_tr6ce")]
+[node name="GreenWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("33_tr6ce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 5)
 
-[node name="RedWindow" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("34_8okc5")]
+[node name="RedWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("34_8okc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 5)
 
-[node name="MagentaWindow" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("35_ikldc")]
+[node name="MagentaWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("35_ikldc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 5)
 
-[node name="YellowWindow" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("36_g5l35")]
+[node name="YellowWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("36_g5l35")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 5)
 
-[node name="Bells" type="Node3D" parent="WorldEnvironment/Node/SchoolhouseGrid/DetailAndInteractive"]
+[node name="Bells" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]

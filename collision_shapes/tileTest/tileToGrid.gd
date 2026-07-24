@@ -36,14 +36,20 @@ const optNSEW = ["","N","S","E","W"]
 var objects
 var bellNodes
 
-# Variable declaration
-var size = Vector2()
 var cellInfo
 var heightInfo
 var modelName
 var modelType
 var modelDirection
 var heightVal
+var cellPos
+
+var wallSize
+var heightSize 
+var floorSize 
+var ceilingSize
+var detailSize
+var totalMapTiles
 var mapSize
 
 # Gridmaps
@@ -90,13 +96,9 @@ func create_gridmap():
 	levelCeiling = get_node("Ceiling")
 	
 	objects = get_node("DetailAndInteractive")
-	
-	# Get size of tilemap, add one to both axis because it's for some
-	# reason number one short
-	size = tileMapWalls.get_used_rect().size
 
-	size[0] += 1
-	size[1] += 1
+	#size[0] += 1
+	#size[1] += 1
 	
 	# Get mesh library from self
 	northMeshLib = northWall.get_mesh_library()
@@ -129,14 +131,40 @@ func create_gridmap():
 	# Get the floor tilemap data as a PackedByteArray
 	tileMapFloorData = tileMapFloors.get_tile_map_data_as_array()
 	tileMapCeilingData = tileMapCeiling.get_tile_map_data_as_array()
+	
+	# Get size of tilemap, add one to both axis because it's for some
+	# reason number one short
+	wallSize = tileMapWalls.get_used_rect().size + Vector2i(1, 1)
+	heightSize = tileMapHeight.get_used_rect().size + Vector2i(1, 1)
+	floorSize = tileMapFloors.get_used_rect().size + Vector2i(1, 1)
+	ceilingSize = tileMapCeiling.get_used_rect().size + Vector2i(1, 1)
+	detailSize = tileMapDetail.get_used_rect().size + Vector2i(1, 1)
+	
+	mapSize = Vector2(max(
+		wallSize[0], 
+		heightSize[0],
+		floorSize[0],
+		ceilingSize[0],
+		detailSize[0]
+	),
+	max(
+		wallSize[1], 
+		heightSize[1],
+		floorSize[1],
+		ceilingSize[1],
+		detailSize[1]
+	)
+	)
+	
+	print(mapSize)
+	totalMapTiles = (mapSize[0]) * (mapSize[1])
 
-	mapSize = tileMapWallData.size()
 
 	# Checks each cell/entry in tileFloorData
-	for I in range(tileMapFloorData.size()):
+	for I in range(totalMapTiles):
 		# Gets the info of the current cell
-		cellInfo = tileMapFloors.get_cell_tile_data( Vector2( I%size[0], 
-			int(I/size[0]) ) )
+		cellInfo = tileMapFloors.get_cell_tile_data( Vector2( I%floorSize[0], 
+			int(I/floorSize[0]) ) )
 		# Checks if cell is blank or not, if so, ignore 
 		if cellInfo != null:
 			# Gets provided model name from tile, then converts to string
@@ -160,13 +188,13 @@ func create_gridmap():
 					SetCellFloor("Grass", I)
 
 	# Checks each cell/entry in tileMapData
-	for I in range(tileMapWallData.size()):
+	for I in range(totalMapTiles):
 		# Gets the info of the current cell
-		cellInfo = tileMapWalls.get_cell_tile_data( Vector2( I%size[0], 
-			int(I/size[0]) ) )
-		heightInfo = tileMapHeight.get_cell_tile_data( Vector2( I%size[0], 
-			int(I/size[0]) ) )
+		cellPos = Vector2( I%wallSize[0], int(I/wallSize[0]))
 		
+		cellInfo = tileMapWalls.get_cell_tile_data(cellPos)  
+		heightInfo = tileMapHeight.get_cell_tile_data(cellPos)
+
 		# Checks if cell is blank or not, if so, ignore 
 		if cellInfo != null:
 			# Gets provided model name from tile, then converts to string
@@ -193,11 +221,20 @@ func create_gridmap():
 				H += 1
 			
 			var heightInfoNSEW = [
-				tileMapHeight.get_cell_tile_data( Vector2( I%size[0], int((I)/size[0])-1 ) ),
-				tileMapHeight.get_cell_tile_data( Vector2( I%size[0], int((I)/size[0])+1 ) ),
-				tileMapHeight.get_cell_tile_data( Vector2( (I+1)%size[0], int(I/size[0]) ) ),
-				tileMapHeight.get_cell_tile_data( Vector2( (I-1)%size[0], int(I/size[0]) ) ),
+				tileMapHeight.get_cell_tile_data( Vector2( cellPos[0], cellPos[1]-1 )),
+				tileMapHeight.get_cell_tile_data( Vector2( cellPos[0], cellPos[1]+1 )),
+				tileMapHeight.get_cell_tile_data( Vector2( cellPos[0]+1, cellPos[1] )),
+				tileMapHeight.get_cell_tile_data( Vector2( cellPos[0]-1, cellPos[1] ))
 			]
+			
+			#var heightInfoNSEW = [
+			#	tileMapHeight.get_cell_tile_data( Vector2( I, I) ),
+			#	tileMapHeight.get_cell_tile_data( Vector2( I, I) ),
+			#	tileMapHeight.get_cell_tile_data( Vector2( I, I) ),
+			#	tileMapHeight.get_cell_tile_data( Vector2( I, I) )
+			#	]
+			
+			#print(heightInfoNSEW)
 			
 			var heightValNSEW = []
 			
@@ -207,6 +244,7 @@ func create_gridmap():
 				else:
 					heightValNSEW.append(1)
 			
+			#print(heightValNSEW)
 			#print("H : " + str(H))
 			#print("Mx : " + str( min(heightValNSEW[0], heightValNSEW[1], heightValNSEW[2], heightValNSEW[3]) ) )
 			
@@ -229,12 +267,12 @@ func create_gridmap():
 
 				
 	# Checks each cell/entry in tileCeilingData
-	for I in range(tileMapCeilingData.size()):
+	for I in range(totalMapTiles):
 		# Gets the info of the current cell
-		cellInfo = tileMapCeiling.get_cell_tile_data( Vector2( I%size[0], 
-			int(I/size[0]) ) )
-		heightInfo = tileMapHeight.get_cell_tile_data( Vector2( I%size[0], 
-			int(I/size[0]) ) )
+		cellInfo = tileMapCeiling.get_cell_tile_data( Vector2( I%ceilingSize[0], 
+			int(I/ceilingSize[0]) ) )
+		heightInfo = tileMapHeight.get_cell_tile_data( Vector2( I%heightSize[0], 
+			int(I/heightSize[0]) ) )
 		
 		if(heightInfo != null):
 			heightVal = heightInfo.get_custom_data("Value")
@@ -258,11 +296,11 @@ func create_gridmap():
 					SetCellCeiling("FalseLight", I, heightVal-1)
 
 func SetCellCeiling(type, index, tileHeight):
-	levelCeiling.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
+	levelCeiling.set_cell_item(Vector3i(index%ceilingSize[0], tileHeight, int(index/ceilingSize[0])), 
 	ceilingMeshLib.find_item_by_name(type), 0)
 
 func SetCellFloor(type, index):
-	levelFloor.set_cell_item(Vector3i(index%size[0], 0, int(index/size[0])), 
+	levelFloor.set_cell_item(Vector3i(index%floorSize[0], 0, int(index/floorSize[0])), 
 	floorMeshLib.find_item_by_name(type), 0)
 
 func setWall(mn, md, i, h):
@@ -289,14 +327,14 @@ func createWall(type, direction, index, tileHeight, ad = 0):
 		pass
 	else:
 		if direction.contains('n'):
-			northWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
+			northWall.set_cell_item(Vector3i(index%wallSize[0], tileHeight, int(index/wallSize[0])), 
 				northMeshLib.find_item_by_name(type + optNSEW[1 * ad]), 0)
 		if direction.contains('s'):
-			southWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
+			southWall.set_cell_item(Vector3i(index%wallSize[0], tileHeight, int(index/wallSize[0])), 
 				southMeshLib.find_item_by_name(type + optNSEW[2 * ad]), 0)
 		if direction.contains('e'):
-			eastWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
+			eastWall.set_cell_item(Vector3i(index%wallSize[0], tileHeight, int(index/wallSize[0])), 
 				eastMeshLib.find_item_by_name(type + optNSEW[3 * ad]), 0)
 		if direction.contains('w'):
-			westWall.set_cell_item(Vector3i(index%size[0], tileHeight, int(index/size[0])), 
+			westWall.set_cell_item(Vector3i(index%wallSize[0], tileHeight, int(index/wallSize[0])), 
 				westMeshLib.find_item_by_name(type + optNSEW[4 * ad]), 0)

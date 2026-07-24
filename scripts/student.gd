@@ -1,11 +1,11 @@
 extends CharacterBody3D
 
-const MOUSE_SENS: float = 0.4
-const RUNNING_MULTIPLIER_VALUE = 2.0
-const MAX_SPEED: float = 8
-const ACCEL: float = 8
-const DEACCEL: float = 7
-const PLAYER_REACH = 3.0
+const MOUSE_SENS: float = 0.2
+const RUNNING_MULTIPLIER_VALUE = 1.8
+const MAX_SPEED: float = 7.2
+const ACCEL: float = 12
+const DEACCEL: float = 1
+const PLAYER_REACH = 4.0
 
 var cur_speed: float = 4
 var cur_speed_2: float = 4
@@ -104,14 +104,14 @@ func _physics_process(delta) -> void:
 	else:
 		cur_speed_2 = move_toward(cur_speed_2, 0, DEACCEL * delta)
 		
-		if(cur_speed_2 > 8.0):
+		if(cur_speed_2 > 4.0):
 			velocity.x *= (cur_speed_2 / (MAX_SPEED*RUNNING_MULTIPLIER_VALUE))
 			velocity.z *= (cur_speed_2 / (MAX_SPEED*RUNNING_MULTIPLIER_VALUE))
 		else:
 			velocity.x *= (cur_speed_2 / MAX_SPEED)
 			velocity.z *= (cur_speed_2 / MAX_SPEED)
 			
-		if(cur_speed >= 16.0):
+		if(cur_speed >= 12.0):
 				skidNode.play()
 		
 		cur_speed = 0

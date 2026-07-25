@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbvjak0ib83d6"]
+
+[ext_resource type="TileSet" uid="uid://b6mfwtklq0l5q" path="res://collision_shapes/tileTest/heightTileSet.tres" id="1_eyo5k"]
+[ext_resource type="TileSet" uid="uid://dijfaqkpj2de8" path="res://collision_shapes/tileTest/floorTileSet.tres" id="2_iqudi"]
+[ext_resource type="TileSet" uid="uid://6wwm7bwrdahg" path="res://collision_shapes/tileTest/ceilingTileSet.tres" id="3_go1fs"]
+[ext_resource type="TileSet" uid="uid://dc2l4y11wj55m" path="res://collision_shapes/tileTest/wallTileSet.tres" id="4_dqipu"]
+[ext_resource type="TileSet" uid="uid://bn24oa1shxaa5" path="res://collision_shapes/tileTest/detailTileSet.tres" id="5_u3rmt"]
+
+[node name="Tilemaps" type="Node2D"]
+
+[node name="TilemapViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 512.0
+offset_bottom = 512.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TilemapViewport" type="SubViewport" parent="TilemapViewportContainer"]
+handle_input_locally = false
+size = Vector2i(2048, 2048)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="TilemapViewportContainer/TilemapViewport"]
+top_level = true
+limit_enabled = false
+
+[node name="TileMapHeight" type="TileMapLayer" parent="TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("1_eyo5k")
+
+[node name="TileMapFloors" type="TileMapLayer" parent="TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("2_iqudi")
+
+[node name="TileMapCeiling" type="TileMapLayer" parent="TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("3_go1fs")
+
+[node name="TileMapWalls" type="TileMapLayer" parent="TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("4_dqipu")
+
+[node name="TileMapDetail" type="TileMapLayer" parent="TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("5_u3rmt")

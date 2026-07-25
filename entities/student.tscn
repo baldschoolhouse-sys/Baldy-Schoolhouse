@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://1qrdqbcpnp3y"]
+[gd_scene load_steps=10 format=3 uid="uid://1qrdqbcpnp3y"]
 
 [ext_resource type="Script" uid="uid://wxi0ls5x5n34" path="res://scripts/student.gd" id="1_8bc1h"]
 [ext_resource type="Script" uid="uid://df5v4xs8j47fn" path="res://scripts/ray_cast_3d.gd" id="2_5twd6"]
@@ -11,6 +11,8 @@
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_c22a6"]
 viewport_path = NodePath("Head/SubViewportContainer/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_64eig"]
 
 [node name="Student" type="CharacterBody3D"]
 collision_mask = 2
@@ -76,6 +78,9 @@ position = Vector2(-8, -8)
 texture = ExtResource("4_jvcrt")
 centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CenterContainer"]
+[node name="Staminometer" type="Sprite2D" parent="CenterContainer"]
 texture = ExtResource("3_c6rpx")
 centered = false
+
+[node name="DebugMap" type="Sprite2D" parent="CenterContainer"]
+texture = SubResource("ViewportTexture_64eig")

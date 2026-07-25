@@ -26,54 +26,71 @@ centered = false
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." groups=["first_exit_trigger"]]
 environment = ExtResource("3_v3cpt")
 
-[node name="Student" parent="." instance=ExtResource("1_v3cpt")]
+[node name="Student" parent="." node_paths=PackedStringArray("tileMap") instance=ExtResource("1_v3cpt")]
+tileMap = NodePath("../SchoolhouseBuilder/Tilemaps")
 
-[node name="Node" type="Node" parent="."]
+[node name="SchoolhouseBuilder" type="Node" parent="."]
 
-[node name="TileMapHeight" type="TileMapLayer" parent="Node"]
+[node name="Tilemaps" type="Node2D" parent="SchoolhouseBuilder"]
+
+[node name="TilemapViewportContainer" type="SubViewportContainer" parent="SchoolhouseBuilder/Tilemaps"]
+offset_right = 512.0
+offset_bottom = 512.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TilemapViewport" type="SubViewport" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer"]
+handle_input_locally = false
+size = Vector2i(2048, 2048)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer/TilemapViewport"]
+top_level = true
+limit_enabled = false
+
+[node name="TileMapHeight" type="TileMapLayer" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer/TilemapViewport"]
 tile_set = ExtResource("6_k28eo")
 
-[node name="TileMapFloors" type="TileMapLayer" parent="Node"]
+[node name="TileMapFloors" type="TileMapLayer" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer/TilemapViewport"]
 tile_map_data = PackedByteArray(0, 0, 234, 0, 236, 0, 0, 0, 7, 0, 0, 0, 0, 0)
 tile_set = ExtResource("7_pp4u6")
 
-[node name="TileMapCeiling" type="TileMapLayer" parent="Node"]
+[node name="TileMapCeiling" type="TileMapLayer" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer/TilemapViewport"]
 tile_set = ExtResource("8_k4vw2")
 
-[node name="TileMapWalls" type="TileMapLayer" parent="Node"]
+[node name="TileMapWalls" type="TileMapLayer" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer/TilemapViewport"]
 tile_set = ExtResource("9_ymgdw")
 
-[node name="TileMapDetail" type="TileMapLayer" parent="Node"]
+[node name="TileMapDetail" type="TileMapLayer" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer/TilemapViewport"]
 tile_set = ExtResource("10_ayo07")
 
-[node name="SchoolhouseGrid" type="GridMap" parent="Node" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling")]
+[node name="SchoolhouseGrid" type="GridMap" parent="SchoolhouseBuilder" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3886862, -0.25793886, 1.1565399)
 collision_layer = 2
 script = ExtResource("11_i33fr")
-tileMapDetail = NodePath("../TileMapDetail")
-tileMapHeight = NodePath("../TileMapHeight")
-tileMapWalls = NodePath("../TileMapWalls")
-tileMapFloors = NodePath("../TileMapFloors")
-tileMapCeiling = NodePath("../TileMapCeiling")
+tileMapDetail = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapDetail")
+tileMapHeight = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapHeight")
+tileMapWalls = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapWalls")
+tileMapFloors = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapFloors")
+tileMapCeiling = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapCeiling")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="NorthWall" type="GridMap" parent="Node/SchoolhouseGrid"]
+[node name="NorthWall" type="GridMap" parent="SchoolhouseBuilder/SchoolhouseGrid"]
 mesh_library = ExtResource("12_swsgj")
 collision_layer = 2
 
-[node name="SouthWall" type="GridMap" parent="Node/SchoolhouseGrid"]
+[node name="SouthWall" type="GridMap" parent="SchoolhouseBuilder/SchoolhouseGrid"]
 mesh_library = ExtResource("13_21ubr")
 collision_layer = 2
 
-[node name="EastWall" type="GridMap" parent="Node/SchoolhouseGrid"]
+[node name="EastWall" type="GridMap" parent="SchoolhouseBuilder/SchoolhouseGrid"]
 mesh_library = ExtResource("14_i02cs")
 collision_layer = 2
 
-[node name="WestWall" type="GridMap" parent="Node/SchoolhouseGrid"]
+[node name="WestWall" type="GridMap" parent="SchoolhouseBuilder/SchoolhouseGrid"]
 mesh_library = ExtResource("15_je13h")
 collision_layer = 2
 
-[node name="Floor" type="GridMap" parent="Node/SchoolhouseGrid"]
+[node name="Floor" type="GridMap" parent="SchoolhouseBuilder/SchoolhouseGrid"]
 mesh_library = ExtResource("16_er8ke")
 collision_layer = 2
 data = {
@@ -81,14 +98,14 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Ceiling" type="GridMap" parent="Node/SchoolhouseGrid"]
+[node name="Ceiling" type="GridMap" parent="SchoolhouseBuilder/SchoolhouseGrid"]
 mesh_library = ExtResource("17_swdib")
 collision_layer = 2
 
-[node name="DetailAndInteractive" type="Node3D" parent="Node/SchoolhouseGrid"]
+[node name="DetailAndInteractive" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid"]
 
-[node name="Bells" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
+[node name="Bells" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive"]
 
-[node name="Doors" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
+[node name="Doors" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive"]
 
-[node name="Windows" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
+[node name="Windows" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive"]

@@ -1,5 +1,9 @@
 extends CharacterBody3D
 
+@export var tileMap: Node2D
+var debugTileMap
+var debugMap
+
 const MOUSE_SENS: float = 0.2
 const RUNNING_MULTIPLIER_VALUE = 1.8
 const MAX_SPEED: float = 7.2
@@ -44,6 +48,11 @@ func _ready() -> void:
 	backgroundNode = get_node("BackgroundTile")
 	backgroundNode.region_rect = Rect2(0, 0, screensize.x, screensize.y)
 	
+	if(tileMap != null):
+		debugTileMap = tileMap.get_node("TilemapViewportContainer").get_node("TilemapViewport")
+		debugMap = find_child("DebugMap")
+		debugMap.texture = debugTileMap.get_texture()
+	
 func _input(event) -> void:
 	if event is InputEventMouseMotion:
 		cameraNode.rotation_degrees.y -= event.relative.x * MOUSE_SENS
@@ -80,7 +89,7 @@ func _input(event) -> void:
 			else:
 				fullscreen = true
 				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-				
+		
 func _physics_process(delta) -> void:
 	screensize = get_viewport().get_visible_rect().size
 	backgroundNode.region_rect = Rect2(0, 0, screensize.x, screensize.y)
@@ -122,6 +131,11 @@ func _physics_process(delta) -> void:
 	#print("VZ: " + str(velocity.z))
 	#print("VXMT: " + str(move_toward(velocity.x, cur_speed, DEACCEL * delta)))
 	#print("VZMT: " + str(move_toward(velocity.z, cur_speed, DEACCEL * delta)))
+	if debugTileMap != null:
+		if Input.is_action_pressed("debugMap"):
+			debugMap.show()
+		else:
+			debugMap.hide()
 	
 	move_and_slide()
 	cameraNode.position = Vector3(position.x, position.y + headNode.position.y, position.z)

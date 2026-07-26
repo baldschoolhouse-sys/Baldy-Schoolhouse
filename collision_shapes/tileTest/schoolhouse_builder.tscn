@@ -1,0 +1,87 @@
+[gd_scene load_steps=14 format=3 uid="uid://njw247o0ttom"]
+
+[ext_resource type="TileSet" uid="uid://b6mfwtklq0l5q" path="res://collision_shapes/tileTest/heightTileSet.tres" id="1_3122j"]
+[ext_resource type="Environment" uid="uid://bf68s7u74uc27" path="res://graphics/school_house_environment.tres" id="1_x7ffo"]
+[ext_resource type="TileSet" uid="uid://dijfaqkpj2de8" path="res://collision_shapes/tileTest/floorTileSet.tres" id="2_x7ffo"]
+[ext_resource type="TileSet" uid="uid://6wwm7bwrdahg" path="res://collision_shapes/tileTest/ceilingTileSet.tres" id="3_0nt7g"]
+[ext_resource type="TileSet" uid="uid://dc2l4y11wj55m" path="res://collision_shapes/tileTest/wallTileSet.tres" id="4_oh8b6"]
+[ext_resource type="TileSet" uid="uid://bn24oa1shxaa5" path="res://collision_shapes/tileTest/detailTileSet.tres" id="5_1tvl2"]
+[ext_resource type="Script" uid="uid://jcpko70p5lkr" path="res://collision_shapes/tileTest/tileToGrid.gd" id="6_x8i3u"]
+[ext_resource type="MeshLibrary" uid="uid://dyiwsig75frdf" path="res://collision_shapes/tileTest/gridmaps/Walls/NorthWallsMeshLib.tres" id="7_qbvhp"]
+[ext_resource type="MeshLibrary" uid="uid://du71r3f46gso5" path="res://collision_shapes/tileTest/gridmaps/Walls/SouthWallsMeshLib.tres" id="8_kn6ek"]
+[ext_resource type="MeshLibrary" uid="uid://icwg0c3nm6mk" path="res://collision_shapes/tileTest/gridmaps/Walls/EastWallsMeshLib.tres" id="9_51jyh"]
+[ext_resource type="MeshLibrary" uid="uid://d1irv6803lw70" path="res://collision_shapes/tileTest/gridmaps/Walls/WestWallsMeshLib.tres" id="10_pnduf"]
+[ext_resource type="MeshLibrary" uid="uid://cq5m3mbj3540g" path="res://collision_shapes/tileTest/gridmaps/FloorsMeshLib.tres" id="11_ajtd8"]
+[ext_resource type="MeshLibrary" uid="uid://cch83mqa7iq5v" path="res://collision_shapes/tileTest/gridmaps/CeilingMeshLib.tres" id="12_51ihq"]
+
+[node name="SchoolhouseBuilder" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." groups=["first_exit_trigger"]]
+environment = ExtResource("1_x7ffo")
+
+[node name="Tilemaps" type="Node2D" parent="."]
+
+[node name="TilemapViewportContainer" type="SubViewportContainer" parent="Tilemaps"]
+offset_right = 512.0
+offset_bottom = 512.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TilemapViewport" type="SubViewport" parent="Tilemaps/TilemapViewportContainer"]
+handle_input_locally = false
+size = Vector2i(2048, 2048)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="Tilemaps/TilemapViewportContainer/TilemapViewport"]
+top_level = true
+limit_enabled = false
+
+[node name="TileMapHeight" type="TileMapLayer" parent="Tilemaps/TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("1_3122j")
+
+[node name="TileMapFloors" type="TileMapLayer" parent="Tilemaps/TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("2_x7ffo")
+
+[node name="TileMapCeiling" type="TileMapLayer" parent="Tilemaps/TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("3_0nt7g")
+
+[node name="TileMapWalls" type="TileMapLayer" parent="Tilemaps/TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("4_oh8b6")
+
+[node name="TileMapDetail" type="TileMapLayer" parent="Tilemaps/TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("5_1tvl2")
+
+[node name="SchoolhouseGrid" type="GridMap" parent="."]
+collision_layer = 2
+script = ExtResource("6_x8i3u")
+
+[node name="NorthWall" type="GridMap" parent="SchoolhouseGrid"]
+mesh_library = ExtResource("7_qbvhp")
+collision_layer = 2
+
+[node name="SouthWall" type="GridMap" parent="SchoolhouseGrid"]
+mesh_library = ExtResource("8_kn6ek")
+collision_layer = 2
+
+[node name="EastWall" type="GridMap" parent="SchoolhouseGrid"]
+mesh_library = ExtResource("9_51jyh")
+collision_layer = 2
+
+[node name="WestWall" type="GridMap" parent="SchoolhouseGrid"]
+mesh_library = ExtResource("10_pnduf")
+collision_layer = 2
+
+[node name="Floor" type="GridMap" parent="SchoolhouseGrid"]
+mesh_library = ExtResource("11_ajtd8")
+collision_layer = 2
+
+[node name="Ceiling" type="GridMap" parent="SchoolhouseGrid"]
+mesh_library = ExtResource("12_51ihq")
+collision_layer = 2
+
+[node name="DetailAndInteractive" type="Node3D" parent="SchoolhouseGrid"]
+
+[node name="Doors" type="Node3D" parent="SchoolhouseGrid/DetailAndInteractive"]
+
+[node name="Windows" type="Node3D" parent="SchoolhouseGrid/DetailAndInteractive"]
+
+[node name="Bells" type="Node3D" parent="SchoolhouseGrid/DetailAndInteractive"]

@@ -110,13 +110,13 @@ func create_gridmap():
 	ceilingMeshLib = levelCeiling.get_mesh_library()
 	
 	create_node_bases("Doors")
-	bellNodes = get_node("Doors")
+	bellNodes = objects.get_node("Doors")
 
 	create_node_bases("Windows")
-	bellNodes = get_node("Windows")
+	bellNodes = objects.get_node("Windows")
 	
 	create_node_bases("Bells")
-	bellNodes = get_node("Bells")	
+	bellNodes = objects.get_node("Bells")
 
 	# Clears self to avoid corruption and errors
 	northWall.clear()
@@ -134,12 +134,28 @@ func create_gridmap():
 	
 	# Get size of tilemap, add one to both axis because it's for some
 	# reason number one short
-	wallSize = tileMapWalls.get_used_rect().size + Vector2i(1, 1)
-	heightSize = tileMapHeight.get_used_rect().size + Vector2i(1, 1)
-	floorSize = tileMapFloors.get_used_rect().size + Vector2i(1, 1)
-	ceilingSize = tileMapCeiling.get_used_rect().size + Vector2i(1, 1)
-	detailSize = tileMapDetail.get_used_rect().size + Vector2i(1, 1)
+	var usedCellInfo = [
+		tileMapWalls.get_used_cells(),
+		tileMapFloors.get_used_cells(),
+		tileMapDetail.get_used_cells()
+	]
 	
+	if(usedCellInfo[0].size() != 0):
+		wallSize = tileMapWalls.get_used_rect().size + usedCellInfo[0][0]
+	else:
+		wallSize = tileMapWalls.get_used_rect().size
+	if(usedCellInfo[1].size() != 0):
+		floorSize = tileMapFloors.get_used_rect().size + usedCellInfo[1][0]
+	else:
+		floorSize = tileMapWalls.get_used_rect().size
+	if(usedCellInfo[2].size() != 0):
+		detailSize = tileMapDetail.get_used_rect().size + usedCellInfo[2][0]
+	else:
+		detailSize = tileMapWalls.get_used_rect().size
+		
+	ceilingSize = tileMapCeiling.get_used_rect().size + Vector2i(1, 1)
+	heightSize = tileMapHeight.get_used_rect().size + Vector2i(1, 1)
+
 	mapSize = Vector2(max(
 		wallSize[0], 
 		heightSize[0],
@@ -158,7 +174,6 @@ func create_gridmap():
 	
 	print(mapSize)
 	totalMapTiles = (mapSize[0]) * (mapSize[1])
-
 
 	# Checks each cell/entry in tileFloorData
 	for I in range(totalMapTiles):
@@ -195,6 +210,8 @@ func create_gridmap():
 		cellInfo = tileMapWalls.get_cell_tile_data(cellPos)  
 		heightInfo = tileMapHeight.get_cell_tile_data(cellPos)
 
+		#print("ci: " + str(cellInfo))
+
 		# Checks if cell is blank or not, if so, ignore 
 		if cellInfo != null:
 			# Gets provided model name from tile, then converts to string
@@ -206,9 +223,13 @@ func create_gridmap():
 				heightVal = 1
 			# Checks of tile has a model name, if so, add that model to
 			# current cell
-			
+			#print("mn1: " + str( modelType ) )
 			modelType = modelName.findn("tile")
+			#print("mt: " + str( modelType ) )
+			#print("mn2: " + str( modelName ) )
+			#print("mnl: " + str( modelName.length() ) )
 			modelType = modelName.erase(modelType, modelName.length())
+			
 			
 			modelDirection = modelName.get_slice("Tile", 1)
 			modelDirection = modelDirection.to_lower()
@@ -242,7 +263,7 @@ func create_gridmap():
 				if hi != null:
 					heightValNSEW.append(hi.get_custom_data("Value"))
 				else:
-					heightValNSEW.append(1)
+					heightValNSEW.append(heightVal)
 			
 			#print(heightValNSEW)
 			#print("H : " + str(H))

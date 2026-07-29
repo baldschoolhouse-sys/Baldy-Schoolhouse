@@ -47,11 +47,12 @@ func _ready() -> void:
 	screensize = get_viewport().get_visible_rect().size
 	backgroundNode = get_node("BackgroundTile")
 	backgroundNode.region_rect = Rect2(0, 0, screensize.x, screensize.y)
-	
+
 	if(tileMap != null):
-		debugTileMap = tileMap.get_node("TilemapViewportContainer").get_node("TilemapViewport")
-		debugMap = find_child("DebugMap")
-		debugMap.texture = debugTileMap.get_texture()
+		if(tileMap.has_node("TilemapViewportContainer")):
+			debugTileMap = tileMap.get_node("TilemapViewportContainer").get_node("TilemapViewport")
+			debugMap = find_child("DebugMap")
+			debugMap.texture = debugTileMap.get_texture()
 	
 func _input(event) -> void:
 	if event is InputEventMouseMotion:
@@ -71,7 +72,7 @@ func _input(event) -> void:
 			if(clickedObject.get_parent()):
 				var doorScript = clickedObject.get_parent()
 				print(doorScript)
-				if (doorScript.get_script().get_path().get_file() == "door.gd"):
+				if (doorScript.get_script() != null && doorScript.get_script().get_path().get_file() == "door.gd"):
 					doorScript.openDoor(false)
 					doorScript._on_door_collider_exited(self, false)
 	if event is InputEventKey:

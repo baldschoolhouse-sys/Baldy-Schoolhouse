@@ -33,11 +33,15 @@ const optNSEW = ["","N","S","E","W"]
 # Creates gridmap creation button, sets it to "create_gridmap" function
 @export_tool_button("Create Gridmap From Tilemaps") var gridMapFunction = create_gridmap
 
+var bellObject
+
 var objects
 var bellNodes
 
 var cellInfo
 var heightInfo
+var detailInfo
+
 var modelName
 var modelType
 var modelDirection
@@ -84,8 +88,43 @@ func create_node_bases(input):
 
 		objects.add_child(instantiatedNode)
 		instantiatedNode.set_owner(EditorInterface.get_edited_scene_root())
+
+func create_node(object, pos, rot, destination):
+	var instantiatedNode = object.instantiate()
+	instantiatedNode.position = pos
+	instantiatedNode.rotation = rot
+	instantiatedNode.name = instantiatedNode.name + str(destination.get_child_count())
+	
+	destination.add_child(instantiatedNode)
+	instantiatedNode.set_owner(EditorInterface.get_edited_scene_root())
+
+func create_bell(pos, rot):
+	#if ( int(rot) % 2 ) != 0:
+	create_node(
+		bellObject, 
+		Vector3( 
+			( pos[0] * 2 ) + ( ( int(rot) % 2 ) * (
+				( 0.12 * bell_math(rot, 0)  ) ) ) + 1,
+			0, 
+			( pos[1] * 2 ) + ( ( int(rot) % 2 ) * (
+				( 0.12 * bell_math(rot, 1)  ) ) ) + 1
+		), 
+		Vector3(0, -deg_to_rad(rot * (45.0)), 0), 
+		bellNodes
+		)
+		#print(rot)
+		#print( str( bell_math(rot, 0) ) + " " + str( bell_math(rot, 1) ))
+
+func bell_math(rot, type):
+	return ( ( ( int( (rot + (type*2)) / (4) ) + 1 - type) % 2) * 2) - 1
 		
+func clear_nodes(object):
+	for n in object.get_children():
+		n.free()
+
 func create_gridmap():
+	
+	bellObject = load("res://entities/bell/bell.tscn")
 	
 	northWall = get_node("NorthWall")
 	southWall = get_node("SouthWall")
@@ -126,6 +165,8 @@ func create_gridmap():
 	levelFloor.clear()
 	levelCeiling.clear()
 	
+	clear_nodes(bellNodes)
+
 	# Get the wall tilemap data as a PackedByteArray
 	tileMapWallData = tileMapWalls.get_tile_map_data_as_array()
 	# Get the floor tilemap data as a PackedByteArray
@@ -155,6 +196,7 @@ func create_gridmap():
 		
 	ceilingSize = tileMapCeiling.get_used_rect().size + Vector2i(1, 1)
 	heightSize = tileMapHeight.get_used_rect().size + Vector2i(1, 1)
+	detailSize = tileMapDetail.get_used_rect().size
 
 	mapSize = Vector2(max(
 		wallSize[0], 
@@ -209,6 +251,7 @@ func create_gridmap():
 		
 		cellInfo = tileMapWalls.get_cell_tile_data(cellPos)  
 		heightInfo = tileMapHeight.get_cell_tile_data(cellPos)
+		detailInfo = tileMapDetail.get_cell_tile_data(cellPos)
 
 		#print("ci: " + str(cellInfo))
 
@@ -221,6 +264,12 @@ func create_gridmap():
 				heightVal = heightInfo.get_custom_data("Value")
 			else:
 				heightVal = 1
+				
+			if(detailInfo != null):
+				detailInfo = detailInfo.get_custom_data("Asset")
+			else:
+				detailInfo = "blank"
+				
 			# Checks of tile has a model name, if so, add that model to
 			# current cell
 			#print("mn1: " + str( modelType ) )
@@ -230,6 +279,11 @@ func create_gridmap():
 			#print("mnl: " + str( modelName.length() ) )
 			modelType = modelName.erase(modelType, modelName.length())
 			
+			if detailInfo.begins_with("Bell-"):
+				create_bell(
+					Vector2(I%detailSize[0], int(I/detailSize[0])), 
+					int(detailInfo.get_slice("-", 1))
+				)
 			
 			modelDirection = modelName.get_slice("Tile", 1)
 			modelDirection = modelDirection.to_lower()
@@ -284,7 +338,7 @@ func create_gridmap():
 					#print(modelName)
 					setWall(modelName, modelDirection, I, H-1)
 				H -= 1
-				
+			
 
 				
 	# Checks each cell/entry in tileCeilingData
@@ -315,6 +369,7 @@ func create_gridmap():
 					SetCellCeiling("VentCeiling", I, heightVal-1)
 				if modelName.begins_with("FalseLight"):
 					SetCellCeiling("FalseLight", I, heightVal-1)
+	
 
 func SetCellCeiling(type, index, tileHeight):
 	levelCeiling.set_cell_item(Vector3i(index%ceilingSize[0], tileHeight, int(index/ceilingSize[0])), 

@@ -56,6 +56,8 @@ var detailSize
 var totalMapTiles
 var mapSize
 
+var wallVariant
+
 # Gridmaps
 var northWall
 var southWall
@@ -285,13 +287,22 @@ func create_gridmap():
 					int(detailInfo.get_slice("-", 1))
 				)
 			
+			if detailInfo.begins_with("Door-"):
+				wallVariant = ["Doorhole", detailInfo.get_slice("-", 3)]
+				#print(wallVariant)
+			else:
+				wallVariant = ["", ""]
+			
 			modelDirection = modelName.get_slice("Tile", 1)
 			modelDirection = modelDirection.to_lower()
 			
 			var H = 0
 			while H < heightVal: 
 				if modelName != "":
-					setWall(modelName, modelDirection, I, H)
+					if(H == 0):
+						setWall(modelName, modelDirection, I, H, wallVariant)
+					else:
+						setWall(modelName, modelDirection, I, H)
 					pass
 				H += 1
 			
@@ -379,38 +390,42 @@ func SetCellFloor(type, index):
 	levelFloor.set_cell_item(Vector3i(index%floorSize[0], 0, int(index/floorSize[0])), 
 	floorMeshLib.find_item_by_name(type), 0)
 
-func setWall(mn, md, i, h):
+func setWall(mn, md, i, h, wallV = ["", ""]):
 	if mn.begins_with("Debug"):
-		createWall("DebugWall", md, i, h, 1)
+		createWall("DebugWall", md, wallV, i, h, 1)
 	if mn.begins_with("Normal"):
-		createWall("WallClassic", md, i, h)
+		createWall("WallClassic", md, wallV, i, h)
 	if mn.begins_with("YellowC"):
-		createWall("YellowClassroom", md, i, h)
+		createWall("YellowClassroom", md, wallV, i, h)
 	if mn.begins_with("Wood"):
-		createWall("WoodWall", md, i, h)
+		createWall("WoodWall", md, wallV, i, h)
 	if mn.begins_with("RedC"):
-		createWall("RedClassroom", md, i, h)
+		createWall("RedClassroom", md, wallV, i, h)
 	if mn.begins_with("Cafeteria"):
 		if(h == 0):
-			createWall("CafeteriaWall1", md, i, h)
+			createWall("CafeteriaWall1", md, wallV, i, h)
 		else:
-			createWall("CafeteriaWall2", md, i, h)
+			createWall("CafeteriaWall2", md, wallV, i, h)
 	if mn.begins_with("Outside"):
-		createWall("OutsideWall", md, i, h)
+		createWall("OutsideWall", md, wallV, i, h)
 
-func createWall(type, direction, index, tileHeight, ad = 0):
-	if direction == "blank":
-		pass
-	else:
+func createWall(type, direction, wallV, index, tileHeight, ad = 0):
+	var wallVarDir = ["", "", "", "", ""]
+	if(direction.contains(wallV[1].to_lower())):
+		wallVarDir[optNSEW.find(wallV[1])] = wallV[0]
+	#if direction == "blank":
+	#	pass
+	
+	if direction != "blank":
 		if direction.contains('n'):
 			northWall.set_cell_item(Vector3i(index%wallSize[0], tileHeight, int(index/wallSize[0])), 
-				northMeshLib.find_item_by_name(type + optNSEW[1 * ad]), 0)
+				northMeshLib.find_item_by_name(type + optNSEW[1 * ad] + wallVarDir[1]), 0)
 		if direction.contains('s'):
 			southWall.set_cell_item(Vector3i(index%wallSize[0], tileHeight, int(index/wallSize[0])), 
-				southMeshLib.find_item_by_name(type + optNSEW[2 * ad]), 0)
+				southMeshLib.find_item_by_name(type + optNSEW[2 * ad] + wallVarDir[2]), 0)
 		if direction.contains('e'):
 			eastWall.set_cell_item(Vector3i(index%wallSize[0], tileHeight, int(index/wallSize[0])), 
-				eastMeshLib.find_item_by_name(type + optNSEW[3 * ad]), 0)
+				eastMeshLib.find_item_by_name(type + optNSEW[3 * ad] + wallVarDir[3]), 0)
 		if direction.contains('w'):
 			westWall.set_cell_item(Vector3i(index%wallSize[0], tileHeight, int(index/wallSize[0])), 
-				westMeshLib.find_item_by_name(type + optNSEW[4 * ad]), 0)
+				westMeshLib.find_item_by_name(type + optNSEW[4 * ad] + wallVarDir[4]), 0)

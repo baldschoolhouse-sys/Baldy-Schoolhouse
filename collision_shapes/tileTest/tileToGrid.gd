@@ -180,7 +180,8 @@ func create_gridmap():
 	var usedCellInfo = [
 		tileMapWalls.get_used_cells(),
 		tileMapFloors.get_used_cells(),
-		tileMapDetail.get_used_cells()
+		tileMapDetail.get_used_cells(),
+		tileMapCeiling.get_used_cells()
 	]
 	
 	if(usedCellInfo[0].size() != 0):
@@ -191,14 +192,21 @@ func create_gridmap():
 		floorSize = tileMapFloors.get_used_rect().size + usedCellInfo[1][0]
 	else:
 		floorSize = tileMapWalls.get_used_rect().size
-	if(usedCellInfo[2].size() != 0):
-		detailSize = tileMapDetail.get_used_rect().size + usedCellInfo[2][0]
+	#if(usedCellInfo[2].size() != 0):
+	#	detailSize = tileMapDetail.get_used_rect().size + usedCellInfo[2][0]
+	#else:
+	#	detailSize = tileMapWalls.get_used_rect().size
+	if(usedCellInfo[3].size() != 0):
+		ceilingSize = tileMapCeiling.get_used_rect().size + usedCellInfo[3][0]
 	else:
-		detailSize = tileMapWalls.get_used_rect().size
-		
-	ceilingSize = tileMapCeiling.get_used_rect().size + Vector2i(1, 1)
+		ceilingSize = tileMapWalls.get_used_rect().size
+
+	#ceilingSize = tileMapCeiling.get_used_rect().size + Vector2i(1, 1)
 	heightSize = tileMapHeight.get_used_rect().size + Vector2i(1, 1)
 	detailSize = tileMapDetail.get_used_rect().size
+
+	if(wallSize[0] == 0):
+		wallSize = Vector2i(1, 1)
 
 	mapSize = Vector2(max(
 		wallSize[0], 
@@ -249,9 +257,10 @@ func create_gridmap():
 	# Checks each cell/entry in tileMapData
 	for I in range(totalMapTiles):
 		# Gets the info of the current cell
+			
 		cellPos = Vector2( I%wallSize[0], int(I/wallSize[0]))
+		cellInfo = tileMapWalls.get_cell_tile_data(cellPos) 
 		
-		cellInfo = tileMapWalls.get_cell_tile_data(cellPos)  
 		heightInfo = tileMapHeight.get_cell_tile_data(cellPos)
 		detailInfo = tileMapDetail.get_cell_tile_data(cellPos)
 
@@ -283,7 +292,7 @@ func create_gridmap():
 			
 			if detailInfo.begins_with("Bell-"):
 				create_bell(
-					Vector2(I%detailSize[0], int(I/detailSize[0])), 
+					Vector2(I%wallSize[0], int(I/wallSize[0])), 
 					int(detailInfo.get_slice("-", 1))
 				)
 			
@@ -357,8 +366,8 @@ func create_gridmap():
 		# Gets the info of the current cell
 		cellInfo = tileMapCeiling.get_cell_tile_data( Vector2( I%ceilingSize[0], 
 			int(I/ceilingSize[0]) ) )
-		heightInfo = tileMapHeight.get_cell_tile_data( Vector2( I%heightSize[0], 
-			int(I/heightSize[0]) ) )
+		heightInfo = tileMapHeight.get_cell_tile_data( Vector2( I%ceilingSize[0], 
+			int(I/ceilingSize[0]) ) )
 		
 		if(heightInfo != null):
 			heightVal = heightInfo.get_custom_data("Value")

@@ -34,11 +34,16 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-materials/extract=1
+materials/extract=0
 materials/extract_format=0
 materials/extract_path="res://texture/LevelTiles/Materials/Floors"
 _subresources={
 "materials": {
+"AsphaltMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/AsphaltMat.tres",
+"use_external/path": "uid://che3rehh4pp6y"
+},
 "BasicFloorMat": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/BasicFloorMat.tres",
@@ -63,6 +68,11 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/GrassMat.tres",
 "use_external/path": "uid://d3371dmnyhkiw"
+},
+"GymFloorMat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://texture/LevelTiles/Materials/Floors/GymFloorMat.tres",
+"use_external/path": "uid://cddfa4fe41t8v"
 },
 "PlaygroundFloorMat": {
 "use_external/enabled": true,

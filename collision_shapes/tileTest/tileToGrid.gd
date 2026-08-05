@@ -253,7 +253,11 @@ func create_gridmap():
 					SetCellFloor("Sidewalk", I)
 				if modelName.begins_with("Grass"):
 					SetCellFloor("Grass", I)
-
+				if modelName.begins_with("Asphalt"):
+					SetCellFloor("Asphalt", I)
+				if modelName.begins_with("GymFloor"):
+					SetCellFloor("Gymnasium_Floor", I)
+					
 	# Checks each cell/entry in tileMapData
 	for I in range(totalMapTiles):
 		# Gets the info of the current cell

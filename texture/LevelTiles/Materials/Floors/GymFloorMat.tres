@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cddfa4fe41t8v"]
+
+[ext_resource type="Texture2D" uid="uid://cd2nxeoa2qx3y" path="res://texture/LevelTiles/Textures/Floors/Gymnasium_Floor.png" id="1_xfqp5"]
+
+[resource]
+resource_name = "GymFloorMat"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_xfqp5")
+roughness = 0.5
+texture_filter = 0

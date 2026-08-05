@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://che3rehh4pp6y"]
+
+[ext_resource type="Texture2D" uid="uid://ds8ce5cgqgra1" path="res://texture/LevelTiles/Textures/Floors/Asphalt.png" id="1_jsmnj"]
+
+[resource]
+resource_name = "AsphaltMat"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_jsmnj")
+roughness = 0.5
+texture_filter = 0

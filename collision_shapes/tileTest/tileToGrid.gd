@@ -35,8 +35,16 @@ const optNSEW = ["","N","S","E","W"]
 
 var bellObject
 
+var plainTreeObject
+var pineTreeObject
+var lampObject
+
 var objects
+
 var bellNodes
+var doorNodes
+var windowNodes
+var billboardNodes
 
 var cellInfo
 var heightInfo
@@ -119,7 +127,27 @@ func create_bell(pos, rot):
 
 func bell_math(rot, type):
 	return ( ( ( int( (rot + (type*2)) / (4) ) + 1 - type) % 2) * 2) - 1
-		
+
+func create_billboard(pos, billboard):
+	var billboardObject
+	if(billboard == "PlainTree"):
+		billboardObject = plainTreeObject
+	if(billboard == "PineTree"):
+		billboardObject = pineTreeObject
+	if(billboard == "Lamp"):
+		billboardObject = lampObject
+				
+	create_node(
+		billboardObject, 
+		Vector3( 
+			( pos[0] * 2 ) + 1,
+			0, 
+			( pos[1] * 2 ) + 1,
+		), 
+		Vector3(0, 0, 0), 
+		billboardNodes
+		)
+
 func clear_nodes(object):
 	for n in object.get_children():
 		n.free()
@@ -127,6 +155,10 @@ func clear_nodes(object):
 func create_gridmap():
 	
 	bellObject = load("res://entities/bell/bell.tscn")
+	
+	plainTreeObject = load("res://entities/billboards/PlainTree.tscn")
+	pineTreeObject = load("res://entities/billboards/PineTree.tscn")
+	lampObject = load("res://entities/billboards/Lamp.tscn")
 	
 	northWall = get_node("NorthWall")
 	southWall = get_node("SouthWall")
@@ -151,13 +183,16 @@ func create_gridmap():
 	ceilingMeshLib = levelCeiling.get_mesh_library()
 	
 	create_node_bases("Doors")
-	bellNodes = objects.get_node("Doors")
+	doorNodes = objects.get_node("Doors")
 
 	create_node_bases("Windows")
-	bellNodes = objects.get_node("Windows")
+	windowNodes = objects.get_node("Windows")
 	
 	create_node_bases("Bells")
 	bellNodes = objects.get_node("Bells")
+	
+	create_node_bases("Billboards")
+	billboardNodes = objects.get_node("Billboards")
 
 	# Clears self to avoid corruption and errors
 	northWall.clear()
@@ -168,7 +203,8 @@ func create_gridmap():
 	levelCeiling.clear()
 	
 	clear_nodes(bellNodes)
-
+	clear_nodes(billboardNodes)
+	
 	# Get the wall tilemap data as a PackedByteArray
 	tileMapWallData = tileMapWalls.get_tile_map_data_as_array()
 	# Get the floor tilemap data as a PackedByteArray
@@ -270,6 +306,29 @@ func create_gridmap():
 
 		#print("ci: " + str(cellInfo))
 
+		if detailInfo != null:
+			detailInfo = detailInfo.get_custom_data("Asset")
+				
+			if detailInfo.begins_with("Bell-"):
+				create_bell(
+					Vector2(I%wallSize[0], int(I/wallSize[0])), 
+					int(detailInfo.get_slice("-", 1))
+				)
+			
+			if detailInfo.begins_with("Billboard-"):
+				create_billboard(
+					Vector2(I%wallSize[0], int(I/wallSize[0])), 
+					detailInfo.get_slice("-", 1)
+				)
+			
+			if detailInfo.begins_with("Door-"):
+				wallVariant = ["Doorhole", detailInfo.get_slice("-", 3)]
+				#print(wallVariant)
+				
+		else:
+			detailInfo = "blank"
+			wallVariant = ["", ""]
+
 		# Checks if cell is blank or not, if so, ignore 
 		if cellInfo != null:
 			# Gets provided model name from tile, then converts to string
@@ -280,11 +339,6 @@ func create_gridmap():
 			else:
 				heightVal = 1
 				
-			if(detailInfo != null):
-				detailInfo = detailInfo.get_custom_data("Asset")
-			else:
-				detailInfo = "blank"
-				
 			# Checks of tile has a model name, if so, add that model to
 			# current cell
 			#print("mn1: " + str( modelType ) )
@@ -293,18 +347,6 @@ func create_gridmap():
 			#print("mn2: " + str( modelName ) )
 			#print("mnl: " + str( modelName.length() ) )
 			modelType = modelName.erase(modelType, modelName.length())
-			
-			if detailInfo.begins_with("Bell-"):
-				create_bell(
-					Vector2(I%wallSize[0], int(I/wallSize[0])), 
-					int(detailInfo.get_slice("-", 1))
-				)
-			
-			if detailInfo.begins_with("Door-"):
-				wallVariant = ["Doorhole", detailInfo.get_slice("-", 3)]
-				#print(wallVariant)
-			else:
-				wallVariant = ["", ""]
 			
 			modelDirection = modelName.get_slice("Tile", 1)
 			modelDirection = modelDirection.to_lower()
@@ -393,7 +435,6 @@ func create_gridmap():
 					SetCellCeiling("VentCeiling", I, heightVal-1)
 				if modelName.begins_with("FalseLight"):
 					SetCellCeiling("FalseLight", I, heightVal-1)
-	
 
 func SetCellCeiling(type, index, tileHeight):
 	levelCeiling.set_cell_item(Vector3i(index%ceilingSize[0], tileHeight, int(index/ceilingSize[0])), 

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5ic7q2wk8y0h"]
+
+[ext_resource type="Texture2D" uid="uid://dlcn5h6auxfgr" path="res://texture/LevelTiles/Textures/Billboards/Pine_Tree.png" id="1_csh1u"]
+
+[node name="Pinetree" type="Node3D"]
+
+[node name="PineTreeBillboard" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+pixel_size = 0.0078
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_csh1u")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2myku4rjlpch"]
+
+[ext_resource type="Texture2D" uid="uid://bq2k7386jthb5" path="res://texture/LevelTiles/Textures/Billboards/Plain_Tree.png" id="1_f1n0l"]
+
+[node name="Plaintree" type="Node3D"]
+
+[node name="PlainTreeBillboard" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+pixel_size = 0.0078
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_f1n0l")

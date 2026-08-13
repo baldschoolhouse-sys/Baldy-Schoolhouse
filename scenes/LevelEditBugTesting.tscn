@@ -88,3 +88,5 @@ data = {
 [node name="Windows" type="Node3D" parent="SchoolhouseGrid/DetailAndInteractive"]
 
 [node name="Bells" type="Node3D" parent="SchoolhouseGrid/DetailAndInteractive"]
+
+[node name="Billboards" type="Node3D" parent="SchoolhouseGrid/DetailAndInteractive"]

@@ -62,7 +62,7 @@ tile_map_data = PackedByteArray("AAAAABAAAAAGAAAAAAAAABEAAAAGAAEAAAABAA8AAAAGAAA
 tile_set = ExtResource("3_u42a1")
 
 [node name="TileMapDetail" type="TileMapLayer" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer/TilemapViewport"]
-tile_map_data = PackedByteArray("AAADAAEAAAAAAAEAAAAAABEAAAAJAAEAAAAAABIAAAAKAAEAAAAAABMAAAALAAEAAAAWAAkAAAAAAAwAAAAWAB0AAAACAAgAAAAXAAkAAAACAAwAAAAXAB0AAAAAAAgAAAAYAAkAAAACAAoAAAAYAB0AAAAAAAsAAAAlAAkAAAAAAAoAAAAlAB0AAAACAAIAAAAmAAkAAAACAAoAAAAmAB0AAAAAAAIAAAAnAAkAAAACAAkAAAAnAB0AAAAAAA0AAAAOACUAAAAHAAEAAAARAAEAAAABAAEAAAAUACEAAAABAAgAAAAVAAUAAAABAAwAAAAZAAkAAAAAAAoAAAAZAB0AAAACAAsAAAAbAAUAAAADAAoAAAAbACEAAAADAAsAAAAdACUAAAAHAAEAAAAgAAEAAAABAAEAAAAjACEAAAABAAIAAAAkAAUAAAABAAoAAAAoAAkAAAAAAAkAAAAoAB0AAAACAA0AAAAqAAUAAAADAAkAAAAqACEAAAADAA0AAAAsACUAAAAHAAEAAAAvAAEAAAABAAEAAAAIABEAAAAAAAIAAAAIABMAAAACAAYAAAA5AAEAAAACAAEAAAA5ABIAAAABAAcAAAAAADUAAAAJAAEAAAAAADYAAAAKAAEAAAAAADcAAAALAAEAAAADAEkAAAAGAAEAAAAIADUAAAAAAAIAAAAIADcAAAACAAYAAAAOAEkAAAAHAAEAAAARACUAAAABAAEAAAAUAEUAAAABAAgAAAAVACkAAAABAAwAAAAWAC0AAAAAAAwAAAAWAEEAAAACAAgAAAAXAC0AAAACAAwAAAAXAEEAAAAAAAgAAAAYAC0AAAACAAoAAAAYAEEAAAAAAAsAAAAZAC0AAAAAAAoAAAAZAEEAAAACAAsAAAAbACkAAAADAAoAAAAbAEUAAAADAAsAAAAdAEkAAAAHAAEAAAAgACUAAAABAAEAAAAjAEUAAAABAAIAAAAkACkAAAABAAoAAAAlAC0AAAAAAAoAAAAlAEEAAAACAAIAAAAmAC0AAAACAAoAAAAmAEEAAAAAAAIAAAAnAC0AAAACAAkAAAAnAEEAAAAAAA0AAAAoAC0AAAAAAAkAAAAoAEEAAAACAA0AAAAqACkAAAADAAkAAAAqAEUAAAADAA0AAAAsAEkAAAAHAAEAAAAvACUAAAABAAEAAAA5ADYAAAABAAcAAAA5AEkAAAAIAAEAAAADACUAAAAKAAEAAAA5ACUAAAAEAAEAAAA1ADQAAAACAAEAAAAKADQAAAAAAAEAAAAKADgAAAAGAAEAAAA1ADgAAAAIAAEAAAAKABAAAAAJAAEAAAA1ABAAAAADAAEAAAA1ABQAAAAFAAEAAAAxACEAAAAAAB0AAAAwACAAAAABAB0AAAArABwAAAAAAB4AAAAqAB0AAAAAAB4AAAArAB4AAAAAAB4AAAAAAAAAAAAAAB4AAAABAAEAAAAAAB4AAAAwAEQAAAAAAB4AAAAxAEUAAAAAAB4AAAAqAEAAAAAAAB0AAAAqAEIAAAAAAB0AAAArAEEAAAABAB0AAAAAAAEAAAAAAB4AAAABAAAAAAAAAB4AAAA5ADcAAAAFAAEAAAA5ADUAAAADAAEAAAAKABQAAAAKAAEAAAA=")
+tile_map_data = PackedByteArray("AAADAAEAAAAHAAEAAAAAABEAAAAGAAEAAAAAABIAAAAGAAEAAAAAABMAAAAGAAEAAAAWAAkAAAAAAAwAAAAWAB0AAAACAAgAAAAXAAkAAAACAAwAAAAXAB0AAAAAAAgAAAAYAAkAAAACAAoAAAAYAB0AAAAAAAsAAAAlAAkAAAAAAAoAAAAlAB0AAAACAAIAAAAmAAkAAAACAAoAAAAmAB0AAAAAAAIAAAAnAAkAAAACAAkAAAAnAB0AAAAAAA0AAAAOACUAAAAEAAEAAAARAAEAAAAAAAEAAAAUACEAAAABAAgAAAAVAAUAAAABAAwAAAAZAAkAAAAAAAoAAAAZAB0AAAACAAsAAAAbAAUAAAADAAoAAAAbACEAAAADAAsAAAAdACUAAAAEAAEAAAAgAAEAAAAAAAEAAAAjACEAAAABAAIAAAAkAAUAAAABAAoAAAAoAAkAAAAAAAkAAAAoAB0AAAACAA0AAAAqAAUAAAADAAkAAAAqACEAAAADAA0AAAAsACUAAAAEAAEAAAAvAAEAAAAAAAEAAAAIABEAAAAAAAIAAAAIABMAAAACAAYAAAA5AAEAAAABAAEAAAA5ABIAAAABAAcAAAAAADUAAAAGAAEAAAAAADYAAAAGAAEAAAAAADcAAAAGAAEAAAADAEkAAAAFAAEAAAAIADUAAAAAAAIAAAAIADcAAAACAAYAAAAOAEkAAAAEAAEAAAARACUAAAAAAAEAAAAUAEUAAAABAAgAAAAVACkAAAABAAwAAAAWAC0AAAAAAAwAAAAWAEEAAAACAAgAAAAXAC0AAAACAAwAAAAXAEEAAAAAAAgAAAAYAC0AAAACAAoAAAAYAEEAAAAAAAsAAAAZAC0AAAAAAAoAAAAZAEEAAAACAAsAAAAbACkAAAADAAoAAAAbAEUAAAADAAsAAAAdAEkAAAAEAAEAAAAgACUAAAAAAAEAAAAjAEUAAAABAAIAAAAkACkAAAABAAoAAAAlAC0AAAAAAAoAAAAlAEEAAAACAAIAAAAmAC0AAAACAAoAAAAmAEEAAAAAAAIAAAAnAC0AAAACAAkAAAAnAEEAAAAAAA0AAAAoAC0AAAAAAAkAAAAoAEEAAAACAA0AAAAqACkAAAADAAkAAAAqAEUAAAADAA0AAAAsAEkAAAAEAAEAAAAvACUAAAAAAAEAAAA5ADYAAAABAAcAAAA5AEkAAAADAAEAAAADACUAAAAGAAEAAAA5ACUAAAACAAEAAAA1ADQAAAABAAEAAAAKADQAAAAHAAEAAAAKADgAAAAFAAEAAAA1ADgAAAADAAEAAAAKABAAAAAHAAEAAAAKABQAAAAFAAEAAAA1ABAAAAABAAEAAAA1ABQAAAADAAEAAAAxACEAAAAAAB0AAAAwACAAAAABAB0AAAArABwAAAAAAB4AAAAqAB0AAAAAAB4AAAArAB4AAAAAAB4AAAAAAAAAAAAAAB4AAAABAAEAAAAAAB4AAAAwAEQAAAAAAB4AAAAxAEUAAAAAAB4AAAAqAEAAAAAAAB0AAAAqAEIAAAAAAB0AAAArAEEAAAABAB0AAAAAAAEAAAAAAB4AAAABAAAAAAAAAB4AAAA=")
 tile_set = ExtResource("5_1t2bp")
 
 [node name="SchoolhouseGrid" type="GridMap" parent="SchoolhouseBuilder" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling")]
@@ -125,150 +125,144 @@ data = {
 
 [node name="Bells" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive"]
 
-[node name="Bell0" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25, 0, 3)
+[node name="Bell0" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(0.70710665, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, 0.70710665, 6.88, 0, 2.88)
 
-[node name="Bell1" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell1" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 3)
 
-[node name="Bell2" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell2" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 3)
 
-[node name="Bell3" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell3" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 0, 3)
 
-[node name="Bell4" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.75, 0, 3)
+[node name="Bell4" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 115.12, 0, 2.88)
 
-[node name="Bell5" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 21, 0, 32.25)
+[node name="Bell5" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(0.70710665, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, 0.70710665, 20.88, 0, 32.88)
 
-[node name="Bell6" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 107, 0, 32.25)
+[node name="Bell6" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 107.12, 0, 32.88)
 
-[node name="Bell7" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 1, 0, 34.25)
+[node name="Bell7" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 1, 0, 35)
 
-[node name="Bell8" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell8" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 1, 0, 37)
 
-[node name="Bell9" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 1, 0, 39.75)
+[node name="Bell9" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 1, 0, 39)
 
-[node name="Bell10" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 21, 0, 41)
+[node name="Bell10" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, 20.88, 0, 41.12)
 
-[node name="Bell11" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 107, 0, 41.75)
+[node name="Bell11" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 107.12, 0, 41.12)
 
-[node name="Bell12" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell12" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 7, 0, 75)
 
-[node name="Bell13" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell13" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 29, 0, 75)
 
-[node name="Bell14" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell14" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 75)
 
-[node name="Bell15" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell15" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 59, 0, 75)
 
-[node name="Bell16" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell16" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 75)
 
-[node name="Bell17" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell17" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 89, 0, 75)
 
-[node name="Bell18" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell18" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 0, 75)
 
-[node name="Bell19" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell19" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 115, 0, 75)
 
-[node name="Bell20" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.25, 0, 105)
+[node name="Bell20" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(0.70710665, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, 0.70710665, 20.88, 0, 104.88)
 
-[node name="Bell21" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.75, 0, 105)
+[node name="Bell21" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 107.12, 0, 104.88)
 
-[node name="Bell22" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 1, 0, 106.25)
+[node name="Bell22" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 1, 0, 107)
 
-[node name="Bell23" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 115, 0, 106.25)
-
-[node name="Bell24" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell23" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 1, 0, 109)
 
-[node name="Bell25" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 1, 0, 111.75)
+[node name="Bell24" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 1, 0, 111)
 
-[node name="Bell26" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 115, 0, 111.75)
+[node name="Bell25" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, 20.88, 0, 113.12)
 
-[node name="Bell27" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.25, 0, 113)
+[node name="Bell26" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 107.12, 0, 113.12)
 
-[node name="Bell28" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 107.75, 0, 113)
+[node name="Bell27" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, 6.88, 0, 147.12)
 
-[node name="Bell29" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.25, 0, 147)
-
-[node name="Bell30" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell28" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 29, 0, 147)
 
-[node name="Bell31" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell29" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 59, 0, 147)
 
-[node name="Bell32" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+[node name="Bell30" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 89, 0, 147)
 
-[node name="Bell33" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 115.75, 0, 147)
+[node name="Bell31" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("14_m5q2y")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 115.12, 0, 147.12)
 
 [node name="Billboards" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive"]
 
-[node name="Lamp0" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
+[node name="Lamp0" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 
-[node name="Lamp1" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
+[node name="Lamp1" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
 
-[node name="Lamp2" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
+[node name="Lamp2" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
 
-[node name="Lamp3" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
+[node name="Lamp3" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
 
-[node name="Lamp4" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
+[node name="Lamp4" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 0, 57)
 
-[node name="Lamp5" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
+[node name="Lamp5" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 59)
 
-[node name="Lamp6" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
+[node name="Lamp6" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 0, 61)
 
-[node name="Pinetree7" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("16_2db2t")]
+[node name="Pinetree7" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("16_2db2t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97, 0, 65)
 
-[node name="Plaintree8" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("7_3jrh5")]
+[node name="Plaintree8" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("7_3jrh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 67)
 
-[node name="Plaintree9" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("7_3jrh5")]
+[node name="Plaintree9" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("7_3jrh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 129)
 
-[node name="Pinetree10" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("16_2db2t")]
+[node name="Pinetree10" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("16_2db2t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 0, 131)
 
-[node name="Plaintree11" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("7_3jrh5")]
+[node name="Plaintree11" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("7_3jrh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 133)
 
-[node name="Lamp12" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
+[node name="Lamp12" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97, 0, 137)
 
-[node name="Lamp13" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
+[node name="Lamp13" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Billboards" instance=ExtResource("17_435lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 139)
 
 [node name="Student" parent="." node_paths=PackedStringArray("tileMap") instance=ExtResource("2_dycdf")]

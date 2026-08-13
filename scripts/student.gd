@@ -7,12 +7,13 @@ var debugMap
 const MOUSE_SENS: float = 0.2
 const RUNNING_MULTIPLIER_VALUE = 1.8
 const MAX_SPEED: float = 7.2
-const ACCEL: float = 12
-const DEACCEL: float = 1
+const ACCEL: float = 14
+const DEACCEL: float = 14
+const DEACCEL_RUNDIFF: float = 4
 const PLAYER_REACH = 4.0
 
 var cur_speed: float = 4
-var cur_speed_2: float = 4
+var cur_speed_2: Vector3 = Vector3(0, 0, 0)
 
 var collisionNode
 var cameraNode
@@ -107,24 +108,24 @@ func _physics_process(delta) -> void:
 		else:
 			runningMultiplier = 1.0
 			
-		cur_speed = move_toward(cur_speed, MAX_SPEED*runningMultiplier, (ACCEL*runningMultiplier) * delta)
-		cur_speed_2 = cur_speed
+		cur_speed = move_toward(cur_speed, 
+			MAX_SPEED*runningMultiplier, 
+			(ACCEL*runningMultiplier) * delta)
 		velocity.x = cur_speed * move_direction.x
 		velocity.z = cur_speed * move_direction.z
+		
+		cur_speed_2 = move_direction
 	else:
-		cur_speed_2 = move_toward(cur_speed_2, 0, DEACCEL * delta)
-		
-		if(cur_speed_2 > 4.0):
-			velocity.x *= (cur_speed_2 / (MAX_SPEED*RUNNING_MULTIPLIER_VALUE))
-			velocity.z *= (cur_speed_2 / (MAX_SPEED*RUNNING_MULTIPLIER_VALUE))
-		else:
-			velocity.x *= (cur_speed_2 / MAX_SPEED)
-			velocity.z *= (cur_speed_2 / MAX_SPEED)
-			
+		cur_speed = move_toward(cur_speed, 0, 
+			(DEACCEL - ( DEACCEL_RUNDIFF * ( (cur_speed) / ( MAX_SPEED*RUNNING_MULTIPLIER_VALUE) ) ) ) * delta
+			)
+		velocity.x = cur_speed * cur_speed_2.x
+		velocity.z = cur_speed * cur_speed_2.z
+	
 		if(cur_speed >= 12.0):
-				skidNode.play()
-		
-		cur_speed = 0
+			skidNode.play()
+	
+		#cur_speed = 0
 	
 	#print("cur_speed: " + str(cur_speed))
 	#print("cur_speed_2: " + str(cur_speed_2))

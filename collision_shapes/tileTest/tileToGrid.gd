@@ -109,24 +109,28 @@ func create_node(object, pos, rot, destination):
 	instantiatedNode.set_owner(EditorInterface.get_edited_scene_root())
 
 func create_bell(pos, rot):
-	#if ( int(rot) % 2 ) != 0:
 	create_node(
 		bellObject, 
 		Vector3( 
-			( pos[0] * 2 ) + ( ( int(rot) % 2 ) * (
-				( 0.12 * bell_math(rot, 0)  ) ) ) + 1,
+			( pos[0] * 2 ) + bell_math(rot, 1) + 1,
 			0, 
-			( pos[1] * 2 ) + ( ( int(rot) % 2 ) * (
-				( 0.12 * bell_math(rot, 1)  ) ) ) + 1
+			( pos[1] * 2 ) + bell_math(rot, 0) + 1
 		), 
-		Vector3(0, -deg_to_rad(rot * (45.0)), 0), 
+		Vector3(0, -deg_to_rad(int(rot/3) * (90.0)), 0), 
 		bellNodes
 		)
-		#print(rot)
 		#print( str( bell_math(rot, 0) ) + " " + str( bell_math(rot, 1) ))
 
 func bell_math(rot, type):
-	return ( ( ( int( (rot + (type*2)) / (4) ) + 1 - type) % 2) * 2) - 1
+	return (-0.75 + (0.75 * (rot % 3))) * (int(int(rot/3)+type) % 2)
+
+		#Vector3( 
+		#	( pos[0] * 2 ) + ( ( int(rot) % 2 ) * (
+		#		( 0.12 * bell_math(rot, 0)  ) ) ) + 1,
+		#	0, 
+		#	( pos[1] * 2 ) + ( ( int(rot) % 2 ) * (
+		#		( 0.12 * bell_math(rot, 1)  ) ) ) + 1
+		#), 
 
 func create_billboard(pos, billboard):
 	var billboardObject

@@ -43,7 +43,13 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://texture/LevelTiles/Materials/Bell/BellMat.tres",
 "use_external/path": "uid://c7eacp2ggo4e3"
-}
+},
+"BellSizeReference": null,
+"CeilingDebugMat": null,
+"EastWallDebugMat": null,
+"FloorDebugMat": null,
+"SouthWallDebugMat": null,
+"WestWallDebugMat": null
 }
 }
 gltf/naming_version=2

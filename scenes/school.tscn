@@ -51,7 +51,6 @@ tile_map_data = PackedByteArray("AAB/AN8AAAAAAAQAAACAAN8AAAABAAQAAACAAMgAAAABAAU
 tile_set = ExtResource("10_ayo07")
 
 [node name="SchoolhouseGrid" type="GridMap" parent="Node" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3886862, -0.25793886, 1.1565399)
 collision_layer = 2
 script = ExtResource("11_i33fr")
 tileMapDetail = NodePath("../Tilemaps/TileMapDetail")

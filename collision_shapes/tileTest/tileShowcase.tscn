@@ -42,7 +42,6 @@ environment = ExtResource("1_1k3sd")
 [node name="Node" type="Node" parent="."]
 
 [node name="SchoolhouseGrid" type="GridMap" parent="Node"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3886862, -0.25793886, 1.1565399)
 collision_layer = 2
 script = ExtResource("3_3m6cs")
 
@@ -160,11 +159,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, 5)
 [node name="YellowWindow" parent="Node/SchoolhouseGrid/DetailAndInteractive/Windows" instance=ExtResource("28_euouq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 5)
 
-[node name="Bell" parent="Node/SchoolhouseGrid/DetailAndInteractive" instance=ExtResource("29_wcvw5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.000001, 0, 5)
+[node name="Bells" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive"]
 
-[node name="Bell2" parent="Node/SchoolhouseGrid/DetailAndInteractive" instance=ExtResource("29_wcvw5")]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 12.88, 0, 4.88)
+[node name="Bell0" parent="Node/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("29_wcvw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.25, 0, 5)
+
+[node name="Bell1" parent="Node/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("29_wcvw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 5)
+
+[node name="Bell2" parent="Node/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("29_wcvw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.75, 0, 5)
+
+[node name="Bell4" parent="Node/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("29_wcvw5")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 13, 0, 4.25)
+
+[node name="Bell6" parent="Node/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("29_wcvw5")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 13, 0, 7)
+
+[node name="Bell8" parent="Node/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("29_wcvw5")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 13, 0, 9.75)
 
 [node name="Student" parent="." instance=ExtResource("29_o4p83")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.20727, 0.00012493134, 13.469321)

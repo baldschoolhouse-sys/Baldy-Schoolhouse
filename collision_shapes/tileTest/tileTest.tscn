@@ -66,7 +66,6 @@ tile_map_data = PackedByteArray("AAADAAEAAAAAAAEAAAAAABEAAAAJAAEAAAAAABIAAAAKAAE
 tile_set = ExtResource("5_1t2bp")
 
 [node name="SchoolhouseGrid" type="GridMap" parent="SchoolhouseBuilder" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3886862, -0.25793886, 1.1565399)
 collision_layer = 2
 script = ExtResource("7_hjwsv")
 tileMapDetail = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapDetail")
@@ -272,5 +271,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97, 0, 137)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 139)
 
 [node name="Student" parent="." node_paths=PackedStringArray("tileMap") instance=ExtResource("2_dycdf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2072697, 0.00012493134, 38.469322)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 37)
 tileMap = NodePath("../SchoolhouseBuilder/Tilemaps")

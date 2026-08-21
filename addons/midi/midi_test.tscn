@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://gagd5we05tdb"]
+
+[ext_resource type="Script" uid="uid://cyuci1wxsqwn6" path="res://midi_test.gd" id="1_2m4ik"]
+[ext_resource type="PackedScene" uid="uid://bdvkdv77fslji" path="res://addons/midi/ADSR.tscn" id="2_5wmkq"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="3_nimpg"]
+
+[node name="Midi_test" type="Node2D"]
+script = ExtResource("1_2m4ik")
+
+[node name="ADSR" parent="." instance=ExtResource("2_5wmkq")]
+
+[node name="MidiPlayer" parent="." instance=ExtResource("3_nimpg")]
+max_polyphony = 256
+file = "res://addons/midi/Baldy's Schoolhouse.mid"
+playing = true
+loop = true
+soundfont = "res://addons/midi/Windows_Redux.sf2"
+
+[connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

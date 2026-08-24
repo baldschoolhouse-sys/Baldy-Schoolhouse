@@ -8,10 +8,10 @@
 [node name="ADSR" parent="." instance=ExtResource("2_5wmkq")]
 
 [node name="MidiPlayer" parent="." instance=ExtResource("3_nimpg")]
-max_polyphony = 16
-file = "res://audio/midi/Baldy's Schoolhouse.mid"
+max_polyphony = 256
+file = "res://audio/midi/Title Theme.mid"
 playing = true
-loop = true
-soundfont = "res://addons/midi/Windows_Redux.sf2"
+soundfont = "res://addons/midi/GM_Roland.sf2"
+mix_target = 2
 
 [connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]

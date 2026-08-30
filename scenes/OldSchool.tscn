@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://e5xv4f6tvo80"]
+[gd_scene load_steps=16 format=4 uid="uid://e5xv4f6tvo80"]
 
 [ext_resource type="Environment" uid="uid://bf68s7u74uc27" path="res://graphics/school_house_environment.tres" id="5_wa0yv"]
 [ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="6_cp02s"]
 [ext_resource type="TileSet" uid="uid://b6mfwtklq0l5q" path="res://collision_shapes/tileTest/heightTileSet.tres" id="7_5l7rx"]
+[ext_resource type="TileSet" uid="uid://b553yrq01jpxv" path="res://collision_shapes/tileTest/extraTileSet.tres" id="7_pm5bj"]
 [ext_resource type="TileSet" uid="uid://dijfaqkpj2de8" path="res://collision_shapes/tileTest/floorTileSet.tres" id="8_1e8y2"]
 [ext_resource type="TileSet" uid="uid://6wwm7bwrdahg" path="res://collision_shapes/tileTest/ceilingTileSet.tres" id="9_2i3lj"]
 [ext_resource type="TileSet" uid="uid://dc2l4y11wj55m" path="res://collision_shapes/tileTest/wallTileSet.tres" id="10_7sa85"]
@@ -57,7 +58,10 @@ tile_set = ExtResource("10_7sa85")
 [node name="TileMapDetail" type="TileMapLayer" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer/TilemapViewport"]
 tile_set = ExtResource("11_wr87n")
 
-[node name="SchoolhouseGrid" type="GridMap" parent="SchoolhouseBuilder" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling")]
+[node name="TileMapExtra" type="TileMapLayer" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("7_pm5bj")
+
+[node name="SchoolhouseGrid" type="GridMap" parent="SchoolhouseBuilder" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling", "tileMapExtra")]
 collision_layer = 2
 script = ExtResource("12_hevoe")
 tileMapDetail = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapDetail")
@@ -65,6 +69,7 @@ tileMapHeight = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/T
 tileMapWalls = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapWalls")
 tileMapFloors = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapFloors")
 tileMapCeiling = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapCeiling")
+tileMapExtra = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapExtra")
 
 [node name="NorthWall" type="GridMap" parent="SchoolhouseBuilder/SchoolhouseGrid"]
 mesh_library = ExtResource("13_h5tw0")

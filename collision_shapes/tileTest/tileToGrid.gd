@@ -27,6 +27,7 @@ extends GridMap
 @export var tileMapWalls: TileMapLayer
 @export var tileMapFloors: TileMapLayer
 @export var tileMapCeiling: TileMapLayer
+@export var tileMapExtra: TileMapLayer
 
 const optNSEW = ["","N","S","E","W"]
 
@@ -49,6 +50,7 @@ var billboardNodes
 var cellInfo
 var heightInfo
 var detailInfo
+var extraInfo
 
 var modelName
 var modelType
@@ -244,6 +246,7 @@ func create_gridmap():
 	#ceilingSize = tileMapCeiling.get_used_rect().size + Vector2i(1, 1)
 	heightSize = tileMapHeight.get_used_rect().size + Vector2i(1, 1)
 	detailSize = tileMapDetail.get_used_rect().size
+	extraInfo = tileMapExtra.get_used_rect().size
 
 	if(wallSize[0] == 0):
 		wallSize = Vector2i(1, 1)
@@ -307,8 +310,7 @@ func create_gridmap():
 		
 		heightInfo = tileMapHeight.get_cell_tile_data(cellPos)
 		detailInfo = tileMapDetail.get_cell_tile_data(cellPos)
-
-		#print("ci: " + str(cellInfo))
+		extraInfo = tileMapExtra.get_cell_tile_data(cellPos)
 
 		if detailInfo != null:
 			detailInfo = detailInfo.get_custom_data("Asset")
@@ -337,7 +339,19 @@ func create_gridmap():
 		if cellInfo != null:
 			# Gets provided model name from tile, then converts to string
 			modelName = String(cellInfo.get_custom_data("Model"))
+			var modelName2 = null
+			var modelType2 = null
+			var modelDirection2 = null
 			
+			if extraInfo != null:
+				modelName2 = String(extraInfo.get_custom_data("Model"))
+				modelType2 = modelName2.findn("tile")
+				modelType2 = modelName2.erase(modelType2, modelName2.length())
+				modelDirection2 = modelName2.get_slice("Tile", 1)
+				modelDirection2 = modelDirection2.to_lower()
+			else:
+				modelName2 = ""
+				
 			if(heightInfo != null):
 				heightVal = heightInfo.get_custom_data("Value")
 			else:
@@ -355,6 +369,7 @@ func create_gridmap():
 			modelDirection = modelName.get_slice("Tile", 1)
 			modelDirection = modelDirection.to_lower()
 			
+						
 			var H = 0
 			while H < heightVal: 
 				if modelName != "":
@@ -365,21 +380,14 @@ func create_gridmap():
 					pass
 				H += 1
 			
+			var H2 = H
+			
 			var heightInfoNSEW = [
 				tileMapHeight.get_cell_tile_data( Vector2( cellPos[0], cellPos[1]-1 )),
 				tileMapHeight.get_cell_tile_data( Vector2( cellPos[0], cellPos[1]+1 )),
 				tileMapHeight.get_cell_tile_data( Vector2( cellPos[0]+1, cellPos[1] )),
 				tileMapHeight.get_cell_tile_data( Vector2( cellPos[0]-1, cellPos[1] ))
 			]
-			
-			#var heightInfoNSEW = [
-			#	tileMapHeight.get_cell_tile_data( Vector2( I, I) ),
-			#	tileMapHeight.get_cell_tile_data( Vector2( I, I) ),
-			#	tileMapHeight.get_cell_tile_data( Vector2( I, I) ),
-			#	tileMapHeight.get_cell_tile_data( Vector2( I, I) )
-			#	]
-			
-			#print(heightInfoNSEW)
 			
 			var heightValNSEW = []
 			
@@ -392,7 +400,7 @@ func create_gridmap():
 			#print(heightValNSEW)
 			#print("H : " + str(H))
 			#print("Mx : " + str( min(heightValNSEW[0], heightValNSEW[1], heightValNSEW[2], heightValNSEW[3]) ) )
-			
+
 			while H > min(heightValNSEW[0], heightValNSEW[1], heightValNSEW[2], heightValNSEW[3]): 
 				modelDirection = ""
 				if modelName != "":
@@ -404,11 +412,36 @@ func create_gridmap():
 						modelDirection += "e"
 					if(H > heightValNSEW[3]):
 						modelDirection += "w"
-					#print(modelDirection)
-					#print(modelName)
+
 					setWall(modelName, modelDirection, I, H-1)
 				H -= 1
+				
+			H = 10
 			
+			#print(heightValNSEW)
+			
+			while (H) > 0 and H >= heightVal:  
+
+				var modelDirection3 = ""
+				#print(modelDirection2)
+				
+				if modelName2 != "":
+					if(H < heightValNSEW[0] and modelDirection2.contains("n")):
+						modelDirection3 += "n"
+					if(H < heightValNSEW[1] and modelDirection2.contains("s")):
+						modelDirection3 += "s"
+					if(H < heightValNSEW[2] and modelDirection2.contains("e")):
+						modelDirection3 += "e"
+					if(H < heightValNSEW[3] and modelDirection2.contains("w")):
+						modelDirection3 += "w"
+				
+				#print(modelDirection3)
+				
+				setWall(modelName2, modelDirection3, I, H)
+				H -= 1
+#					
+#				
+	
 
 				
 	# Checks each cell/entry in tileCeilingData

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cccabctvg23aq"]
+[gd_scene load_steps=16 format=4 uid="uid://cccabctvg23aq"]
 
 [ext_resource type="Environment" uid="uid://bf68s7u74uc27" path="res://graphics/school_house_environment.tres" id="1_sgux7"]
 [ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="2_tvm4l"]
@@ -8,6 +8,7 @@
 [ext_resource type="TileSet" uid="uid://dc2l4y11wj55m" path="res://collision_shapes/tileTest/wallTileSet.tres" id="6_tmgso"]
 [ext_resource type="TileSet" uid="uid://bn24oa1shxaa5" path="res://collision_shapes/tileTest/detailTileSet.tres" id="7_oflah"]
 [ext_resource type="Script" uid="uid://jcpko70p5lkr" path="res://collision_shapes/tileTest/tileToGrid.gd" id="8_ffbx7"]
+[ext_resource type="TileSet" uid="uid://b553yrq01jpxv" path="res://collision_shapes/tileTest/extraTileSet.tres" id="8_y64p1"]
 [ext_resource type="MeshLibrary" uid="uid://dyiwsig75frdf" path="res://collision_shapes/tileTest/gridmaps/Walls/NorthWallsMeshLib.tres" id="9_rqa4p"]
 [ext_resource type="MeshLibrary" uid="uid://du71r3f46gso5" path="res://collision_shapes/tileTest/gridmaps/Walls/SouthWallsMeshLib.tres" id="10_qh3t2"]
 [ext_resource type="MeshLibrary" uid="uid://icwg0c3nm6mk" path="res://collision_shapes/tileTest/gridmaps/Walls/EastWallsMeshLib.tres" id="11_g4ys1"]
@@ -42,7 +43,10 @@ tile_set = ExtResource("6_tmgso")
 tile_map_data = PackedByteArray("AAAJAAIAAAAEABUAAAAJAAMAAAAEABYAAAAJAAQAAAAEABcAAAAJAAUAAAAEABUAAAAJAAYAAAAEABYAAAAJAAcAAAAEABcAAAAJAAgAAAAEABUAAAAJAAkAAAAEABYAAAAJAAoAAAAEABcAAAAGAAEAAAAHAAEAAAABAA8AAAAFAAEAAAAJAAEAAAABAAEAAAAJAA4AAAABAAgAAAAJAA8AAAADAAEAAAAKAA4AAAADAAgAAAA=")
 tile_set = ExtResource("7_oflah")
 
-[node name="SchoolhouseGrid" type="GridMap" parent="." node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling")]
+[node name="TileMapExtra" type="TileMapLayer" parent="."]
+tile_set = ExtResource("8_y64p1")
+
+[node name="SchoolhouseGrid" type="GridMap" parent="." node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling", "tileMapExtra")]
 collision_layer = 2
 script = ExtResource("8_ffbx7")
 tileMapDetail = NodePath("../TileMapDetail")
@@ -50,6 +54,7 @@ tileMapHeight = NodePath("../TileMapHeight")
 tileMapWalls = NodePath("../TileMapWalls")
 tileMapFloors = NodePath("../TileMapFloors")
 tileMapCeiling = NodePath("../TileMapCeiling")
+tileMapExtra = NodePath("../TileMapExtra")
 
 [node name="NorthWall" type="GridMap" parent="SchoolhouseGrid"]
 mesh_library = ExtResource("9_rqa4p")

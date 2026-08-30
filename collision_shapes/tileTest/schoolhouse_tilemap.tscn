@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbvjak0ib83d6"]
+[gd_scene load_steps=7 format=3 uid="uid://dbvjak0ib83d6"]
 
 [ext_resource type="TileSet" uid="uid://b6mfwtklq0l5q" path="res://collision_shapes/tileTest/heightTileSet.tres" id="1_eyo5k"]
 [ext_resource type="TileSet" uid="uid://dijfaqkpj2de8" path="res://collision_shapes/tileTest/floorTileSet.tres" id="2_iqudi"]
 [ext_resource type="TileSet" uid="uid://6wwm7bwrdahg" path="res://collision_shapes/tileTest/ceilingTileSet.tres" id="3_go1fs"]
 [ext_resource type="TileSet" uid="uid://dc2l4y11wj55m" path="res://collision_shapes/tileTest/wallTileSet.tres" id="4_dqipu"]
 [ext_resource type="TileSet" uid="uid://bn24oa1shxaa5" path="res://collision_shapes/tileTest/detailTileSet.tres" id="5_u3rmt"]
+[ext_resource type="TileSet" uid="uid://b553yrq01jpxv" path="res://collision_shapes/tileTest/extraTileSet.tres" id="6_iqudi"]
 
 [node name="Tilemaps" type="Node2D"]
 
@@ -36,3 +37,6 @@ tile_set = ExtResource("4_dqipu")
 
 [node name="TileMapDetail" type="TileMapLayer" parent="TilemapViewportContainer/TilemapViewport"]
 tile_set = ExtResource("5_u3rmt")
+
+[node name="TileMapExtra" type="TileMapLayer" parent="TilemapViewportContainer/TilemapViewport"]
+tile_set = ExtResource("6_iqudi")

@@ -21,7 +21,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=30
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
-config/icon="uid://b7r47htwq0xmx"
+config/icon="uid://cgta1qgq83ajc"
 boot_splash/minimum_display_time=990
 
 [display]

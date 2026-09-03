@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgta1qgq83ajc"
-path="res://.godot/imported/BSH.png-b22fbcc5c2cd239b2aa520342d89c5ca.ctex"
+path="res://.godot/imported/BSH.png-e184fa1fa097b630aa5f20e5113f0e8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BSH.png"
-dest_files=["res://.godot/imported/BSH.png-b22fbcc5c2cd239b2aa520342d89c5ca.ctex"]
+source_file="res://sprite/BSH.png"
+dest_files=["res://.godot/imported/BSH.png-e184fa1fa097b630aa5f20e5113f0e8f.ctex"]
 
 [params]
 

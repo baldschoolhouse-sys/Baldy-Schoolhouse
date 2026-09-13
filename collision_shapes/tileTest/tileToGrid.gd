@@ -282,24 +282,8 @@ func create_gridmap():
 			# Checks of tile has a model name, if so, add that model to
 			# current cell
 			if modelName != "":
-				if modelName.begins_with("FloorDebug"):
-					SetCellFloor("FloorDebug", I)
-				if modelName.begins_with("BasicFloor"):
-					SetCellFloor("BasicFloor", I)
-				if modelName.begins_with("ClassicFloor"):
-					SetCellFloor("ClassicFloor", I)
-				if modelName.begins_with("CarpetFloor"):
-					SetCellFloor("CarpetFloor", I)
-				if modelName.begins_with("PlaygroundFloor"):
-					SetCellFloor("PlaygroundFloor", I)
-				if modelName.begins_with("Sidewalk"):
-					SetCellFloor("Sidewalk", I)
-				if modelName.begins_with("Grass"):
-					SetCellFloor("Grass", I)
-				if modelName.begins_with("Asphalt"):
-					SetCellFloor("Asphalt", I)
-				if modelName.begins_with("GymFloor"):
-					SetCellFloor("Gymnasium_Floor", I)
+				SetCellFloor(modelName, I)
+				#print(GetCellFloor(I))
 					
 	# Checks each cell/entry in tileMapData
 	for I in range(totalMapTiles):
@@ -329,6 +313,9 @@ func create_gridmap():
 			
 			if detailInfo.begins_with("Door-"):
 				wallVariant = ["Doorhole", detailInfo.get_slice("-", 3)]
+			
+			if detailInfo.begins_with("Window-"):
+				wallVariant = ["Window", detailInfo.get_slice("-", 2)]
 				#print(wallVariant)
 				
 		else:
@@ -368,7 +355,6 @@ func create_gridmap():
 			
 			modelDirection = modelName.get_slice("Tile", 1)
 			modelDirection = modelDirection.to_lower()
-			
 						
 			var H = 0
 			while H < heightVal: 
@@ -379,9 +365,7 @@ func create_gridmap():
 						setWall(modelName, modelDirection, I, H)
 					pass
 				H += 1
-			
-			var H2 = H
-			
+
 			var heightInfoNSEW = [
 				tileMapHeight.get_cell_tile_data( Vector2( cellPos[0], cellPos[1]-1 )),
 				tileMapHeight.get_cell_tile_data( Vector2( cellPos[0], cellPos[1]+1 )),
@@ -439,9 +423,6 @@ func create_gridmap():
 				
 				setWall(modelName2, modelDirection3, I, H)
 				H -= 1
-#					
-#				
-	
 
 				
 	# Checks each cell/entry in tileCeilingData
@@ -480,6 +461,12 @@ func SetCellCeiling(type, index, tileHeight):
 func SetCellFloor(type, index):
 	levelFloor.set_cell_item(Vector3i(index%floorSize[0], 0, int(index/floorSize[0])), 
 	floorMeshLib.find_item_by_name(type), 0)
+
+func GetCellFloor(index):
+	var temp = floorMeshLib.get_item_mesh(levelFloor.get_cell_item(Vector3i(index%floorSize[0], 0, int(index/floorSize[0]))))
+	
+	#floorMeshLib.find_item_by_name(type), 0
+	return(temp)
 
 func setWall(mn, md, i, h, wallV = ["", ""]):
 	if mn.begins_with("Debug"):

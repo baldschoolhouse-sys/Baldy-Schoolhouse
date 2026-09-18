@@ -318,9 +318,9 @@ func create_gridmap():
 				wallVariant = ["DoubleDoor", detailInfo.get_slice("-", 3)]
 
 			if detailInfo.begins_with("Door-L"):
-				wallVariant = ["-LDDoor", detailInfo.get_slice("-", 3)]
+				wallVariant = ["LDDoor", detailInfo.get_slice("-", 3)]
 			if detailInfo.begins_with("Door-R"):
-				wallVariant = ["-RDDoor", detailInfo.get_slice("-", 3)]
+				wallVariant = ["RDDoor", detailInfo.get_slice("-", 3)]
 				
 			if detailInfo.begins_with("Window-"):
 				wallVariant = ["Window", detailInfo.get_slice("-", 2)]

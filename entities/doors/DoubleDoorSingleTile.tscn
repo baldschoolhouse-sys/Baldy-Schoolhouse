@@ -50,7 +50,7 @@ DoorClosed = ExtResource("2_41gg7")
 DoorOpen = ExtResource("3_kw1nh")
 
 [node name="Door" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1, -0.01)
+transform = Transform3D(1.03, 0, 0, 0, -4.371139e-08, -1.03, 0, 1, -4.502273e-08, 0, 1.015, -0.01)
 material_override = ExtResource("2_41gg7")
 mesh = SubResource("ArrayMesh_pc2eh")
 skeleton = NodePath("")

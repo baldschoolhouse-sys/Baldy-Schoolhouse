@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://wltdrgsreurn"]
+[gd_scene load_steps=10 format=3 uid="uid://cqgqn85vj3whw"]
 
-[ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_o7pec"]
-[ext_resource type="Material" uid="uid://g32pjsn0d473" path="res://texture/LevelTiles/Materials/Doors/EnglishDoorClosed.tres" id="2_o7pec"]
-[ext_resource type="Material" uid="uid://conna1a8shwil" path="res://texture/LevelTiles/Materials/Doors/EnglishDoorOpen.tres" id="3_gpivi"]
-[ext_resource type="PackedScene" uid="uid://gmx6f7hb2jb8" path="res://entities/doors/DoorCollider.tscn" id="4_a1r5h"]
-[ext_resource type="PackedScene" uid="uid://6jv1l2crg2ym" path="res://entities/doors/DoorConnector.tscn" id="5_4s6c4"]
+[ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_41gg7"]
+[ext_resource type="Material" uid="uid://dwcvq3vd6wcoq" path="res://texture/LevelTiles/Materials/Doors/DoubleDoorSingleTileClosed.tres" id="2_41gg7"]
+[ext_resource type="Material" uid="uid://b7tmejvgkbe1p" path="res://texture/LevelTiles/Materials/Doors/DoubleDoorSingleTileOpen.tres" id="3_kw1nh"]
+[ext_resource type="PackedScene" uid="uid://6jv1l2crg2ym" path="res://entities/doors/DoorConnector.tscn" id="4_gjrbj"]
+[ext_resource type="PackedScene" uid="uid://gmx6f7hb2jb8" path="res://entities/doors/DoorCollider.tscn" id="4_xsk3t"]
+[ext_resource type="PackedScene" uid="uid://bnxbx8tshhqfk" path="res://entities/doors/AutoOpenCollider.tscn" id="6_i8ib4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgkwk"]
 
@@ -38,21 +39,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_72073")
 
-[node name="EnglishDoor" type="Node3D"]
-script = ExtResource("1_o7pec")
-DoorClosed = ExtResource("2_o7pec")
-DoorOpen = ExtResource("3_gpivi")
+[node name="DoubleDoorSingleTile" type="Node3D"]
+script = ExtResource("1_41gg7")
+DoubleDoor = true
+DoorClosed = ExtResource("2_41gg7")
+DoorOpen = ExtResource("3_kw1nh")
 
 [node name="Door" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1, -0.01)
-material_override = ExtResource("2_o7pec")
+transform = Transform3D(1.03, 0, 0, 0, -4.371139e-08, -1.03, 0, 1, -4.502273e-08, 0, 1.015, -0.01)
+material_override = ExtResource("2_41gg7")
 mesh = SubResource("ArrayMesh_okfpq")
 skeleton = NodePath("")
 
-[node name="SingleDoorCollider" parent="." instance=ExtResource("4_a1r5h")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, -0.01)
+[node name="DoorConnector" parent="." instance=ExtResource("4_gjrbj")]
 
-[node name="DoorConnector" parent="." instance=ExtResource("5_4s6c4")]
+[node name="DoorCollider" parent="." instance=ExtResource("4_xsk3t")]
+
+[node name="AutoOpenCollider" parent="." instance=ExtResource("6_i8ib4")]
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cqgqn85vj3whw"]
+
+[ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_41gg7"]
+[ext_resource type="Material" uid="uid://dwcvq3vd6wcoq" path="res://texture/LevelTiles/Materials/Doors/DoubleDoorSingleTileClosed.tres" id="2_41gg7"]
+[ext_resource type="Material" uid="uid://b7tmejvgkbe1p" path="res://texture/LevelTiles/Materials/Doors/DoubleDoorSingleTileOpen.tres" id="3_kw1nh"]
+[ext_resource type="PackedScene" uid="uid://6jv1l2crg2ym" path="res://entities/doors/DoorConnector.tscn" id="4_gjrbj"]
+[ext_resource type="PackedScene" uid="uid://gmx6f7hb2jb8" path="res://entities/doors/DoorCollider.tscn" id="4_xsk3t"]
+[ext_resource type="PackedScene" uid="uid://bnxbx8tshhqfk" path="res://entities/doors/AutoOpenCollider.tscn" id="6_i8ib4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgkwk"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_72073"]
+_surfaces = [{
+"aabb": AABB(-1, -0.97987485, -0.99999994, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_okfpq"]
+resource_name = "Door_DoorPlanes"
+_surfaces = [{
+"aabb": AABB(-1, -0.97987485, -0.99999994, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_pgkwk"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_72073")
+
+[node name="DoubleDoorSingleTile" type="Node3D"]
+script = ExtResource("1_41gg7")
+DoubleDoor = true
+DoorClosed = ExtResource("2_41gg7")
+DoorOpen = ExtResource("3_kw1nh")
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.03, 0, 0, 0, -4.371139e-08, -1.03, 0, 1, -4.502273e-08, 0, 1.015, -0.01)
+material_override = ExtResource("2_41gg7")
+mesh = SubResource("ArrayMesh_okfpq")
+skeleton = NodePath("")
+
+[node name="DoorConnector" parent="." instance=ExtResource("4_gjrbj")]
+
+[node name="DoorCollider" parent="." instance=ExtResource("4_xsk3t")]
+
+[node name="AutoOpenCollider" parent="." instance=ExtResource("6_i8ib4")]
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="on_timeout"]

@@ -1,44 +1,39 @@
-[gd_scene load_steps=8 format=4 uid="uid://ghjxspa5uak4"]
+[gd_scene load_steps=9 format=3 uid="uid://ghjxspa5uak4"]
 
 [ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="1_8s20k"]
 [ext_resource type="Material" uid="uid://cgl7w5i7xw3lf" path="res://texture/LevelTiles/Materials/Doors/MathDoorClosed.tres" id="2_8s20k"]
 [ext_resource type="Material" uid="uid://bfckkp0q1pvvg" path="res://texture/LevelTiles/Materials/Doors/MathDoorOpen.tres" id="3_q5u0e"]
-[ext_resource type="PackedScene" uid="uid://gmx6f7hb2jb8" path="res://entities/doors/SingleDoorCollider.tscn" id="4_8s20k"]
+[ext_resource type="PackedScene" uid="uid://gmx6f7hb2jb8" path="res://entities/doors/DoorCollider.tscn" id="4_8s20k"]
+[ext_resource type="PackedScene" uid="uid://6jv1l2crg2ym" path="res://entities/doors/DoorConnector.tscn" id="5_q5u0e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgkwk"]
-resource_name = "DoorClosed"
-transparency = 4
-albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
-roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_72073"]
 _surfaces = [{
-"aabb": AABB(-1, -0.99987483, -0.99999994, 2, 0.01999998, 2),
+"aabb": AABB(-1, -0.97987485, -0.99999994, 2, 1e-05, 2),
 "format": 34896613377,
-"index_count": 12,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
-"name": "DoorClosed",
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAAAAAAAAAAAA//8AAP//AAAAAP////8AAP////8AAAAA////////AAAAAP//AAAAAA==")
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pc2eh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_okfpq"]
 resource_name = "Door_DoorPlanes"
 _surfaces = [{
-"aabb": AABB(-1, -0.99987483, -0.99999994, 2, 0.01999998, 2),
-"attribute_data": PackedByteArray("AAD/////AAAAAAAA/////wAA/////wAA/////wAAAAA="),
+"aabb": AABB(-1, -0.97987485, -0.99999994, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0),
 "format": 34896613399,
-"index_count": 12,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
 "material": SubResource("StandardMaterial3D_pgkwk"),
-"name": "DoorClosed",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAAP///z///wAAAAD/PwAAAAAAAP8///8AAP///z8AAP//////v/////8AAP+//////////78AAP//AAD/vwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/")
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_72073")
@@ -51,11 +46,13 @@ DoorOpen = ExtResource("3_q5u0e")
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1, -0.01)
 material_override = ExtResource("2_8s20k")
-mesh = SubResource("ArrayMesh_pc2eh")
+mesh = SubResource("ArrayMesh_okfpq")
 skeleton = NodePath("")
 
 [node name="SingleDoorCollider" parent="." instance=ExtResource("4_8s20k")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, -0.01)
+
+[node name="DoorConnector" parent="." instance=ExtResource("5_q5u0e")]
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

@@ -55,7 +55,7 @@ func _ready() -> void:
 			debugMap = find_child("DebugMap")
 			debugMap.texture = debugTileMap.get_texture()
 	
-func _input(event) -> void:
+func _unhandled_input(event) -> void:
 	if event is InputEventMouseMotion:
 		cameraNode.rotation_degrees.y -= event.relative.x * MOUSE_SENS
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:

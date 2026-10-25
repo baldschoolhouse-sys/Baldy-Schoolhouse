@@ -359,12 +359,27 @@ func create_gridmap():
 				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), Vector2(I%wallSize[0], int(I/wallSize[0])), 
 					detailInfo.get_slice("-", 3))
 			
-			# TODO: Make this accout for both sides
+			# TODO: Make this accout for both sides & less jerryrigged
 			if detailInfo.begins_with("Door-L"):
 				wallVariant = ["LDDoor", detailInfo.get_slice("-", 3)]
+				
+				var tempToMakeThisQuick = letterToNum(detailInfo.get_slice("-", 3))
+				var tempToMakeThisQuick1 = 0
+				var tempToMakeThisQuick2 = 0
+				
+				if(tempToMakeThisQuick == 0):
+					tempToMakeThisQuick1 = 0.5
+				elif(tempToMakeThisQuick == 1):
+					tempToMakeThisQuick2 = 0.5
+				elif(tempToMakeThisQuick == 2):
+					tempToMakeThisQuick1 = -0.5
+				elif(tempToMakeThisQuick == 3):
+					tempToMakeThisQuick2 = -0.5
+					
 				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), 
-					Vector2(I%wallSize[0], int(I/wallSize[0])), 
+					Vector2(I%wallSize[0]+tempToMakeThisQuick1, int(I/wallSize[0])+tempToMakeThisQuick2), 
 					detailInfo.get_slice("-", 3))
+					
 			if detailInfo.begins_with("Door-R"):
 				wallVariant = ["RDDoor", detailInfo.get_slice("-", 3)]
 				

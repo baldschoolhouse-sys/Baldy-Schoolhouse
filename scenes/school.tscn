@@ -33,6 +33,7 @@ tileMap = NodePath("../Node/Tilemaps")
 [node name="Node" type="Node" parent="."]
 
 [node name="Tilemaps" type="Node2D" parent="Node"]
+visible = false
 script = ExtResource("3_ob2vs")
 
 [node name="TilemapViewportContainer" type="SubViewportContainer" parent="Node/Tilemaps"]
@@ -43,7 +44,7 @@ metadata/_edit_use_anchors_ = true
 [node name="TilemapViewport" type="SubViewport" parent="Node/Tilemaps/TilemapViewportContainer"]
 handle_input_locally = false
 size = Vector2i(9999, 9999)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="Node/Tilemaps/TilemapViewportContainer/TilemapViewport"]
 top_level = true
@@ -67,7 +68,7 @@ tile_map_data = PackedByteArray("AAB+AN4AAAAGAAIAAACBAN4AAAAIAAIAAAB/AN4AAAAHAAI
 tile_set = ExtResource("9_ymgdw")
 
 [node name="TileMapDetail" type="TileMapLayer" parent="Node/Tilemaps/TilemapViewportContainer/TilemapViewport/Camera2D"]
-tile_map_data = PackedByteArray("AACXAGoAAAAAAAQAAACYAGoAAAABAAQAAAB8AM4AAAADAAcAAAB8ANkAAAADAAIAAAB/AN4AAAAAAAUAAACAAN4AAAABAAUAAACAAMkAAAABAAQAAAB/AMkAAAAAAAQAAACXAGkAAAAAAAUAAACYAGkAAAABAAUAAAB7AM4AAAABAAcAAAA=")
+tile_map_data = PackedByteArray("AACXAGoAAAAAAAQAAACYAGoAAAABAAQAAAB8AM4AAAADAAcAAAB8ANkAAAADAAIAAAB/AN4AAAAAAAUAAACAAN4AAAABAAUAAACAAMkAAAABAAQAAAB/AMkAAAAAAAQAAACXAGkAAAAAAAUAAACYAGkAAAABAAUAAAA=")
 tile_set = ExtResource("10_ayo07")
 
 [node name="TileMapExtra" type="TileMapLayer" parent="Node/Tilemaps/TilemapViewportContainer/TilemapViewport/Camera2D"]

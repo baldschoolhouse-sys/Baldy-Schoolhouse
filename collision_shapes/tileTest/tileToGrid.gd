@@ -351,14 +351,20 @@ func create_gridmap():
 			
 			if detailInfo.begins_with("Door-S"):
 				wallVariant = ["Doorhole", detailInfo.get_slice("-", 3)]
-				create_door(sDoorObject, Vector2(I%wallSize[0], int(I/wallSize[0])), 
+				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 0), Vector2(I%wallSize[0], int(I/wallSize[0])), 
 					detailInfo.get_slice("-", 3))
 
 			if detailInfo.begins_with("Door-D"):
 				wallVariant = ["DoubleDoor", detailInfo.get_slice("-", 3)]
-
+				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), Vector2(I%wallSize[0], int(I/wallSize[0])), 
+					detailInfo.get_slice("-", 3))
+			
+			# TODO: Make this accout for both sides
 			if detailInfo.begins_with("Door-L"):
 				wallVariant = ["LDDoor", detailInfo.get_slice("-", 3)]
+				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), 
+					Vector2(I%wallSize[0], int(I/wallSize[0])), 
+					detailInfo.get_slice("-", 3))
 			if detailInfo.begins_with("Door-R"):
 				wallVariant = ["RDDoor", detailInfo.get_slice("-", 3)]
 				
@@ -537,6 +543,29 @@ func setWall(mn, md, i, h, wallV = ["", ""]):
 	if mn.begins_with("Outside"):
 		createWall("OutsideWall", md, wallV, i, h)
 
+func returnDoorObject(type, size):
+	if type.begins_with("Standard"):
+		if(size == 0):
+			return sDoorObject
+		elif(size == 1):
+			return dDoorObject
+	if type.begins_with("Office"):
+		return ofcDoorObject
+	if type.begins_with("Clinic"):
+		return cliDoorObject
+	if type.begins_with("English"):
+		return engDoorObject
+	if type.begins_with("Geology"):
+		return geoDoorObject
+	if type.begins_with("History"):
+		return hisDoorObject
+	if type.begins_with("Math"):
+		return mthDoorObject	
+	if type.begins_with("Science"):
+		return sciDoorObject
+	if type.begins_with("Spelling"):
+		return splDoorObject
+		
 func letterToNum(input):
 	if input == 'n' || input == 'N':
 		return 0

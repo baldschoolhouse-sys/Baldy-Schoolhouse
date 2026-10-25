@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://ca45vy30js6ow"]
+[gd_scene load_steps=25 format=4 uid="uid://ca45vy30js6ow"]
 
 [ext_resource type="Environment" uid="uid://bf68s7u74uc27" path="res://graphics/school_house_environment.tres" id="1_jh5w5"]
 [ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="2_dycdf"]
@@ -17,8 +17,12 @@
 [ext_resource type="MeshLibrary" uid="uid://cq5m3mbj3540g" path="res://collision_shapes/tileTest/gridmaps/FloorsMeshLib.tres" id="12_4pfur"]
 [ext_resource type="MeshLibrary" uid="uid://cch83mqa7iq5v" path="res://collision_shapes/tileTest/gridmaps/CeilingMeshLib.tres" id="13_qyj7d"]
 [ext_resource type="PackedScene" uid="uid://iq4mddle347r" path="res://entities/bell/bell.tscn" id="14_m5q2y"]
+[ext_resource type="PackedScene" uid="uid://bl7sgqcgtk0gx" path="res://entities/doors/StandardDoor.tscn" id="15_bevl2"]
 [ext_resource type="PackedScene" uid="uid://b5ic7q2wk8y0h" path="res://entities/billboards/PineTree.tscn" id="16_2db2t"]
+[ext_resource type="Script" uid="uid://q7b6x4v6idkj" path="res://scripts/door.gd" id="16_yvq6t"]
 [ext_resource type="PackedScene" uid="uid://d1mj8bk5ovdlo" path="res://entities/billboards/Lamp.tscn" id="17_435lr"]
+[ext_resource type="Material" uid="uid://diutdty0gient" path="res://texture/LevelTiles/Materials/Doors/StandardDoorClosed.tres" id="17_c71r8"]
+[ext_resource type="Material" uid="uid://c0o65jsl2rh0d" path="res://texture/LevelTiles/Materials/Doors/StandardDoorOpen.tres" id="18_giwbl"]
 
 [sub_resource type="GDScript" id="GDScript_ujjl2"]
 
@@ -125,6 +129,330 @@ data = {
 [node name="DetailAndInteractive" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid"]
 
 [node name="Doors" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive"]
+
+[node name="StandardDoor0" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 49, 0, 15)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor1" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 61, 0, 15)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor2" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 79, 0, 15)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor3" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 91, 0, 15)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor4" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 23)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor5" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 53, 0, 23)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor6" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 55, 0, 23)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor7" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 0, 23)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor8" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81, 0, 23)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor9" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 83, 0, 23)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor10" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 85, 0, 23)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor11" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 0, 23)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor12" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 39)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor13" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 121, 0, 41)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor14" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 23, 0, 43)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor15" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 51, 0, 63)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor16" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 0, 63)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor17" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 63)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor18" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 57, 0, 63)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor19" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 81, 0, 63)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor20" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, 63)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor21" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 63)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor22" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 87, 0, 63)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor23" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 47, 0, 71)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor24" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 61, 0, 71)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor25" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 77, 0, 71)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor26" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 91, 0, 71)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor27" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 49, 0, 87)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor28" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 61, 0, 87)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor29" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 79, 0, 87)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor30" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 91, 0, 87)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor31" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 0, 95)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor32" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 53, 0, 95)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor33" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 55, 0, 95)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor34" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 0, 95)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor35" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81, 0, 95)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor36" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 83, 0, 95)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor37" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 85, 0, 95)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor38" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 0, 95)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor39" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 111)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor40" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 121, 0, 113)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor41" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 23, 0, 115)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor42" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 51, 0, 135)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor43" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 0, 135)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor44" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 135)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor45" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 57, 0, 135)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor46" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 81, 0, 135)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor47" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, 135)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor48" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 135)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor49" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 87, 0, 135)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor50" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 47, 0, 143)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor51" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 61, 0, 143)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor52" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 77, 0, 143)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
+
+[node name="StandardDoor53" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("15_bevl2")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 91, 0, 143)
+script = ExtResource("16_yvq6t")
+DoorClosed = ExtResource("17_c71r8")
+DoorOpen = ExtResource("18_giwbl")
 
 [node name="Windows" type="Node3D" parent="SchoolhouseBuilder/SchoolhouseGrid/DetailAndInteractive"]
 

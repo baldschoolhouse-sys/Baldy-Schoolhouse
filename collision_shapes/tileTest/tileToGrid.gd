@@ -34,6 +34,17 @@ const optNSEW = ["","N","S","E","W"]
 # Creates gridmap creation button, sets it to "create_gridmap" function
 @export_tool_button("Create Gridmap From Tilemaps") var gridMapFunction = create_gridmap
 
+var sDoorObject
+var dDoorObject
+var ofcDoorObject 
+var cliDoorObject 
+var engDoorObject 
+var geoDoorObject
+var hisDoorObject 
+var mthDoorObject 
+var sciDoorObject 
+var splDoorObject
+
 var bellObject
 
 var plainTreeObject
@@ -110,6 +121,19 @@ func create_node(object, pos, rot, destination):
 	destination.add_child(instantiatedNode)
 	instantiatedNode.set_owner(EditorInterface.get_edited_scene_root())
 
+func create_door(type, pos, rot):
+	create_node(
+		type, 
+		Vector3( 
+			( pos[0] * 2 ) + 1,
+			0, 
+			( pos[1] * 2 ) + 1
+		), 
+		Vector3(0, -deg_to_rad(letterToNum(rot) * (90.0)), 0), 
+		doorNodes
+		)
+		#p
+
 func create_bell(pos, rot):
 	create_node(
 		bellObject, 
@@ -159,6 +183,19 @@ func clear_nodes(object):
 		n.free()
 
 func create_gridmap():
+	
+	sDoorObject = load("res://entities/doors/StandardDoor.tscn")
+
+	dDoorObject = load("res://entities/doors/DoubleDoor.tscn")
+	
+	ofcDoorObject = load("res://entities/doors/OfficeDoor.tscn")
+	cliDoorObject = load("res://entities/doors/ClinicDoor.tscn")
+	engDoorObject = load("res://entities/doors/EnglishDoor.tscn")
+	geoDoorObject = load("res://entities/doors/GeologyDoor.tscn")
+	hisDoorObject = load("res://entities/doors/HistoryDoor.tscn")
+	mthDoorObject = load("res://entities/doors/MathDoor.tscn")
+	sciDoorObject = load("res://entities/doors/ScienceDoor.tscn")
+	splDoorObject = load("res://entities/doors/SpellingDoor.tscn")
 	
 	bellObject = load("res://entities/bell/bell.tscn")
 	
@@ -210,6 +247,7 @@ func create_gridmap():
 	
 	clear_nodes(bellNodes)
 	clear_nodes(billboardNodes)
+	clear_nodes(doorNodes)
 	
 	# Get the wall tilemap data as a PackedByteArray
 	tileMapWallData = tileMapWalls.get_tile_map_data_as_array()
@@ -313,6 +351,8 @@ func create_gridmap():
 			
 			if detailInfo.begins_with("Door-S"):
 				wallVariant = ["Doorhole", detailInfo.get_slice("-", 3)]
+				create_door(sDoorObject, Vector2(I%wallSize[0], int(I/wallSize[0])), 
+					detailInfo.get_slice("-", 3))
 
 			if detailInfo.begins_with("Door-D"):
 				wallVariant = ["DoubleDoor", detailInfo.get_slice("-", 3)]
@@ -496,6 +536,16 @@ func setWall(mn, md, i, h, wallV = ["", ""]):
 			createWall("CafeteriaWall2", md, wallV, i, h)
 	if mn.begins_with("Outside"):
 		createWall("OutsideWall", md, wallV, i, h)
+
+func letterToNum(input):
+	if input == 'n' || input == 'N':
+		return 0
+	if input == 'e' || input == 'E':
+		return 1
+	if input == 's' || input == 'S':
+		return 2
+	if input == 'w' || input == 'W':
+		return 3
 
 func createWall(type, direction, wallV, index, tileHeight, ad = 0):
 	var wallVarDir = ["", "", "", "", ""]

@@ -461,7 +461,9 @@ func create_gridmap():
 					SetCellCeiling("VentCeiling", I, heightVal-1)
 				if modelName.begins_with("FalseLight"):
 					SetCellCeiling("FalseLight", I, heightVal-1)
-
+				if modelName.begins_with("GymnasiumCeiling"):
+					SetCellCeiling("GymnasiumCeiling", I, heightVal-1)
+					
 func SetCellCeiling(type, index, tileHeight):
 	levelCeiling.set_cell_item(Vector3i(index%ceilingSize[0], tileHeight, int(index/ceilingSize[0])), 
 	ceilingMeshLib.find_item_by_name(type), 0)

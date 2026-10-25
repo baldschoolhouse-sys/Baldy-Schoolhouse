@@ -33,6 +33,7 @@ tileMap = NodePath("../Node/Tilemaps")
 script = ExtResource("3_ob2vs")
 
 [node name="TilemapViewportContainer" type="SubViewportContainer" parent="Node/Tilemaps"]
+visible = false
 offset_right = 512.0
 offset_bottom = 512.0
 metadata/_edit_use_anchors_ = true
@@ -40,7 +41,7 @@ metadata/_edit_use_anchors_ = true
 [node name="TilemapViewport" type="SubViewport" parent="Node/Tilemaps/TilemapViewportContainer"]
 handle_input_locally = false
 size = Vector2i(9999, 9999)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="Node/Tilemaps/TilemapViewportContainer/TilemapViewport"]
 top_level = true

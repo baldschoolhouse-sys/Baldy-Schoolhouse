@@ -129,7 +129,7 @@ func create_door(type, pos, rot):
 			0, 
 			( pos[1] * 2 ) + 1
 		), 
-		Vector3(0, -deg_to_rad(letterToNum(rot) * (90.0)), 0), 
+		Vector3(0, -deg_to_rad(durToNum(rot) * (90.0)), 0), 
 		doorNodes
 		)
 		#p
@@ -350,35 +350,50 @@ func create_gridmap():
 				)
 			
 			if detailInfo.begins_with("Door-S"):
-				wallVariant = ["Doorhole", detailInfo.get_slice("-", 3)]
-				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 0), Vector2(I%wallSize[0], int(I/wallSize[0])), 
-					detailInfo.get_slice("-", 3))
+				var wDir = detailInfo.get_slice("-", 3)
+				wallVariant = ["Doorhole", wDir]
+				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 0), 
+				Vector2(I%wallSize[0], int(I/wallSize[0])), wDir)
+					
+				# TODO: Make this not a crime against all things python
+				var durToApply = applyDur(durToNum(durInvert(wDir)))
+				modelName = String(cellInfo.get_custom_data("Model"))
+			
+				var I2 = I-(durToApply[1] - (durToApply[0]*wallSize[0]))
+			
+				setWall(modelName, durInvert(wDir), 
+				I2, 0, 
+				[wallVariant[0], durInvert(wDir).to_upper()])
+				
+
+				
+				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 0), 
+				Vector2(I2%wallSize[0], int(I2/wallSize[0])), durInvert(wDir))
 
 			if detailInfo.begins_with("Door-D"):
-				wallVariant = ["DoubleDoor", detailInfo.get_slice("-", 3)]
+				var wDir = detailInfo.get_slice("-", 3)
+				wallVariant = ["DoubleDoor", wDir]
 				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), Vector2(I%wallSize[0], int(I/wallSize[0])), 
 					detailInfo.get_slice("-", 3))
+			
+				# TODO: Make this not a crime against all things python
+				var durToApply = applyDur(durToNum(durInvert(wDir)))
+				modelName = String(cellInfo.get_custom_data("Model"))
+				setWall(modelName, durInvert(wDir), 
+				I-(durToApply[1] - (durToApply[0]*wallSize[0])), 0, 
+				[wallVariant[0], durInvert(wDir).to_upper()])
+				
+				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), 
+				Vector2((I-durToApply[1])%wallSize[0], int((I-durToApply[0])/wallSize[0])), durInvert(wDir))
 			
 			# TODO: Make this accout for both sides & less jerryrigged
 			if detailInfo.begins_with("Door-L"):
 				wallVariant = ["LDDoor", detailInfo.get_slice("-", 3)]
 				
-				var tempToMakeThisQuick = letterToNum(detailInfo.get_slice("-", 3))
-				var tempToMakeThisQuick1 = 0
-				var tempToMakeThisQuick2 = 0
-				
-				if(tempToMakeThisQuick == 0):
-					tempToMakeThisQuick1 = 0.5
-				elif(tempToMakeThisQuick == 1):
-					tempToMakeThisQuick2 = 0.5
-				elif(tempToMakeThisQuick == 2):
-					tempToMakeThisQuick1 = -0.5
-				elif(tempToMakeThisQuick == 3):
-					tempToMakeThisQuick2 = -0.5
+				var durToApply = applyDur(durToNum(detailInfo.get_slice("-", 3)))
 					
-				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), 
-					Vector2(I%wallSize[0]+tempToMakeThisQuick1, int(I/wallSize[0])+tempToMakeThisQuick2), 
-					detailInfo.get_slice("-", 3))
+				setWall(modelName, modelDirection, I+(durToApply[0] + (durToApply[1]*wallSize[0])), 0, wallVariant)
+				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), Vector2(I%wallSize[0]+(durToApply[0]*0.5), int(I/wallSize[0])+(durToApply[1]*0.5)), detailInfo.get_slice("-", 3))
 					
 			if detailInfo.begins_with("Door-R"):
 				wallVariant = ["RDDoor", detailInfo.get_slice("-", 3)]
@@ -539,6 +554,20 @@ func GetCellFloor(index):
 	#floorMeshLib.find_item_by_name(type), 0
 	return(temp)
 
+func applyDur(input):
+	var output = [0, 0]
+				
+	if(input == 0):
+		output[0] = 1
+	elif(input == 1):
+		output[1] = 1
+	elif(input == 2):
+		output[0] = -1
+	elif(input == 3):
+		output[1] = -1
+		
+	return(output)
+
 func setWall(mn, md, i, h, wallV = ["", ""]):
 	if mn.begins_with("Debug"):
 		createWall("DebugWall", md, wallV, i, h, 1)
@@ -581,7 +610,7 @@ func returnDoorObject(type, size):
 	if type.begins_with("Spelling"):
 		return splDoorObject
 		
-func letterToNum(input):
+func durToNum(input):
 	if input == 'n' || input == 'N':
 		return 0
 	if input == 'e' || input == 'E':
@@ -590,6 +619,16 @@ func letterToNum(input):
 		return 2
 	if input == 'w' || input == 'W':
 		return 3
+
+func durInvert(input):
+	if input == 'n' || input == 'N':
+		return 's'
+	if input == 'e' || input == 'E':
+		return 'w'
+	if input == 's' || input == 'S':
+		return 'n'
+	if input == 'w' || input == 'W':
+		return 'e'
 
 func createWall(type, direction, wallV, index, tileHeight, ad = 0):
 	var wallVarDir = ["", "", "", "", ""]

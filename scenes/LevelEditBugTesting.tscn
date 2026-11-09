@@ -46,12 +46,12 @@ tile_set = ExtResource("7_oflah")
 [node name="TileMapExtra" type="TileMapLayer" parent="."]
 tile_set = ExtResource("8_y64p1")
 
-[node name="SchoolhouseGrid" type="GridMap" parent="." node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling", "tileMapExtra")]
+[node name="SchoolhouseGrid" type="GridMap" parent="." node_paths=PackedStringArray("tileMapDetailNode", "tileMapHeight", "tileMapWallNode", "tileMapFloors", "tileMapCeiling", "tileMapExtra")]
 collision_layer = 2
 script = ExtResource("8_ffbx7")
-tileMapDetail = NodePath("../TileMapDetail")
+tileMapDetailNode = NodePath("../TileMapDetail")
 tileMapHeight = NodePath("../TileMapHeight")
-tileMapWalls = NodePath("../TileMapWalls")
+tileMapWallNode = NodePath("../TileMapWalls")
 tileMapFloors = NodePath("../TileMapFloors")
 tileMapCeiling = NodePath("../TileMapCeiling")
 tileMapExtra = NodePath("../TileMapExtra")

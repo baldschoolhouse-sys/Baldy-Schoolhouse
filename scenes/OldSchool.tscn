@@ -61,12 +61,12 @@ tile_set = ExtResource("11_wr87n")
 [node name="TileMapExtra" type="TileMapLayer" parent="SchoolhouseBuilder/Tilemaps/TilemapViewportContainer/TilemapViewport"]
 tile_set = ExtResource("7_pm5bj")
 
-[node name="SchoolhouseGrid" type="GridMap" parent="SchoolhouseBuilder" node_paths=PackedStringArray("tileMapDetail", "tileMapHeight", "tileMapWalls", "tileMapFloors", "tileMapCeiling", "tileMapExtra")]
+[node name="SchoolhouseGrid" type="GridMap" parent="SchoolhouseBuilder" node_paths=PackedStringArray("tileMapDetailNode", "tileMapHeight", "tileMapWallNode", "tileMapFloors", "tileMapCeiling", "tileMapExtra")]
 collision_layer = 2
 script = ExtResource("12_hevoe")
-tileMapDetail = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapDetail")
+tileMapDetailNode = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapDetail")
 tileMapHeight = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapHeight")
-tileMapWalls = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapWalls")
+tileMapWallNode = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapWalls")
 tileMapFloors = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapFloors")
 tileMapCeiling = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapCeiling")
 tileMapExtra = NodePath("../Tilemaps/TilemapViewportContainer/TilemapViewport/TileMapExtra")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://dtysqmt4ld5k3"]
+[gd_scene load_steps=32 format=4 uid="uid://dtysqmt4ld5k3"]
 
 [ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="1_v3cpt"]
 [ext_resource type="Script" uid="uid://dw4tm4vooul6s" path="res://scenes/tilemaps.gd" id="3_ob2vs"]
@@ -24,8 +24,11 @@
 [ext_resource type="PackedScene" uid="uid://c1mnto2ub6j58" path="res://entities/doors/ClinicDoor.tscn" id="22_bcfsd"]
 [ext_resource type="Material" uid="uid://cxdqoxkrxd44i" path="res://texture/LevelTiles/Materials/Doors/ClinicDoorClosed.tres" id="23_7iutg"]
 [ext_resource type="Material" uid="uid://cj8vte1houahs" path="res://texture/LevelTiles/Materials/Doors/ClinicDoorOpen.tres" id="24_bcfsd"]
+[ext_resource type="PackedScene" uid="uid://dgwj8pufjjgym" path="res://entities/doors/GeologyDoor.tscn" id="25_bcfsd"]
 [ext_resource type="PackedScene" uid="uid://bl7sgqcgtk0gx" path="res://entities/doors/StandardDoor.tscn" id="25_jmj33"]
 [ext_resource type="Material" uid="uid://diutdty0gient" path="res://texture/LevelTiles/Materials/Doors/StandardDoorClosed.tres" id="26_klmiq"]
+[ext_resource type="Material" uid="uid://r8umv8e6baeu" path="res://texture/LevelTiles/Materials/Doors/GeologyDoorClosed.tres" id="26_ku21s"]
+[ext_resource type="Material" uid="uid://ciy4kx1olfah7" path="res://texture/LevelTiles/Materials/Doors/GeologyDoorOpen.tres" id="27_jmj33"]
 [ext_resource type="Material" uid="uid://c0o65jsl2rh0d" path="res://texture/LevelTiles/Materials/Doors/StandardDoorOpen.tres" id="27_ku21s"]
 [ext_resource type="PackedScene" uid="uid://d1mj8bk5ovdlo" path="res://entities/billboards/Lamp.tscn" id="28_3d5f6"]
 
@@ -41,6 +44,7 @@ tileMap = NodePath("../Node/Tilemaps")
 [node name="Node" type="Node" parent="."]
 
 [node name="Tilemaps" type="Node2D" parent="Node"]
+visible = false
 script = ExtResource("3_ob2vs")
 
 [node name="TilemapViewportContainer" type="SubViewportContainer" parent="Node/Tilemaps"]
@@ -51,7 +55,7 @@ metadata/_edit_use_anchors_ = true
 [node name="TilemapViewport" type="SubViewport" parent="Node/Tilemaps/TilemapViewportContainer"]
 handle_input_locally = false
 size = Vector2i(9999, 9999)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="Node/Tilemaps/TilemapViewportContainer/TilemapViewport"]
 top_level = true
@@ -189,26 +193,38 @@ script = ExtResource("19_3qdmc")
 DoorClosed = ExtResource("23_7iutg")
 DoorOpen = ExtResource("24_bcfsd")
 
-[node name="StandardDoor6" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_jmj33")]
+[node name="GeologyDoor6" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_bcfsd")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 257, 0, 425)
+script = ExtResource("19_3qdmc")
+DoorClosed = ExtResource("26_ku21s")
+DoorOpen = ExtResource("27_jmj33")
+
+[node name="GeologyDoor7" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_bcfsd")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 259, 0, 425)
+script = ExtResource("19_3qdmc")
+DoorClosed = ExtResource("26_ku21s")
+DoorOpen = ExtResource("27_jmj33")
+
+[node name="StandardDoor8" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_jmj33")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 247, 0, 435)
 script = ExtResource("19_3qdmc")
 DoorClosed = ExtResource("26_klmiq")
 DoorOpen = ExtResource("27_ku21s")
 
-[node name="StandardDoor7" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_jmj33")]
+[node name="StandardDoor9" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_jmj33")]
 transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 249, 0, 435)
 script = ExtResource("19_3qdmc")
 DoorClosed = ExtResource("26_klmiq")
 DoorOpen = ExtResource("27_ku21s")
 
-[node name="DoubleDoorSingleTile8" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_3qdmc")]
+[node name="DoubleDoorSingleTile10" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_3qdmc")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 256, 0, 445)
 script = ExtResource("19_3qdmc")
 DoubleDoor = true
 DoorClosed = ExtResource("20_3d5f6")
 DoorOpen = ExtResource("21_ncu48")
 
-[node name="DoubleDoorSingleTile9" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_3qdmc")]
+[node name="DoubleDoorSingleTile11" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("18_3qdmc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, 447)
 script = ExtResource("19_3qdmc")
 DoubleDoor = true

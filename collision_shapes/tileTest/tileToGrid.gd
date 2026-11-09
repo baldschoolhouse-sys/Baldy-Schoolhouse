@@ -314,6 +314,7 @@ func create_gridmap():
 	print(mapSize)
 	totalMapTiles = (mapSize[0]) * (mapSize[1])
 
+	# Applies automatic changes to tileset for easier use
 	for I in range(totalMapTiles):
 		var wallCellPos = Vector2( I%wallSize[0], int(I/wallSize[0]))
 		var detailCellPos = Vector2( I%detailSize[0], int(I/detailSize[0]))
@@ -336,13 +337,13 @@ func create_gridmap():
 				#I2, 0, 
 				#[wallVariant[0], durInvert(wDir).to_upper()])
 				
-				tileMapWalls.set_cell(I3, 0, Vector2(9, 0), 0) 
+				#tileMapWalls.set_cell(I3, 0, Vector2(9, 0), 0) 
 				
-				tileMapDetail.set_cell(I3, 0, Vector2(0, 30), 0) 
+				tileMapDetail.set_cell(I3, 0, Vector2(durToNum(durInvert(wDir)), 6), 0) 
 				
 				#create_door(returnDoorObject(detailInfo.get_slice("-", 2), 0), 
 				#Vector2(I2%wallSize[0], int(I2/wallSize[0])), durInvert(wDir))
-				print("Temp!")
+				#print()
 				
 	# Checks each cell/entry in tileFloorData
 	for I in range(totalMapTiles):

@@ -331,11 +331,51 @@ func create_gridmap():
 				var I2 = I-(durToApply[1] - (durToApply[0]*wallSize[0]))
 				var I3 = Vector2( I2%wallSize[0], int(I2/wallSize[0]))
 
-				print(detailInfoAtlas)
-
 				tileMapDetail.set_cell(I3, 0, Vector2(durToNum(durInvert(wDir)), detailInfoAtlas[1]), 0) 
+			if detailInfoAsset.begins_with("Door-D"):
+				var wDir = detailInfoAsset.get_slice("-", 3)
+				var durToApply = applyDur(durToNum(durInvert(wDir)))
 
-				
+				var I2 = I-(durToApply[1] - (durToApply[0]*wallSize[0]))
+				var I3 = Vector2( I2%wallSize[0], int(I2/wallSize[0]))
+
+				tileMapDetail.set_cell(I3, 0, Vector2(durToNum(durInvert(wDir)), 3), 0) 
+			if detailInfoAsset.begins_with("Door-L"):
+				var wDir = detailInfoAsset.get_slice("-", 3)
+				var durToApply = applyDur(durToNum(durInvert(wDir)))
+
+				var I2 = I-(durToApply[1] - (durToApply[0]*wallSize[0]))
+				var I3 = Vector2( I2%wallSize[0], int(I2/wallSize[0]))
+	
+				var I4 = durToNum(durInvert(wDir))
+
+				if(I4 == 0):
+					tileMapDetail.set_cell(I3, 0, Vector2(1, 4), 0) 
+				elif(I4 == 1):
+					tileMapDetail.set_cell(I3, 0, Vector2(3, 5), 0) 
+				elif(I4 == 2):
+					tileMapDetail.set_cell(I3, 0, Vector2(0, 5), 0) 
+				elif(I4 == 3):
+					tileMapDetail.set_cell(I3, 0, Vector2(2, 4), 0) 
+			if detailInfoAsset.begins_with("Door-R"):
+				var wDir = detailInfoAsset.get_slice("-", 3)
+				var durToApply = applyDur(durToNum(durInvert(wDir)))
+
+				var I2 = I-(durToApply[1] - (durToApply[0]*wallSize[0]))
+				var I3 = Vector2( I2%wallSize[0], int(I2/wallSize[0]))
+	
+				var I4 = durToNum(durInvert(wDir))
+
+				if(I4 == 0):
+					tileMapDetail.set_cell(I3, 0, Vector2(0, 4), 0) 
+				elif(I4 == 1):
+					tileMapDetail.set_cell(I3, 0, Vector2(3, 4), 0) 
+				elif(I4 == 2):
+					tileMapDetail.set_cell(I3, 0, Vector2(1, 5), 0) 
+				elif(I4 == 3):
+					tileMapDetail.set_cell(I3, 0, Vector2(2, 5), 0) 
+
+					
 	# Checks each cell/entry in tileFloorData
 	for I in range(totalMapTiles):
 		# Gets the info of the current cell
@@ -390,23 +430,11 @@ func create_gridmap():
 				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), Vector2(I%wallSize[0], int(I/wallSize[0])), 
 					detailInfo.get_slice("-", 3))
 			
-				# TODO: Make this not a crime against all things python
-				var durToApply = applyDur(durToNum(durInvert(wDir)))
-				modelName = String(cellInfo.get_custom_data("Model"))
-				setWall(modelName, durInvert(wDir), 
-				I-(durToApply[1] - (durToApply[0]*wallSize[0])), 0, 
-				[wallVariant[0], durInvert(wDir).to_upper()])
-				
-				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), 
-				Vector2((I-durToApply[1])%wallSize[0], int((I-durToApply[0])/wallSize[0])), durInvert(wDir))
-			
-			# TODO: Make this accout for both sides & less jerryrigged
+			# TODO: Make this accout for both left and right
 			if detailInfo.begins_with("Door-L"):
 				wallVariant = ["LDDoor", detailInfo.get_slice("-", 3)]
 				
 				var durToApply = applyDur(durToNum(detailInfo.get_slice("-", 3)))
-					
-				setWall(modelName, modelDirection, I+(durToApply[0] + (durToApply[1]*wallSize[0])), 0, wallVariant)
 				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 1), Vector2(I%wallSize[0]+(durToApply[0]*0.5), int(I/wallSize[0])+(durToApply[1]*0.5)), detailInfo.get_slice("-", 3))
 					
 			if detailInfo.begins_with("Door-R"):

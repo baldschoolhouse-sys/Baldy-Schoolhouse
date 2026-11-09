@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dtysqmt4ld5k3"]
+[gd_scene load_steps=29 format=4 uid="uid://dtysqmt4ld5k3"]
 
 [ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="1_v3cpt"]
 [ext_resource type="Script" uid="uid://dw4tm4vooul6s" path="res://scenes/tilemaps.gd" id="3_ob2vs"]
@@ -22,11 +22,8 @@
 [ext_resource type="Material" uid="uid://dwcvq3vd6wcoq" path="res://texture/LevelTiles/Materials/Doors/DoubleDoorSingleTileClosed.tres" id="20_3d5f6"]
 [ext_resource type="Material" uid="uid://b7tmejvgkbe1p" path="res://texture/LevelTiles/Materials/Doors/DoubleDoorSingleTileOpen.tres" id="21_ncu48"]
 [ext_resource type="PackedScene" uid="uid://c1mnto2ub6j58" path="res://entities/doors/ClinicDoor.tscn" id="22_bcfsd"]
-[ext_resource type="PackedScene" uid="uid://c0sxjp36thv8m" path="res://entities/doors/OfficeDoor.tscn" id="22_klmiq"]
 [ext_resource type="Material" uid="uid://cxdqoxkrxd44i" path="res://texture/LevelTiles/Materials/Doors/ClinicDoorClosed.tres" id="23_7iutg"]
-[ext_resource type="Material" uid="uid://qpaclk2ftppv" path="res://texture/LevelTiles/Materials/Doors/OfficeDoorClosed.tres" id="23_ku21s"]
 [ext_resource type="Material" uid="uid://cj8vte1houahs" path="res://texture/LevelTiles/Materials/Doors/ClinicDoorOpen.tres" id="24_bcfsd"]
-[ext_resource type="Material" uid="uid://bhxo5xb8bshd5" path="res://texture/LevelTiles/Materials/Doors/OfficeDoorOpen.tres" id="24_jmj33"]
 [ext_resource type="PackedScene" uid="uid://bl7sgqcgtk0gx" path="res://entities/doors/StandardDoor.tscn" id="25_jmj33"]
 [ext_resource type="Material" uid="uid://diutdty0gient" path="res://texture/LevelTiles/Materials/Doors/StandardDoorClosed.tres" id="26_klmiq"]
 [ext_resource type="Material" uid="uid://c0o65jsl2rh0d" path="res://texture/LevelTiles/Materials/Doors/StandardDoorOpen.tres" id="27_ku21s"]
@@ -166,11 +163,11 @@ DoubleDoor = true
 DoorClosed = ExtResource("20_3d5f6")
 DoorOpen = ExtResource("21_ncu48")
 
-[node name="OfficeDoor2" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("22_klmiq")]
+[node name="ClinicDoor2" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("22_bcfsd")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 247, 0, 413)
 script = ExtResource("19_3qdmc")
-DoorClosed = ExtResource("23_ku21s")
-DoorOpen = ExtResource("24_jmj33")
+DoorClosed = ExtResource("23_7iutg")
+DoorOpen = ExtResource("24_bcfsd")
 
 [node name="ClinicDoor3" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("22_bcfsd")]
 transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 249, 0, 413)
@@ -178,11 +175,11 @@ script = ExtResource("19_3qdmc")
 DoorClosed = ExtResource("23_7iutg")
 DoorOpen = ExtResource("24_bcfsd")
 
-[node name="OfficeDoor4" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("22_klmiq")]
+[node name="StandardDoor4" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_jmj33")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 247, 0, 435)
 script = ExtResource("19_3qdmc")
-DoorClosed = ExtResource("23_ku21s")
-DoorOpen = ExtResource("24_jmj33")
+DoorClosed = ExtResource("26_klmiq")
+DoorOpen = ExtResource("27_ku21s")
 
 [node name="StandardDoor5" type="Node3D" parent="Node/SchoolhouseGrid/DetailAndInteractive/Doors" instance=ExtResource("25_jmj33")]
 transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 249, 0, 435)

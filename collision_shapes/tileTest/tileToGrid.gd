@@ -317,33 +317,24 @@ func create_gridmap():
 	# Applies automatic changes to tileset for easier use
 	for I in range(totalMapTiles):
 		var wallCellPos = Vector2( I%wallSize[0], int(I/wallSize[0]))
-		var detailCellPos = Vector2( I%detailSize[0], int(I/detailSize[0]))
 		
 		detailInfo = tileMapDetail.get_cell_tile_data(wallCellPos)
 		
 		if detailInfo != null:
+			var detailInfoAsset = detailInfo.get_custom_data("Asset")
 			
-			detailInfo = detailInfo.get_custom_data("Asset")
-			
-			if detailInfo.begins_with("Door-S"):
-				# TODO: Make this not a crime against all things python
-				var wDir = detailInfo.get_slice("-", 3)
+			if detailInfoAsset.begins_with("Door-S"):
+				var detailInfoAtlas = tileMapDetail.get_cell_atlas_coords(wallCellPos)
+				var wDir = detailInfoAsset.get_slice("-", 3)
 				var durToApply = applyDur(durToNum(durInvert(wDir)))
-				#modelName = String(CellInfo.get_custom_data("Model"))
-			
+
 				var I2 = I-(durToApply[1] - (durToApply[0]*wallSize[0]))
 				var I3 = Vector2( I2%wallSize[0], int(I2/wallSize[0]))
-				#setWall(modelName, durInvert(wDir), 
-				#I2, 0, 
-				#[wallVariant[0], durInvert(wDir).to_upper()])
-				
-				#tileMapWalls.set_cell(I3, 0, Vector2(9, 0), 0) 
-				
-				tileMapDetail.set_cell(I3, 0, Vector2(durToNum(durInvert(wDir)), 6), 0) 
-				
-				#create_door(returnDoorObject(detailInfo.get_slice("-", 2), 0), 
-				#Vector2(I2%wallSize[0], int(I2/wallSize[0])), durInvert(wDir))
-				#print()
+
+				print(detailInfoAtlas)
+
+				tileMapDetail.set_cell(I3, 0, Vector2(durToNum(durInvert(wDir)), detailInfoAtlas[1]), 0) 
+
 				
 	# Checks each cell/entry in tileFloorData
 	for I in range(totalMapTiles):

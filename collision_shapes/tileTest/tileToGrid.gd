@@ -22,12 +22,15 @@ extends GridMap
 # you get a weird map in the corner of the screen
 
 # Adds TileMapLayer parameter
-@export var tileMapDetail: TileMapLayer
+@export var tileMapDetailNode: TileMapLayer
 @export var tileMapHeight: TileMapLayer
-@export var tileMapWalls: TileMapLayer
+@export var tileMapWallNode: TileMapLayer
 @export var tileMapFloors: TileMapLayer
 @export var tileMapCeiling: TileMapLayer
 @export var tileMapExtra: TileMapLayer
+
+var tileMapWalls: TileMapLayer
+var tileMapDetail: TileMapLayer
 
 const optNSEW = ["","N","S","E","W"]
 
@@ -184,6 +187,9 @@ func clear_nodes(object):
 
 func create_gridmap():
 	
+	tileMapWalls = tileMapWallNode.duplicate();
+	tileMapDetail = tileMapDetailNode.duplicate();
+	
 	sDoorObject = load("res://entities/doors/StandardDoor.tscn")
 
 	dDoorObject = load("res://entities/doors/DoubleDoor.tscn")
@@ -308,6 +314,36 @@ func create_gridmap():
 	print(mapSize)
 	totalMapTiles = (mapSize[0]) * (mapSize[1])
 
+	for I in range(totalMapTiles):
+		var wallCellPos = Vector2( I%wallSize[0], int(I/wallSize[0]))
+		var detailCellPos = Vector2( I%detailSize[0], int(I/detailSize[0]))
+		
+		detailInfo = tileMapDetail.get_cell_tile_data(wallCellPos)
+		
+		if detailInfo != null:
+			
+			detailInfo = detailInfo.get_custom_data("Asset")
+			
+			if detailInfo.begins_with("Door-S"):
+				# TODO: Make this not a crime against all things python
+				var wDir = detailInfo.get_slice("-", 3)
+				var durToApply = applyDur(durToNum(durInvert(wDir)))
+				#modelName = String(CellInfo.get_custom_data("Model"))
+			
+				var I2 = I-(durToApply[1] - (durToApply[0]*wallSize[0]))
+				var I3 = Vector2( I2%wallSize[0], int(I2/wallSize[0]))
+				#setWall(modelName, durInvert(wDir), 
+				#I2, 0, 
+				#[wallVariant[0], durInvert(wDir).to_upper()])
+				
+				tileMapWalls.set_cell(I3, 0, Vector2(9, 0), 0) 
+				
+				tileMapDetail.set_cell(I3, 0, Vector2(0, 30), 0) 
+				
+				#create_door(returnDoorObject(detailInfo.get_slice("-", 2), 0), 
+				#Vector2(I2%wallSize[0], int(I2/wallSize[0])), durInvert(wDir))
+				print("Temp!")
+				
 	# Checks each cell/entry in tileFloorData
 	for I in range(totalMapTiles):
 		# Gets the info of the current cell
@@ -354,21 +390,7 @@ func create_gridmap():
 				wallVariant = ["Doorhole", wDir]
 				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 0), 
 				Vector2(I%wallSize[0], int(I/wallSize[0])), wDir)
-					
-				# TODO: Make this not a crime against all things python
-				var durToApply = applyDur(durToNum(durInvert(wDir)))
-				modelName = String(cellInfo.get_custom_data("Model"))
-			
-				var I2 = I-(durToApply[1] - (durToApply[0]*wallSize[0]))
-			
-				setWall(modelName, durInvert(wDir), 
-				I2, 0, 
-				[wallVariant[0], durInvert(wDir).to_upper()])
-				
 
-				
-				create_door(returnDoorObject(detailInfo.get_slice("-", 2), 0), 
-				Vector2(I2%wallSize[0], int(I2/wallSize[0])), durInvert(wDir))
 
 			if detailInfo.begins_with("Door-D"):
 				var wDir = detailInfo.get_slice("-", 3)

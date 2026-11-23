@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bny1cwpvq587n"]
+[gd_scene load_steps=35 format=3 uid="uid://bny1cwpvq587n"]
 
 [ext_resource type="Environment" uid="uid://bf68s7u74uc27" path="res://graphics/school_house_environment.tres" id="1_1k3sd"]
 [ext_resource type="Script" uid="uid://jcpko70p5lkr" path="res://collision_shapes/tileTest/tileToGrid.gd" id="3_3m6cs"]
@@ -25,17 +25,40 @@
 [ext_resource type="PackedScene" uid="uid://ch0ymu0oee02o" path="res://entities/windows/GreenWindow.tscn" id="25_pvct1"]
 [ext_resource type="PackedScene" uid="uid://c57kt1ewdyaqu" path="res://entities/windows/RedWindow.tscn" id="26_bvcom"]
 [ext_resource type="PackedScene" uid="uid://ct4hm2v5pwsjd" path="res://entities/windows/MagentaWindow.tscn" id="27_lq867"]
+[ext_resource type="Shader" uid="uid://d25ce43rs55q7" path="res://shaders/school.gdshader" id="27_wcvw5"]
+[ext_resource type="Texture2D" uid="uid://c6bn5sayocens" path="res://texture/Panorama.png" id="28_3m6cs"]
 [ext_resource type="PackedScene" uid="uid://e5174cxdwlgn" path="res://entities/windows/YellowWindow.tscn" id="28_euouq"]
 [ext_resource type="PackedScene" uid="uid://1qrdqbcpnp3y" path="res://entities/student.tscn" id="29_o4p83"]
 [ext_resource type="PackedScene" uid="uid://iq4mddle347r" path="res://entities/bell/bell.tscn" id="29_wcvw5"]
 
 [sub_resource type="GDScript" id="GDScript_ujjl2"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l71pi"]
+render_priority = 0
+shader = ExtResource("27_wcvw5")
+shader_parameter/lock_aspect = false
+shader_parameter/aspect_ratio = 1.3333333
+shader_parameter/fov = Vector2(180, 90)
+shader_parameter/tiling = Vector2i(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_byb6b"]
+material = SubResource("ShaderMaterial_l71pi")
+flip_faces = true
+size = Vector3(3000, 3000, 3000)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6k84"]
+render_priority = 0
+shader = ExtResource("27_wcvw5")
+shader_parameter/sky_texture = ExtResource("28_3m6cs")
+shader_parameter/lock_aspect = false
+shader_parameter/aspect_ratio = 1.3333333
+shader_parameter/fov = Vector2(180, 90)
+shader_parameter/tiling = Vector2i(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+
 [node name="School" type="Node3D"]
 script = SubResource("GDScript_ujjl2")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." groups=["first_exit_trigger"]]
-environment = ExtResource("1_1k3sd")
 
 [node name="Node" type="Node" parent="."]
 
@@ -203,6 +226,14 @@ transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 13, 
 
 [node name="Bell8" parent="Node/SchoolhouseGrid/DetailAndInteractive/Bells" instance=ExtResource("29_wcvw5")]
 transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 13, 0, 9.75)
+
+[node name="Sky_Box" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259, 196, 256)
+mesh = SubResource("BoxMesh_byb6b")
+surface_material_override/0 = SubResource("ShaderMaterial_k6k84")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node/Sky_Box"]
+environment = ExtResource("1_1k3sd")
 
 [node name="Student" parent="." instance=ExtResource("29_o4p83")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.20727, 0.00012493134, 13.469321)

@@ -1,39 +1,35 @@
-// NOTE: Shader automatically converted from Godot Engine 4.0.beta10's StandardMaterial3D.
-
 shader_type spatial;
-render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
-uniform vec4 albedo : source_color;
-uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;
-uniform float point_size : hint_range(0,128);
-uniform float roughness : hint_range(0,1);
-uniform sampler2D texture_metallic : hint_default_white,filter_linear_mipmap,repeat_enable;
-uniform vec4 metallic_texture_channel;
-uniform sampler2D texture_roughness : hint_roughness_r,filter_linear_mipmap,repeat_enable;
-uniform float specular;
-uniform float metallic;
-uniform vec3 uv1_scale;
-uniform vec3 uv1_offset;
-uniform vec3 uv2_scale;
-uniform vec3 uv2_offset;
+render_mode unshaded;
 
+uniform sampler2D sky_texture : source_color;
+uniform bool lock_aspect = false;
+uniform float aspect_ratio = 1.3333333;
+uniform vec2 fov = vec2(180.0, 90.0);
+uniform ivec2 tiling = ivec2(1, 1);
+uniform vec2 offset = vec2(0.0, 0.0);
+
+// XY offset, ZW tiling
+varying vec4 bg_coords;
 
 void vertex() {
-	UV=UV*uv1_scale.xy+uv1_offset.xy;
+	// Camera YX rotation per Basis.get_euler source code
+	float y = atan(VIEW_MATRIX[0][2], VIEW_MATRIX[2][2]);
+	float x = asin(VIEW_MATRIX[1][2]);
+	
+	// Map rotation to screen space
+	bg_coords.xy = vec2(y * -0.5, x) / PI;
+	bg_coords.y += 0.5;
+	
+	bg_coords.w = fov.y / 180.0;
+	bg_coords.z = !lock_aspect ? fov.x / 360.0 : VIEWPORT_SIZE.x / (VIEWPORT_SIZE.y * aspect_ratio) * bg_coords.w;
+	
+	// Keep background centered vertically when FOV changes
+	bg_coords.y *= bg_coords.w > 1.0 ? 0.0 : 1.0 - bg_coords.w;
 }
 
-
-
-
-
-
 void fragment() {
-	vec2 base_uv = UV;
-	vec4 albedo_tex = texture(texture_albedo,base_uv);
-	ALBEDO = albedo.rgb * albedo_tex.bgr;
-	float metallic_tex = dot(texture(texture_metallic,base_uv),metallic_texture_channel);
-	METALLIC = metallic_tex * metallic;
-	vec4 roughness_texture_channel = vec4(1.0,0.0,0.0,0.0);
-	float roughness_tex = dot(texture(texture_roughness,base_uv),roughness_texture_channel);
-	ROUGHNESS = roughness_tex * roughness;
-	SPECULAR = specular;
+	vec2 uv_offset = vec2(-offset.x, offset.y);
+	vec2 uv = (SCREEN_UV + uv_offset) * bg_coords.zw + bg_coords.xy;
+	uv *= vec2(tiling);
+	ALBEDO = texture(sky_texture, uv).rgb;
 }

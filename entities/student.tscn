@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://338hxl54gjim" path="res://texture/Boarder.png" id="4_jvcrt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_64eig"]
+size = Vector3(0.5, 1.5, 0.5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_c22a6"]
 viewport_path = NodePath("Head/SubViewportContainer/SubViewport")
@@ -16,10 +17,11 @@ viewport_path = NodePath("Head/SubViewportContainer/SubViewport")
 
 [node name="Student" type="CharacterBody3D"]
 collision_mask = 2
+axis_lock_linear_y = true
 script = ExtResource("1_8bc1h")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 1.5, 0, 0, 0, 0.5, 0, 0.775, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.775, 0)
 rotation_edit_mode = 1
 shape = SubResource("BoxShape3D_64eig")
 debug_color = Color(18.892157, 0, 18.892157, 0.41960785)
@@ -84,3 +86,11 @@ centered = false
 
 [node name="DebugMap" type="Sprite2D" parent="CenterContainer"]
 texture = SubResource("ViewportTexture_64eig")
+
+[node name="NoclipText" type="Label" parent="."]
+visible = false
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 236.0
+offset_bottom = 64.0
+text = "Noclip Mode Activated!"

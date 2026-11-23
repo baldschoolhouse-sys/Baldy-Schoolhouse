@@ -15,6 +15,8 @@ const PLAYER_REACH = 4.0
 var cur_speed: float = 4
 var cur_speed_2: Vector3 = Vector3(0, 0, 0)
 
+var noClip = false
+
 var collisionNode
 var cameraNode
 var subViewportNode
@@ -22,6 +24,7 @@ var backgroundNode
 var headNode
 var centerContainerNode
 var skidNode
+var debugTextNode
 
 var screensize
 
@@ -39,6 +42,7 @@ func _ready() -> void:
 	subViewportNode = find_child("SubViewport")
 	centerContainerNode = find_child("CenterContainer")
 	skidNode = find_child("Skid")
+	debugTextNode = find_child("NoclipText")
 	
 	DisplayServer.window_set_min_size(subViewportNode.size)
 	
@@ -91,6 +95,15 @@ func _unhandled_input(event) -> void:
 			else:
 				fullscreen = true
 				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		if Input.is_key_pressed(KEY_N):
+			if(noClip):
+				noClip = false
+				set_collision_mask_value(2, true)
+				debugTextNode.visible = false
+			else:
+				noClip = true
+				set_collision_mask_value(2, false)
+				debugTextNode.visible = true
 		
 func _physics_process(delta) -> void:
 	screensize = get_viewport().get_visible_rect().size

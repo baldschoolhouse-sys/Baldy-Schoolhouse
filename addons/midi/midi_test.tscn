@@ -9,8 +9,10 @@
 
 [node name="MidiPlayer" parent="." instance=ExtResource("3_nimpg")]
 max_polyphony = 256
-file = "res://audio/midi/Title Theme.mid"
+file = "res://audio/midi/Baldy's Schoolhouse.mid"
 playing = true
+loop = true
+loop_start = 1.0
 soundfont = "res://addons/midi/GM_Roland.sf2"
 mix_target = 2
 

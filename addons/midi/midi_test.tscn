@@ -12,7 +12,7 @@ max_polyphony = 256
 file = "res://audio/midi/Baldy's Schoolhouse.mid"
 playing = true
 loop = true
-loop_start = 1.0
+loop_start = 16.0
 soundfont = "res://addons/midi/GM_Roland.sf2"
 mix_target = 2
 
